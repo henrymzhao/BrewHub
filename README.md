@@ -6,5 +6,5 @@ Starring:
 Trevor Gale,
 Janice Moat,
 Edmond Eng,
-Mu Han Zhao,
+Henry Zhao,
 Jonathan Loewen
