@@ -1,0 +1,2 @@
+class BhControllerController < ApplicationController
+end
