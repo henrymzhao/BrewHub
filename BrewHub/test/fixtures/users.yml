@@ -1,1 +1,6 @@
-#empty
+one:
+  name: Alice
+  email: alice@example.com
+two:
+  name: Bob
+  email: bob@example.com
