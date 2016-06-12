@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160611051639) do
     t.string   "email"
     t.string   "encrypted_password"
     t.string   "salt"
+    t.integer  "userRole"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
