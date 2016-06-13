@@ -4145,3 +4145,1140 @@ Processing by UsersController#index as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
   Rendered users/index.html.erb within layouts/application (4.5ms)
 Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:05:19 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" IS NULL LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 863ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (Missing partial layouts/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/edmond/Documents/BrewHub/app/views"
+):
+     7:   <%= csrf_meta_tags %>
+     8: </head>
+     9: <body>
+    10: 	<%= render 'layouts/header' %>
+    11: 	<div class="container">
+    12: 	<%= yield %>
+    13: 	<%= render 'layouts/footer' %>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___1955032578606257533_40863340'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (32.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (63.1ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:05:24 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (Missing partial layouts/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/edmond/Documents/BrewHub/app/views"
+):
+     7:   <%= csrf_meta_tags %>
+     8: </head>
+     9: <body>
+    10: 	<%= render 'layouts/header' %>
+    11: 	<div class="container">
+    12: 	<%= yield %>
+    13: 	<%= render 'layouts/footer' %>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___1955032578606257533_40863340'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (22.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (63.0ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:06:25 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Missing partial layouts/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/edmond/Documents/BrewHub/app/views"
+):
+     7:   <%= csrf_meta_tags %>
+     8: </head>
+     9: <body>
+    10: <!-- 	<%= render 'layouts/header' %>
+    11: 	<div class="container"> -->
+    12: 	<%= yield %>
+    13: <!-- 	<%= render 'layouts/footer' %>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___1955032578606257533_69982858944720'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (46.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (28.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (130.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (3.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (5.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (84.0ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:06:27 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Missing partial layouts/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/edmond/Documents/BrewHub/app/views"
+):
+     7:   <%= csrf_meta_tags %>
+     8: </head>
+     9: <body>
+    10: <!-- 	<%= render 'layouts/header' %>
+    11: 	<div class="container"> -->
+    12: 	<%= yield %>
+    13: <!-- 	<%= render 'layouts/footer' %>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___1955032578606257533_69982858944720'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (21.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (21.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (69.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (61.7ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:06:54 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/brewmanager.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/brewmanager.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-13 07:06:54 -0700
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:08:53 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" IS NULL LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (undefined method `email' for #<User:0x007f4c4e875888>):
+    12:     <tr>
+    13:       <td><%= user.name %></td>
+    14:       <td><%= user.password %></td>
+    15:       <td><%= user.email %></td>
+    16:       <td><%= link_to 'Show', user_path(user) %></td>
+    17:       <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    18:        <td><%= link_to 'Destroy', user_path(user),
+  app/views/users/index.html.erb:15:in `block in _app_views_users_index_html_erb___2531157129773676335_69982856565540'
+  app/views/users/index.html.erb:11:in `_app_views_users_index_html_erb___2531157129773676335_69982856565540'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (22.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (37.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (72.0ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:08:57 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `email' for #<User:0x007f4c4ea58d30>):
+    12:     <tr>
+    13:       <td><%= user.name %></td>
+    14:       <td><%= user.password %></td>
+    15:       <td><%= user.email %></td>
+    16:       <td><%= link_to 'Show', user_path(user) %></td>
+    17:       <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    18:        <td><%= link_to 'Destroy', user_path(user),
+  app/views/users/index.html.erb:15:in `block in _app_views_users_index_html_erb___2531157129773676335_69982856565540'
+  app/views/users/index.html.erb:11:in `_app_views_users_index_html_erb___2531157129773676335_69982856565540'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (66.6ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:09:03 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.5ms)
+
+ActionView::Template::Error (undefined method `email' for #<User:0x007f4c4d8f1560>):
+    12:     <tr>
+    13:       <td><%= user.name %></td>
+    14:       <td><%= user.password %></td>
+    15:       <td><%= user.email %></td>
+    16:       <td><%= link_to 'Show', user_path(user) %></td>
+    17:       <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    18:        <td><%= link_to 'Destroy', user_path(user),
+  app/views/users/index.html.erb:15:in `block in _app_views_users_index_html_erb___2531157129773676335_69982856565540'
+  app/views/users/index.html.erb:11:in `_app_views_users_index_html_erb___2531157129773676335_69982856565540'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (66.1ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:09:11 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `email' for #<User:0x007f4c4ec30220>):
+    12:     <tr>
+    13:       <td><%= user.name %></td>
+    14:       <td><%= user.password %></td>
+    15:       <td><%= user.email %></td>
+    16:       <td><%= link_to 'Show', user_path(user) %></td>
+    17:       <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    18:        <td><%= link_to 'Destroy', user_path(user),
+  app/views/users/index.html.erb:15:in `block in _app_views_users_index_html_erb___2531157129773676335_69982856565540'
+  app/views/users/index.html.erb:11:in `_app_views_users_index_html_erb___2531157129773676335_69982856565540'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.8ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:09:44 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `Email' for #<User:0x00000003676238>):
+    12:     <tr>
+    13:       <td><%= user.name %></td>
+    14:       <td><%= user.password %></td>
+    15:       <td><%= user.Email %></td>
+    16:       <td><%= link_to 'Show', user_path(user) %></td>
+    17:       <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    18:        <td><%= link_to 'Destroy', user_path(user),
+  app/views/users/index.html.erb:15:in `block in _app_views_users_index_html_erb___2531157129773676335_29371020'
+  app/views/users/index.html.erb:11:in `_app_views_users_index_html_erb___2531157129773676335_29371020'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.3ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:09:47 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `Email' for #<User:0x007f4c4e4b58d8>):
+    12:     <tr>
+    13:       <td><%= user.name %></td>
+    14:       <td><%= user.password %></td>
+    15:       <td><%= user.Email %></td>
+    16:       <td><%= link_to 'Show', user_path(user) %></td>
+    17:       <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    18:        <td><%= link_to 'Destroy', user_path(user),
+  app/views/users/index.html.erb:15:in `block in _app_views_users_index_html_erb___2531157129773676335_29371020'
+  app/views/users/index.html.erb:11:in `_app_views_users_index_html_erb___2531157129773676335_29371020'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (37.3ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (69.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnNameToPost (20160613141128)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "posts" ADD "email" varchar[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnNameToPost (20160613141128)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "posts" ADD "email" varchar[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:14:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.6) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.6) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (79.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnNameToPost (20160613141128)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "posts" ADD "email" varchar[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnNameToPost (20160613141128)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "posts" ADD "email" varchar[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnNameToPost (20160613141128)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "posts" ADD "email" varchar[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnNameToPost (20160613141128)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "posts" ADD "email" varchar[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnEmailToUser (20160613141256)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160613141256"]]
+  [1m[36m (22.7ms)[0m  [1mcommit transaction[0m
+Migrating to User (20160613141939)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160613141939"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:22:12 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" IS NULL LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 653ms (Views: 559.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/brewmanager.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/brewmanager.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:22:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPasswordDigestToUser (20160613142936)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160613142936"]]
+  [1m[36m (23.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:36:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" IS NULL LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 849ms (Views: 747.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/brewmanager.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:36:52 -0700
+
+
+Started GET "/assets/user.self-00697ff0b44043f0392706f5367e978c69eeffc636765b2b834ccd9872b03490.css?body=1" for ::1 at 2016-06-13 07:36:52 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:36:52 -0700
+
+
+Started GET "/user.css" for ::1 at 2016-06-13 07:36:52 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (72.3ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (65.7ms)
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started GET "/assets/brewmanager.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:36:53 -0700
+
+
+Started DELETE "/users/5" for ::1 at 2016-06-13 07:36:57 -0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vZf/cuubyHURRvAwn/lXxwjt6A7h39MDslgnRgESd4A+Ibrb1eX30HWxTOHGcGu8gaGB2COWqEaKyIVmA+r6Vw==", "id"=>"5"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 5]]
+  [1m[36m (36.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 65ms (ActiveRecord: 37.8ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:36:58 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 97ms (Views: 93.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user.css" for ::1 at 2016-06-13 07:36:58 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (60.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (86.2ms)
+
+
+Started DELETE "/users/6" for ::1 at 2016-06-13 07:37:00 -0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jNcGdEPmzUbBgWUB6bsvE8pGhXRDziItRqRCIdop5XwPYUPdfZjy46V22dCwMhNoQwrsooGHWWh+NOAB2NFoqw==", "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[35m (26.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 36ms (ActiveRecord: 27.3ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:37:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 72ms (Views: 70.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user.css" for ::1 at 2016-06-13 07:37:00 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (82.1ms)
+
+
+Started DELETE "/users/7" for ::1 at 2016-06-13 07:37:02 -0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"loiKyRaKO/JpWBJHv8/yJVLBtUxedh4ASnUjTO5TSDMVPs9gKPQEVw2vrpbmRs5e243cmpw/ZUVy5YFs7KvF5A==", "id"=>"7"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 7]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 25ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:37:02 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 99ms (Views: 95.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user.css" for ::1 at 2016-06-13 07:37:03 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.3ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (82.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (33.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (66.9ms)
+
+
+Started DELETE "/users/8" for ::1 at 2016-06-13 07:37:06 -0700
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zI7OoowuW7jChKiNB4MpOllsoxCXkze28ugAHfRn6E1POIsLslBkHaZzFFxeChVB0CDKxlXaTPPKeKI99p9lmg==", "id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[35m (27.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users
+Completed 302 Found in 37ms (ActiveRecord: 27.9ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:37:06 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 66ms (Views: 64.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/user.css" for ::1 at 2016-06-13 07:37:06 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (75.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (74.8ms)
+
+
+Started GET "/" for ::1 at 2016-06-13 07:37:16 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-06-13 07:37:18 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/new.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+    1: <%= form_for @user, url: user_path do |f| %>
+    2: 
+    3:   <% if @user.errors.any? %>
+    4:     <div id="error_explanation">
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___4351495251633960367_70059210877500'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1387430032595168102_70059210853480'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (29.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.2ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.3ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.5ms)
+
+
+Started GET "/users/new" for ::1 at 2016-06-13 07:37:19 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (5.9ms)
+  Rendered users/new.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+    1: <%= form_for @user, url: user_path do |f| %>
+    2: 
+    3:   <% if @user.errors.any? %>
+    4:     <div id="error_explanation">
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___4351495251633960367_70059209893260'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1387430032595168102_70059209929820'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (37.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (74.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (61.7ms)
+
+
+Started GET "/users/new" for ::1 at 2016-06-13 07:38:00 -0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (10.3ms)
+  Rendered users/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/brewmanager.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/user.self-00697ff0b44043f0392706f5367e978c69eeffc636765b2b834ccd9872b03490.css?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/brewmanager.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-06-13 07:38:00 -0700
+
+
+Started POST "/users" for ::1 at 2016-06-13 07:38:41 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oLdnDJxl9OEfDzBudiBQrvQ5jP1ZgsPpvadHMa8GA3kjASKlohvLRHv4jL8vqWzVfXXlK5vLuKyFN+URrf6Org==", "user"=>{"name"=>"JOJO", "password"=>"[FILTERED]", "email"=>"asd@test.com"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."name" = 'JOJO' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered users/_form.html.erb (6.5ms)
+  Rendered users/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 164ms (Views: 55.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2016-06-13 07:38:47 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LxjH8uv5SHT1LEhOjiOS7KMO2VmNKr36DlrczWMHy4qsroJb1Yd30ZHb9J/Xqq6XKkKwj09jxr82yn7tYf9GXQ==", "user"=>{"name"=>"JOJO", "password"=>"[FILTERED]", "email"=>"asd@test.com"}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."name" = 'JOJO' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "JOJO"], ["password_digest", "$2a$10$L0BC03E.0BAjJn8vXNLL.OZi5RbAF9PsymbSKvWTZq2KXV8I6atpq"], ["email", "asd@test.com"], ["created_at", "2016-06-13 14:38:47.637988"], ["updated_at", "2016-06-13 14:38:47.637988"]]
+  [1m[35m (36.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 148ms (ActiveRecord: 37.5ms)
+
+
+Started GET "/users/9" for ::1 at 2016-06-13 07:38:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:38:50 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user.css" for ::1 at 2016-06-13 07:38:50 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (33.5ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (66.5ms)
+
+
+Started GET "/users/9/edit" for ::1 at 2016-06-13 07:38:56 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered users/_form.html.erb (6.1ms)
+  Rendered users/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/9" for ::1 at 2016-06-13 07:39:05 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5YMEOQkb9KYC2A2A5scCS/7HV8M37BwU3b5zp9Jgq5RmNUGQN2XLA2YvsVG/Tj4wd4s+FfWlZ1HlLtGH0JgmQw==", "user"=>{"name"=>"JOJO", "password"=>"[FILTERED]", "email"=>"asd@test.com"}, "commit"=>"Update User", "id"=>"9"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."name" = 'JOJO' AND "users"."id" != 9) LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$10$D2BTS1LFUnIG2WyGaeLIau/67OKOI4zcdCq9a44LkVgeOgPmTBksS"], ["updated_at", "2016-06-13 14:39:05.787201"], ["id", 9]]
+  [1m[35m (31.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 150ms (ActiveRecord: 32.6ms)
+
+
+Started GET "/users/9" for ::1 at 2016-06-13 07:39:05 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 61ms (Views: 59.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2016-06-13 07:39:07 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 90ms (Views: 88.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/user.css" for ::1 at 2016-06-13 07:39:07 -0700
+
+ActionController::RoutingError (No route matches [GET] "/user.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/edmond/.rvm/rubies/ruby-2.2.4/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (52.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/edmond/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (63.6ms)
