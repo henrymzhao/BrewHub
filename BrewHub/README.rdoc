@@ -11,18 +11,18 @@ done:
   field validation
   	presence validation
   	length validation
-  	format validation -username, email
+  	format validation
   	uniqueness validation -username, email *note my test is bad
   		also on a database level via add_index
   	password
   		bcrypt
   		presence validation
   		min length
+    ability to log in and out / sessions
 
 --------------------------------------------------------------
 todo:
-  debugger?
-  password requirements
+  more password requirements
   	must include at least one letter and one number
   	cannot include certain characters
   admin vs normal user
@@ -36,4 +36,4 @@ todo:
   	or above button write 'by submitting i assert i'm over 19'
   banned email restriciton?
   authentication
-  form field error messages
+  form field error messages?

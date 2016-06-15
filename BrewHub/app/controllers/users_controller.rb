@@ -16,11 +16,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user }
-        format.json { render :show, status: :created, location: @user }
+        #format.html { redirect_to @user }
+        #format.json { render :show, status: :created, location: @user }
+        session[:user_id] = @user.id
+        #redirect_to '/'
+        format.html { redirect_to '/' }
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        #format.html { render :new }
+        #format.json { render json: @user.errors, status: :unprocessable_entity }
+        #redirect_to '/signup'
+        format.html { redirect_to '/signup' }
       end
     end
   end
