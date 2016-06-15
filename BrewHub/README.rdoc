@@ -1,28 +1,6 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Accomplished in this iteration so far
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Account creation
+* Accounts contain id, email, username, bcrypt(salt and hash), and a userRole which will contain either 1 for admin or 0 for normal user. Currently this is set at account creation but the best way to accomplish "privledge escalation" would be to have one "root" user who can grant "admin" to others.
