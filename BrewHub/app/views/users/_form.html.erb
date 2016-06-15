@@ -1,0 +1,34 @@
+<%= form_for :user, url: '/users' do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <br>
+
+  <%= f.label :firstname %>
+  <%= f.text_field :firstname %>
+
+  <br>
+
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname %>
+
+  <br>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <br>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+
+  <br>
+
+  <%= f.submit "Register" %>
+<% end %>
