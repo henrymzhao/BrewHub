@@ -1,11 +1,22 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  # => resourses :users
+  resources :users
+  root 'users#index'
+  #temporary homepage
+
+  #create a new user
+  get '/signup' => 'users#new'
+  get '/users' => 'users#create'
+
+  # these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -14,7 +25,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-     resources :users
+  #   resources :products
 
   # Example resource route with options:
   #   resources :products do
