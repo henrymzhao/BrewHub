@@ -13,11 +13,10 @@ done:
   		also on a database level via add_index
   password encryption with bcrypt
   ability to log in and out / sessions
-  error messages for signup
+  error messages for signup and login
 
 --------------------------------------------------------------
 todo:
-  error messages for login
   more password requirements
   	must include at least one letter and one number
   	cannot include certain characters
