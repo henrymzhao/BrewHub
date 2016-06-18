@@ -1,27 +1,23 @@
-BrewHub - Iteration 1 - login - Janice
+BrewHub - Iteration 1 - login
+--------------------------------------------------------------
+change password in database.yml to match your own
 --------------------------------------------------------------
 done:
-  gemfile
-  	gem 'rails_12factor', group: :production
-  	gem 'bcrypt', '3.1.11'
-  database.yml - added username & pass
   made database for users
   	username, firstname, lastname, email
   	*added index to username and email
   field validation
-  	presence validation
-  	length validation
-  	format validation
-  	uniqueness validation -username, email *note my test is bad
+  	presence, length, & format validation
+  	uniqueness validation  for username & email
+      *note my test for this is bad
   		also on a database level via add_index
-  	password
-  		bcrypt
-  		presence validation
-  		min length
-    ability to log in and out / sessions
+  password encryption with bcrypt
+  ability to log in and out / sessions
+  error messages for signup
 
 --------------------------------------------------------------
 todo:
+  error messages for login
   more password requirements
   	must include at least one letter and one number
   	cannot include certain characters
@@ -31,9 +27,10 @@ todo:
   	remove a user
   	ban a user -keep db of banned emails?
   	how to remove/create other admins?
+  in signup check if email is banned
+  banned words for usernames?
   validity test for e-mail
-  age restriction: on clicking to create make a 'i am over 19' notice?
+  age restriction:
+    on clicking to create make a 'i am over 19' continue or cancel?
   	or above button write 'by submitting i assert i'm over 19'
   banned email restriciton?
-  authentication
-  form field error messages?
