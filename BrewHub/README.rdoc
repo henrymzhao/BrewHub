@@ -1,0 +1,36 @@
+BrewHub - Iteration 1 - login
+--------------------------------------------------------------
+change password in database.yml to match your own
+--------------------------------------------------------------
+done:
+  made database for users
+  	username, firstname, lastname, email
+  	*added index to username and email
+  field validation
+  	presence, length, & format validation
+  	uniqueness validation  for username & email
+      *note my test for this is bad
+  		also on a database level via add_index
+  password encryption with bcrypt
+  ability to log in and out / sessions
+  error messages for signup
+
+--------------------------------------------------------------
+todo:
+  error messages for login
+  more password requirements
+  	must include at least one letter and one number
+  	cannot include certain characters
+  admin vs normal user
+  	view list of users
+  	search list of users
+  	remove a user
+  	ban a user -keep db of banned emails?
+  	how to remove/create other admins?
+  in signup check if email is banned
+  banned words for usernames?
+  validity test for e-mail
+  age restriction:
+    on clicking to create make a 'i am over 19' continue or cancel?
+  	or above button write 'by submitting i assert i'm over 19'
+  banned email restriciton?
