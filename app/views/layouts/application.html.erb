@@ -17,7 +17,13 @@
           
           <li class="menus"><a href="#">Breweries</a></li>
           <li class="menus"><a href="#">Social</a></li>
-          <li class="menus"><a href="/login">Login</a></li>
+          
+          <% if current_user %>
+    	      <li class="menus"><a href="/users"><%= current_user.username %></a></li>
+          <% else %>
+	          <li class="menus"><a href="/login">Login</a></li>          
+          <% end %>
+          
         </ul>
       </div>
     </nav>
