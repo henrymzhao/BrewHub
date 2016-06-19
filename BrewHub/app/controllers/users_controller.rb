@@ -21,6 +21,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         #redirect_to '/'
         format.html { redirect_to '/' }
+        # @user.assign_attributes({:banned => false, :admin => false})
       else
         #format.html { render :new }
         #format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation)
+      params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :Banned, :Admin)
     end
 
 end
