@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
+<<<<<<< HEAD
       redirect_to '/login'
+=======
+      render 'login_error'
+>>>>>>> 6a562bbe11f0fa79f991c26296b4c20d5d0ec83c
     end
   end
 
