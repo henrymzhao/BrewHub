@@ -20,4 +20,6 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length:{minimum:6, maximum:18}
 
+  # attr_accessible :banned, :admin
+
 end
