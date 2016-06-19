@@ -1,0 +1,2 @@
+module BrewmanagerHelper
+end
