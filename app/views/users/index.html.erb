@@ -16,6 +16,8 @@
             <th>FirstName</th>
             <th>LastName</th>
             <th>email</th>
+            <th>Banned</th>
+            <th>Admin</th>
             <th>Show</th>
           </tr>
         </thead>
@@ -26,6 +28,8 @@
             <td><%= user.firstname %></td>
             <td><%= user.lastname %></td>
             <td><%= user.email %></td>
+            <td><%= user.banned %></td>
+            <td><%= user.admin %></td>
             <td><%= link_to 'Show', user %></td>
           </tr>
           <% end %>
