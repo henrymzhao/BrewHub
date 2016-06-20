@@ -6,34 +6,40 @@
     <%= button_to 'Login', '/login', :method => :get %>
     <%= button_to 'Signup', '/signup', :method => :get %>
   <% end %>
+  <% if current_user %>
+    <br>
+      <% if current_user.admin %>
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>email</th>
+              <th>Ban Status</th>
+              <th>Admin</th>
+              <th>Show</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.username %></td>
+                <td><%= user.firstname %></td>
+                <td><%= user.lastname %></td>
+                <td><%= user.email %></td>
+                <td><%= user.banned %>:<%= link_to("Change", user_ban_path(user), :confirm => "Are you sure?", :method => :post)%></td>
+                <td><%= user.admin %>:<%= link_to("Change", user_admin_path(user), :confirm => "Are you sure?", :method => :post)%></td>
+                <td><%= link_to 'Show', user %></td>
 
-  <br>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>email</th>
-            <th>Banned</th>
-            <th>Admin</th>
-            <th>Show</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @users.each do |user| %>
-          <tr>
-            <td><%= user.username %></td>
-            <td><%= user.firstname %></td>
-            <td><%= user.lastname %></td>
-            <td><%= user.email %></td>
-            <td><%= user.banned %></td>
-            <td><%= user.admin %></td>
-            <td><%= link_to 'Show', user %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+<p>
+    Edit your user profile:
+<!-- TODO-->
+</p>
+  <% end %>
 </body>
