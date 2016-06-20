@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
 
   match 'users/:id/ban', :to => 'users#ban', :as => 'user_ban', :via => :post
+  match 'users/:id/admin', :to => 'users#admin', :as => 'user_admin', :via => :post
 
 
   # The priority is based upon order of creation: first created -> highest priority.

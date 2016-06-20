@@ -19,8 +19,6 @@
               <th>Ban Status</th>
               <th>Admin</th>
               <th>Show</th>
-              <th>Change Ban status</th>
-              <th>Change Admin status</th>
             </tr>
           </thead>
           <tbody>
@@ -30,10 +28,10 @@
                 <td><%= user.firstname %></td>
                 <td><%= user.lastname %></td>
                 <td><%= user.email %></td>
-                <td><%= user.banned %></td>
-                <td><%= user.admin %></td>
+                <td><%= user.banned %>:<%= link_to("Change", user_ban_path(user), :confirm => "Are you sure?", :method => :post)%></td>
+                <td><%= user.admin %>:<%= link_to("Change", user_admin_path(user), :confirm => "Are you sure?", :method => :post)%></td>
                 <td><%= link_to 'Show', user %></td>
-                <td><%= link_to("Bannnn", user_ban_path(user), :confirm => "Are you sure?", :method => :post)%></td>
+
               </tr>
             <% end %>
           </tbody>
