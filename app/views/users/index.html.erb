@@ -19,6 +19,7 @@
               <th>Ban Status</th>
               <th>Admin</th>
               <th>Show</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -31,15 +32,14 @@
                 <td><%= user.banned %>:<%= link_to("Change", user_ban_path(user), :confirm => "Are you sure?", :method => :post)%></td>
                 <td><%= user.admin %>:<%= link_to("Change", user_admin_path(user), :confirm => "Are you sure?", :method => :post)%></td>
                 <td><%= link_to 'Show', user %></td>
-
+                <td><%= link_to "Edit Account", edit_user_path(user) %></td>
               </tr>
             <% end %>
           </tbody>
         </table>
       <% end %>
 <p>
-    Edit your user profile:
-<!-- TODO-->
+    <%= link_to "Edit your user profile", edit_user_path(current_user) %>
 </p>
   <% end %>
 </body>

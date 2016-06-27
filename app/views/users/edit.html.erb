@@ -1,0 +1,39 @@
+<% if current_user.id == @user.id or current_user.admin  %><!--- Remove current_user.admin to disallow admin editing of accounts -->
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <p>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    </p>
+
+    <p>
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+    </p>
+
+    <p>
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+    </p>
+
+    <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    </p>
+
+    <p>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    </p>
+
+    <p>
+    <%= f.label :password_confirmation, "confirmation" %>
+    <%= f.text_field :password_confirmation %>
+    </p>
+
+    <%= f.submit "Update your account" %>
+  <% end %>
+<% else %>
+  <h1>You don't have permission to edit another user's account!</h1>
+<% end %>
