@@ -12,6 +12,26 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def ban
+    @user = User.find(params[:id])
+    if !@user.banned
+      @user.update_attribute(:banned,'t')
+    else
+      @user.update_attribute(:banned,'f')
+    end
+    @user.save
+  end
+
+  def admin
+    @user = User.find(params[:id])
+    if !@user.admin
+      @user.update_attribute(:admin,'t')
+    else
+      @user.update_attribute(:admin,'f')
+    end
+    @user.save
+  end
+
   def create
     @user = User.new(user_params)
     respond_to do |format|
@@ -31,9 +51,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
   private
     def user_params
-      params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation)
+      params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :banned, :admin)
     end
 
 end
