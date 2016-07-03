@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/master
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -33,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160619025846) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
+<<<<<<< HEAD
 =======
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
@@ -68,4 +72,6 @@ ActiveRecord::Schema.define(version: 20160611054403) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
+>>>>>>> refs/remotes/origin/master
+=======
 >>>>>>> refs/remotes/origin/master
