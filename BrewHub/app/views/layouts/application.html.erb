@@ -7,8 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 
+<body style="background-color: RGB(112,71,39)">
+
+	<nav>
+      <div id="mainbanner">
+        <ul>
+          <li><a href="/" class="logoclass"> <%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>394, :height => 57, :class => "logo")%> </a></li>
+                   
+          
+          <li class="menus"><a href="#">Breweries</a></li>
+          <li class="menus"><a href="#">Social</a></li>
+          
+          <% if current_user %>
+    	      <li class="menus"><a href="/users"><%= current_user.username %></a></li>
+          <% else %>
+	          <li class="menus"><a href="/login">Login</a></li>          
+          <% end %>
+          
+        </ul>
+      </div>
+    </nav>
+
+</body>
+
+<div id="mainbox">
     <%= yield %>
-
-
-
+</div>
 </html>

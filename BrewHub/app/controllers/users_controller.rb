@@ -12,6 +12,26 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def ban
+    @user = User.find(params[:id])
+    if !@user.banned
+      @user.update_attribute(:banned,'t')
+    else
+      @user.update_attribute(:banned,'f')
+    end
+    @user.save
+  end
+
+  def admin
+    @user = User.find(params[:id])
+    if !@user.admin
+      @user.update_attribute(:admin,'t')
+    else
+      @user.update_attribute(:admin,'f')
+    end
+    @user.save
+  end
+
   def create
     @user = User.new(user_params)
     respond_to do |format|
@@ -21,7 +41,6 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         #redirect_to '/'
         format.html { redirect_to '/' }
-        # @user.assign_attributes({:banned => false, :admin => false})
       else
         #format.html { render :new }
         #format.json { render json: @user.errors, status: :unprocessable_entity }

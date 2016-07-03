@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :users
-  root 'users#index'
+  root 'welcome#index'
   #temporary homepage
 
   #create a new user
@@ -11,6 +13,11 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+
+  match 'users/:id/ban', :to => 'users#ban', :as => 'user_ban', :via => :post
+  match 'users/:id/admin', :to => 'users#admin', :as => 'user_admin', :via => :post
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
