@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+#mainbanner
+{ 
+  margin-top:15px;
+  height: 100px;
+  width: 100%;
+  background-color: maroon;
+  box-shadow: 0px 10px 50px #000000;
+  margin: 0 auto;
+}
+
+#mainbanner ul
+{
+}
+
+#mainbanner li
+{
+  font: 34px Arial;
+  display: inline;
+  list-style-type: none;
+}
+
+#mainbanner li.menus
+{
+  float: right;
+  display: inline-block;
+  margin: 10;
+  transform: translateY(30px);
+}
+
+#mainbanner a
+{
+  padding: 30px 35px;
+  background-color:rgba(190,0,0,1.00);
+  color: white;
+  text-decoration:none; 
+}
+
+#mainbanner a.logoclass
+{
+  padding:0;
+  background-color:transparent; 
+}
+
+#mainbanner a.logoclass:hover
+{
+  background-color:transparent;
+  color: black;
+}
+
+#mainbanner a:hover
+{
+  background-color:rgba(179,137,36,1.00);
+  color:white;
+  
+}
+
+.logo {
+  display: inline-block;
+  padding-top: 20px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+  outline: none;
+  position: relative;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
+#mainbox
+{
+	color: white;
+	padding: 20px;
+}
