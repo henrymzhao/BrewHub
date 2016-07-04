@@ -7,30 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body style="background-color: RGB(112,71,39)">
+<body style="background-color: RGB(233,235,238)">
 
 	<nav>
-      <div id="mainbanner">
-        <ul>
-          <li><a href="/" class="logoclass"> <%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>394, :height => 57, :class => "logo")%> </a></li>
-                   
-          
-          <li class="menus"><a href="#">Breweries</a></li>
-          <li class="menus"><a href="#">Social</a></li>
-          
-          <% if current_user %>
-    	      <li class="menus"><a href="/users"><%= current_user.username %></a></li>
-          <% else %>
-	          <li class="menus"><a href="/login">Login</a></li>          
-          <% end %>
-          
-        </ul>
-      </div>
+    <ul class="nav">
+      <li style="float:left"><a href="/" class="logoclass"> <%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>331, :height => 48, :class => "logo")%> </a></li>
+      <li><a href="#">Breweries</a></li>
+      <li><a href="#">Social</a></li>
+      <% if current_user %>
+        <li><a href="/users"><%= current_user.username %></a></li>
+      <% else %>
+        <li><a href="/login">Login</a></li>
+      <% end %>
+      <li class="icon">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+      </li>
+    </ul>
+    <!-- <li><a href="/" class="logoclass"> <%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>394, :height => 57, :class => "logo")%> </a></li> -->
     </nav>
 
 </body>
 
-<div id="mainbox">
+<div class="mainbox">
     <%= yield %>
 </div>
 </html>
