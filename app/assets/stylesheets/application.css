@@ -24,7 +24,7 @@ ul.nav li a
   padding: 14px 16px;
   text-decoration: none;
   transition: 0.3s;
-  font: 17px Arial;
+  font: 30px Arial;
 }
 
 ul.nav li a:hover
@@ -38,7 +38,7 @@ ul.nav li.icon
 }
 
 /*media queries for small screens*/
-@media screen and (max-width:680px)
+@media screen and (max-width:800px)
 {
   ul.nav li:not(:first-child)
   {
@@ -51,7 +51,7 @@ ul.nav li.icon
   }
 }
 
-@media screen and (max-width:680px)
+@media screen and (max-width:800px)
 {
   ul.nav.responsive
   {
