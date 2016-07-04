@@ -3,14 +3,41 @@
 <head>
   <title>BrewHub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'materialize', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'materialize.min', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'materialize', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'materialize.min', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 </head>
 
 <body style="background-color: RGB(233,235,238)">
 
 	<nav>
-    <ul class="nav">
+    <div class="nav-wrapper brown darken-2 white-text" style="margin-top: 20px">
+      <a href="#!" class="brand-logo" style="margin-top:10px"><%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>331, :height => 48)%></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Breweries</a></li>
+        <li><a href="#">Social</a></li>
+        <% if current_user %>
+          <li><a href="/users"><%= current_user.username %></a></li>
+        <% else %>
+          <li><a href="/login">Login</a></li>
+        <% end %>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#">Breweries</a></li>
+        <li><a href="#">Social</a></li>
+        <% if current_user %>
+          <li><a href="/users"><%= current_user.username %></a></li>
+        <% else %>
+          <li><a href="/login">Login</a></li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- <ul class="nav">
       <li style="float:left"><a href="/" class="logoclass"> <%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>331, :height => 48, :class => "logo")%> </a></li>
       <li><a href="#">Breweries</a></li>
       <li><a href="#">Social</a></li>
@@ -20,9 +47,9 @@
         <li><a href="/login">Login</a></li>
       <% end %>
       <li class="icon">
-        <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+        <a href="javascript:void(0);" style="font-size:45px;" onclick="myFunction()">☰</a>
       </li>
-    </ul>
+    </ul> -->
     </nav>
 
 </body>
