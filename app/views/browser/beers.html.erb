@@ -1,0 +1,17 @@
+<h1>Browser#beers</h1>
+<p>Find me in app/views/browser/beers.html.erb</p>
+
+<%= form_tag '/browser/beers' do %>
+  Name: <%= text_field_tag :name %>
+  Brewery: <%= text_field_tag :brewery %>
+  
+<% end %>
+<%
+@beers.each do |b|
+  %><p><%=b.name%></p>
+  <%
+end
+
+
+
+%>
