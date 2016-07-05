@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'browser/beers'
+
+  get 'browser/pubs'
+
   get 'welcome/index'
 
   resources :users
