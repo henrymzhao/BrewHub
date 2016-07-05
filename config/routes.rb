@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  get '/beers' => 'browser#beers'
+  get '/pubs' => 'browser#pubs'
 
   match 'users/:id/ban', :to => 'users#ban', :as => 'user_ban', :via => :post
   match 'users/:id/admin', :to => 'users#admin', :as => 'user_admin', :via => :post
