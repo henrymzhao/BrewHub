@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: BrewHub_production
-  username: BrewHub
-  password: <%= ENV['BREWHUB_DATABASE_PASSWORD'] %>
