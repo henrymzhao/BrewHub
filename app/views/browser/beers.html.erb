@@ -6,11 +6,17 @@
   Brewery: <%= text_field_tag :brewery %>
   
 <% end %>
+<%= form_for '/browser/beers' do |f| %>
+
+
+<%=f.submit%>
+
+<%end%>
+<% @beers.each do |b| %>
+  <p><%= b.name %></p>
+<% end %>
 <%
-@beers.each do |b|
-  %><p><%=b.name%></p>
-  <%
-end
+
 
 
 
