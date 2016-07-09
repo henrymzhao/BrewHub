@@ -9,7 +9,6 @@ gem 'rails', '4.2.6'
 #password encryption
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '3.1.11'
-
 gem 'brewery_db'
 
 # Use postgresql as the database for Active Record

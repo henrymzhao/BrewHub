@@ -1,10 +1,9 @@
 <h1>Browser#pubs</h1>
 <p>Find me in app/views/browser/pubs.html.erb</p>
 
-<p>Currently pulling beers from Big River Brewing, ID AAj4GG</p>
+<p>Currently pulling beers from BC</p>
 
-<%
-@pubs.each do |p|
-  %><p><%=p.name%></p>
+<%@pubs.each do |p|%>
+  <p><%=p.brewery.name%></p>
   <%
 end%>

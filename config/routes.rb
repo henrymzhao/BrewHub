@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get '/beers' => 'browser#beers'
   get '/pubs' => 'browser#pubs'
+  get '/pub' => 'browser#pub'
 
   match 'users/:id/ban', :to => 'users#ban', :as => 'user_ban', :via => :post
   match 'users/:id/admin', :to => 'users#admin', :as => 'user_admin', :via => :post
