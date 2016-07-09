@@ -4,7 +4,13 @@
 <p>Currently pulling beers from Big River Brewing, ID AAj4GG</p>
 
 <%
-@pubs.each do |p|
-  %><p><%=p.name%></p>
+
+@allbreweries.each do |brewery|
+  brewery.each do |b|
+  
+  %>
+  <p><%=b.name%></p>
   <%
-end%>
+  end
+  end
+  %>

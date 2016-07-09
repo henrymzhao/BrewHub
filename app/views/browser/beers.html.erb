@@ -12,8 +12,10 @@
 <%=f.submit%>
 
 <%end%>
+<%collection_select(@beers.name, @beers.id, @beers)%>
 <% @beers.each do |b| %>
   <p><%= b.name %></p>
+  <p><%= b.id %></p>
 <% end %>
 <%
 
