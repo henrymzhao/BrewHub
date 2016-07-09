@@ -6,16 +6,29 @@ class BrowserController < ApplicationController
   end
 
   def beers
-    brewery_db = BreweryDB::Client.new do |config|
-      config.api_key = API_KEY
+    begin
+      brewery_db = BreweryDB::Client.new do |config|
+        config.api_key = API_KEY
+      end
+    rescue
+      brewery_db = BreweryDB::Client.new do |config|
+        config.api_key = BACKUP_API_KEY
+      end
     end
     @beers = brewery_db.beers.all(abv: '5.5')
   end
 
   def pubs
-    brewery_db = BreweryDB::Client.new do |config|
-      config.api_key = API_KEY
+    begin
+      brewery_db = BreweryDB::Client.new do |config|
+        config.api_key = API_KEY
+      end
+    rescue
+      brewery_db = BreweryDB::Client.new do |config|
+        config.api_key = BACKUP_API_KEY
+      end
     end
+  
     
     
     
