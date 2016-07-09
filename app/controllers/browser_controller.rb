@@ -6,8 +6,57 @@ class BrowserController < ApplicationController
   end
 
   def beers
-    brewery_db = BreweryDB::Client.new do |config|
+    begin
+      brewery_db = BreweryDB::Client.new do |config|
         config.api_key = API_KEY
+      end
+      @pubs = brewery_db.brewery('AAj4GG').beers
+    rescue
+      begin
+        brewery_db = BreweryDB::Client.new do |config|
+          config.api_key = BACKUP_API_KEY_1
+        end
+        @pubs = brewery_db.brewery('AAj4GG').beers
+      rescue
+        begin
+          brewery_db = BreweryDB::Client.new do |config|
+            config.api_key = BACKUP_API_KEY_2
+          end
+          @pubs = brewery_db.brewery('AAj4GG').beers
+        rescue
+          begin
+            brewery_db = BreweryDB::Client.new do |config|
+              config.api_key = BACKUP_API_KEY_3
+            end
+            @pubs = brewery_db.brewery('AAj4GG').beers
+          rescue
+            begin
+              brewery_db = BreweryDB::Client.new do |config|
+                config.api_key = BACKUP_API_KEY_4
+              end
+              @pubs = brewery_db.brewery('AAj4GG').beers
+            rescue
+              begin
+                brewery_db = BreweryDB::Client.new do |config|
+                  config.api_key = BACKUP_API_KEY_5
+                end
+                @pubs = brewery_db.brewery('AAj4GG').beers
+              rescue
+                begin
+                  brewery_db = BreweryDB::Client.new do |config|
+                    config.api_key = BACKUP_API_KEY_6
+                  end
+                  @pubs = brewery_db.brewery('AAj4GG').beers
+                rescue
+                  brewery_db = BreweryDB::Client.new do |config|
+                    config.api_key = BACKUP_API_KEY_7
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
     end
       
     @beers = brewery_db.beers.all(abv: '5.5')
@@ -15,18 +64,60 @@ class BrowserController < ApplicationController
   end
 
   def pubs
+    #find a working API key
     begin
       brewery_db = BreweryDB::Client.new do |config|
         config.api_key = API_KEY
       end
+      @pubs = brewery_db.brewery('AAj4GG').beers
     rescue
-      brewery_db = BreweryDB::Client.new do |config|
-        config.api_key = BACKUP_API_KEY_5
+      begin
+        brewery_db = BreweryDB::Client.new do |config|
+          config.api_key = BACKUP_API_KEY_1
+        end
+        @pubs = brewery_db.brewery('AAj4GG').beers
+      rescue
+        begin
+          brewery_db = BreweryDB::Client.new do |config|
+            config.api_key = BACKUP_API_KEY_2
+          end
+          @pubs = brewery_db.brewery('AAj4GG').beers
+        rescue
+          begin
+            brewery_db = BreweryDB::Client.new do |config|
+              config.api_key = BACKUP_API_KEY_3
+            end
+            @pubs = brewery_db.brewery('AAj4GG').beers
+          rescue
+            begin
+              brewery_db = BreweryDB::Client.new do |config|
+                config.api_key = BACKUP_API_KEY_4
+              end
+              @pubs = brewery_db.brewery('AAj4GG').beers
+            rescue
+              begin
+                brewery_db = BreweryDB::Client.new do |config|
+                  config.api_key = BACKUP_API_KEY_5
+                end
+                @pubs = brewery_db.brewery('AAj4GG').beers
+              rescue
+                begin
+                  brewery_db = BreweryDB::Client.new do |config|
+                    config.api_key = BACKUP_API_KEY_6
+                  end
+                  @pubs = brewery_db.brewery('AAj4GG').beers
+                rescue
+                  brewery_db = BreweryDB::Client.new do |config|
+                    config.api_key = BACKUP_API_KEY_7
+                  end
+                end
+              end
+            end
+          end
+        end
       end
     end
-  
-    
-    
+        
     
     #@pubs = brewery_db.brewery('AAj4GG').beers
     @breweries1 = brewery_db.breweries.all(ids: 'DqlySI, GSkOGp,yagN3u,zC8X6x,Xr0G6p,AAj4GG,aywDqA,gvFuE2,SxnUb2,nVB9Cq')
