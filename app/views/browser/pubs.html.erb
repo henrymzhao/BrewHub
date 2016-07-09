@@ -4,6 +4,6 @@
 <p>Currently pulling beers from BC</p>
 
 <%@pubs.each do |p|%>
-  <p><%=p.brewery.name%></p>
+  <p><%=p.brewery.name%> <a href=/pub/<%= p.id %>>More Info</a></p>
   <%
 end%>

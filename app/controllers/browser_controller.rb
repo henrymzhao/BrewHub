@@ -28,6 +28,7 @@ class BrowserController < ApplicationController
       config.api_key = API_KEY
     end
     #@pub = brewery_db.brewery(params[:id]).all
-    @pub = brewery_db.brewery('AAj4GG')
+    #@pub = brewery_db.breweries.find(params[:id])
+    @pub = brewery_db.locations.find(params[:id])
   end
 end
