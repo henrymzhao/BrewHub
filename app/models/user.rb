@@ -19,7 +19,4 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates :password, presence: true, length:{minimum:6, maximum:18}, allow_nil: true
-  
-  geocoded_by :ip_address
-  after_validation :geocode
 end
