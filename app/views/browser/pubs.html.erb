@@ -16,12 +16,12 @@
 <div class="contentbox1">
 
   <%@pubs.each do |p|%><!--- Add @allbreweries.each do |brewery| then interate over brewery for the method using IDs, trevor has saved the old code  --->
-    <!--<a href=/pub/<%= p.id %>>-->
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';">
+    <!-- <a href=/pub/<%= p.id %>> -->
+      <div class="pubbox" onclick="passPubInfo(&quot;<%= p.id %>&quot;)" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';">
         <p class="brewery"><%= p.brewery.name %></p>
         <p class="location"><%= p.locality %></p>
       </div>
-    <!--</a>-->
+    <!-- </a> -->
   <%end%>
 
 </div>
@@ -29,7 +29,38 @@
 <div class="contentbox2">
 
   <p id="brewdetails"> Brewery Details here </p>
-  <p id="brewdetails"> <%= @pub %> </p>
-
 
 </div>
+
+
+<script>
+function passPubInfo(id){
+    makeRequest("GET", "http://api.brewerydb.com/v2/breweries?key=672ea896133a20896bd56857129715ab&ids=nDWISG");
+    // alert(config.api_key);
+  };
+
+// function makeRequest (method, url) {
+//   return new Promise(function (resolve, reject) {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open(method, url);
+//     xhr.onload = function () {
+//       if (this.status >= 200 && this.status < 300) {
+//         resolve(xhr.response);
+//       } else {
+//         reject({
+//           status: this.status,
+//           statusText: xhr.statusText
+//         });
+//       }
+//     };
+//     xhr.onerror = function () {
+//       reject({
+//         status: this.status,
+//         statusText: xhr.statusText
+//       });
+//     };
+//     xhr.send();
+//   });
+}
+
+</script>
