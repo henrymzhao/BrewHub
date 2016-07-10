@@ -75,7 +75,50 @@ ul.nav li.icon
   }
 }
 
-div.mainbox
-{
-  padding-left:16px;
+
+
+
+
+
+
+
+div.contentbox1 {
+  width: 370px;
+  background-color:white;
+  padding:10px;
+  overflow:scroll;
+  height: 700px;
+  float: left;
+  margin-left:50px;
+}
+
+div.contentbox2 {
+  width: 500px;
+  background-color:white;
+  padding:20px;
+  overflow:scroll;
+  height: 500px;
+  float: left;
+  margin-left:50px;
+}
+
+div.pubbox {
+  width: 300px;
+  background-color:white;
+  padding:20px;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+
+p.brewery {
+  color:black;
+  line-height: 0.8;
+  font-size: 120%
+}
+
+p.location {
+  color:gray;
+  line-height: 0.1;
+  text-indent: 20px;
+  font-size: 90%;
 }
