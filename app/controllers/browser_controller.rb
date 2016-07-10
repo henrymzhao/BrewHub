@@ -62,7 +62,7 @@ class BrowserController < ApplicationController
     #@beers = brewery_db.beers.all(withBreweries: 'Y')
     #@beers = brewery_db.beers.all(abv: '5.5')
     ##We need to localise this
-    @beers = brewery_db.beers.all(withBreweries: 'Y')
+    #@beers = brewery_db.beers.all(withBreweries: 'Y')
 
     @beers = brewery_db.beers.all(abv: '5.5')
 

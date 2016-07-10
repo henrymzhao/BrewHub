@@ -122,3 +122,12 @@ p.location {
   text-indent: 20px;
   font-size: 90%;
 }
+
+p.bname {
+  font-weight:bold;
+  font-size:130%;
+}
+
+p.bdesc {
+
+}
