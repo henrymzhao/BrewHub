@@ -1,9 +1,9 @@
 <h1>Browser#pubs</h1>
 <p>Find me in app/views/browser/pubs.html.erb</p>
 
+
 <p>Currently pulling beers from BC</p>
 
 <%@pubs.each do |p|%>
   <p><%=p.brewery.name%> <a href=/pub/<%= p.id %>>More Info</a></p>
-  <%
-end%>
+<%end%>

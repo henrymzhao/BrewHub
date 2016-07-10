@@ -11,6 +11,8 @@ gem 'rails', '4.2.6'
 gem 'bcrypt', '3.1.11'
 gem 'brewery_db'
 
+gem 'brewery_db'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets

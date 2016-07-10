@@ -10,7 +10,9 @@ class BrowserController < ApplicationController
       config.api_key = API_KEY
     end
     #@beers = brewery_db.beers.all(withBreweries: 'Y')
-    @beers = brewery_db.beers.all(abv: '5.5')
+    #@beers = brewery_db.beers.all(abv: '5.5')
+
+    @beers = brewery_db.beers.all(withBreweries: 'Y')
   end
 
   def pubs
