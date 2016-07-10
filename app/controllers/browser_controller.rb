@@ -127,6 +127,8 @@ class BrowserController < ApplicationController
     #@pubs = brewery_db.brewery('AAj4GG').all()
     #@pubs = brewery_db.breweries().location
     @pubs = brewery_db.locations.all(region: 'british columbia')
+    
+    
 
     #@breweries1 = brewery_db.breweries.all(ids: 'DqlySI, GSkOGp,yagN3u,zC8X6x,Xr0G6p,AAj4GG,aywDqA,gvFuE2,SxnUb2,nVB9Cq')
     #@breweries2 = brewery_db.breweries.all(ids: 'dZ0mKT,Bk34Go,iorTHl,yGsalR,supFO9,RNHfY1,hwiUzY,aabOus,xuSuqz,aEBj0Q')
@@ -139,10 +141,10 @@ class BrowserController < ApplicationController
   end
 
   def pub
-    brewery_db = BreweryDB::Client.new do |config|
+    @brewery_db = BreweryDB::Client.new do |config|
       config.api_key = BACKUP_API_KEY_6
     end#This needs to be "try catched"
     #@pub = brewery_db.brewery(params[:id]).all
-    @pub = brewery_db.locations.find(params[:id])
+    @pub = @brewery_db.locations.find(params[:id])
   end
 end

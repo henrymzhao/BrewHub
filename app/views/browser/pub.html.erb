@@ -5,3 +5,19 @@
 Note: this is debug output, it very much needs to be made "pretty"
 
 <%= @pub %>
+
+<p>A list of beers at this brewery</p>
+
+<%
+@pubbeers = @brewery_db.brewery(@pub.id).beers
+
+@pubbeers.each do |pb|
+  %><p><%=pb.name %></p><%
+end
+%>
+
+<p>The user's location</p>
+<% @lat = request.location.latitude %>
+<% @lon = request.location.longitude %>
+<% @city = request.location.city %>
+<p><%=@lat%>, <%=@lon%>, <%=@city%></p>

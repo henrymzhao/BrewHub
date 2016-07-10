@@ -7,4 +7,12 @@
 
 <%@pubs.each do |p|%><!--- Add @allbreweries.each do |brewery| then interate over brewery for the method using IDs, trevor has saved the old code  --->
   <p><%=p.brewery.name%> <a href=/pub/<%= p.id %>>More Info</a></p>
+  <%
+  #@thispub = @brewery_db.breweries.all(p.id)
+  #@lat = @thispub.latitude()
+  @lat = p.latitude()
+  @lon = p.longitude()
+  @addr = p.streetAddress()
+  %>
+  <p>Address:</p><p><%=@addr%>, Latitude:<%=@lat%>, Longitude:<%=@lon%></p>
 <%end%>
