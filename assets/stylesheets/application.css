@@ -1,0 +1,142 @@
+body
+{
+  margin: 20px 0 0 0;
+}
+ul.nav
+{
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background-color:#333;
+}
+
+ul.nav li
+{
+  float:right;
+}
+
+ul.nav li a
+{
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font: 30px Arial;
+}
+
+ul.nav li a:hover
+{
+  background-color: #111;
+}
+
+ul.nav li.icon
+{
+  display:none;
+}
+
+/*media queries for small screens*/
+@media screen and (max-width:800px)
+{
+  ul.nav li:not(:first-child)
+  {
+    display: none;
+  }
+  ul.nav li.icon
+  {
+    float:right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:800px)
+{
+  ul.nav.responsive
+  {
+    position: relative;
+  }
+  ul.nav.responsive li.icon
+  {
+    position:absolute;
+    right:0;
+    top: 0;
+  }
+  ul.nav.responsive li
+  {
+    float: none;
+    display: inline;
+  }
+  ul.nav.responsive li a
+  {
+    display:block;
+    text-align: left;
+  }
+}
+
+
+
+
+
+
+div.mainbox {
+  min-width: 2000px
+}
+
+div.contentbox1 {
+  width: 370px;
+  background-color:white;
+  padding:10px;
+  overflow-y:scroll;
+  height: 700px;
+  float: left;
+  margin-left:50px;
+}
+
+div.contentbox2 {
+  width: 500px;
+  background-color:white;
+  padding:20px;
+  overflow-y:scroll;
+  height: 500px;
+  float: left;
+  margin-left:50px;
+}
+
+div.pubbox {
+  width: 300px;
+  background-color:white;
+  padding:20px;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+}
+
+p.brewery {
+  color:black;
+  line-height: 0.8;
+  font-size: 120%;
+}
+
+p.brewery2 {
+  color:black;
+  line-height: 0.8;
+  font-size: 120%;
+  padding-left:20px;
+}
+
+p.location {
+  color:gray;
+  line-height: 0.1;
+  text-indent: 20px;
+  font-size: 90%;
+}
+
+p.bname {
+  font-weight:bold;
+  font-size:130%;
+}
+
+p.bdesc {
+
+}
