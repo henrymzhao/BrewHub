@@ -24,7 +24,9 @@
         <li><a href="/beers">Beers</a></li>
         <li><a href="/breweries">Breweries</a></li>
         <li><a href="#">Social</a></li>
-        <% if current_user %>
+        <% if current_user && !current_user.name.blank? %>
+          <li><a href="/users"><%=  current_user.name %></a></li>
+        <% elsif current_user %>
           <li><a href="/users"><%= current_user.username %></a></li>
         <% else %>
           <li><a href="/login">Login</a></li>
@@ -34,7 +36,9 @@
         <li><a href="/beers">Beers</a></li>
         <li><a href="/breweriess">Breweries</a></li>
         <li><a href="#">Social</a></li>
-        <% if current_user %>
+        <% if current_user && !current_user.name.blank? %>
+          <li><a href="/users"><%= current_user.name %></a></li>
+        <% elsif current_user %>
           <li><a href="/users"><%= current_user.username %></a></li>
         <% else %>
           <li><a href="/login">Login</a></li>

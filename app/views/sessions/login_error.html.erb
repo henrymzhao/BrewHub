@@ -14,3 +14,12 @@
   <%= submit_tag "Submit" %>
 
 <% end %>
+
+<br>
+<br>
+<div>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+</div>
+<%= yield %>
+<br>
+<a href="/signup">Don't have an account? Sign up here</a>
