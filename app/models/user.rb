@@ -22,26 +22,27 @@ class User < ActiveRecord::Base
 
   #validate password.  Allows nil is required for facebook login - password cant be changed if it doesnt validate, other fields can.
   has_secure_password
-  validates :password, presence: true, length:{minimum:6, maximum:18}, allow_nil: true
-end
+  validates :password, presence: true, length:{minimum:6, maximum:30}, allow_nil: true
 
-def self.create_with_omniauth(auth)
-  create! do |user|
-    user.firstname = "example"
-    user.lastname = "example"
-    user.username = rand 10000000
-    user.email = "#{user.username}@example.com"
-    user.password = auth["uid"]
-    user.password_confirmation = auth["uid"]
-    user.provider = auth["provider"]
-    user.uid = auth["uid"]
-    user.name = auth["info"]["name"]
-    user.oauth_token = auth["credentials"]["token"]
-    user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-    user.save!
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.firstname = "example"
+      user.lastname = "example"
+      user.username = rand 10000000
+      user.email = "#{user.username}@example.com"
+      user.password = auth["uid"]
+      user.password_confirmation = auth["uid"]
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["info"]["name"]
+      user.oauth_token = auth["credentials"]["token"]
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+    end
   end
-end
 
-def self.find_by_provider_and_uid(provider, uid)
-  where(provider: provider, uid: uid).first
+
+  def self.find_by_provider_and_uid(provider, uid)
+    where(provider: provider, uid: uid).first
+  end
 end

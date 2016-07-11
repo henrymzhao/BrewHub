@@ -2,7 +2,7 @@
     <%=#This page is for displaying all users, their statuses and their information.  From here, the admin can ban/unban, admin/unadmin, and remove users.
   %>
   <% if current_user && !current_user.name.blank? %>
-    Signed in as <%= current_user.name %> | <%= link_to "Logout",     '/logout' %>
+    Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
   <% elsif current_user %>
     Signed in as <%= current_user.username %> | <%= link_to "Logout", '/logout' %>
   <% else %>
