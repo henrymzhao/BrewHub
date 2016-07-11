@@ -15,6 +15,9 @@ gem 'geocoder'
 # facebook omniauth
 gem 'omniauth-facebook'
 
+# google omniauth
+gem "omniauth-google-oauth2"
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
