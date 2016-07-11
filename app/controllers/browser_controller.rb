@@ -1,10 +1,15 @@
 class BrowserController < ApplicationController
-
+  #BrowserController is a hold-all for search functionality.  Currently, it holds the functionaliy to list beers, to list all pubs in British Columbia,
+  #to show the API details of individual pubs, and to use back-up API keys if the first API key's requests have been exhausted.
+  #Obviously, in a working environment, we would be paying for the full BreweryDB functionality.  However, since this is a student project, we just have a bunch of free keys.
+  
+  #a placeholder for now, will in the future be a page to more easily add beers and breweries.
   def new
     @browser = Browser.new
     @beer = Beer.new
   end
 
+  #a page for listing information about beers.  Currently, this controller is of no consequence to the actual page.
   def beers
     brewery_db = tryAll()
 
@@ -14,17 +19,27 @@ class BrowserController < ApplicationController
     #@beers = brewery_db.beers.all(withBreweries: 'Y')
 
     @beers = brewery_db.beers.all(abv: '5.5')
-
-
+  end
+  
+  def provinceConv(prov)
+    puts case prov
+    when 'BC'
+      return 'British Columbia'
+    else
+      return 'Manitoba'
+    end
+    #code
   end
 
+  #a page for showing all breweries in an area.
   def pubs
     #find a working API key
     brewery_db = tryAll()
 
     #@pubs = brewery_db.brewery('AAj4GG').all()
+    pc = request.location.province
 
-    @pubs = brewery_db.locations.all(region: 'british columbia')
+    @pubs = brewery_db.locations.all(region: provinceConv('BC'))
 
     #@breweries1 = brewery_db.breweries.all(ids: 'DqlySI, GSkOGp,yagN3u,zC8X6x,Xr0G6p,AAj4GG,aywDqA,gvFuE2,SxnUb2,nVB9Cq')
     #@breweries2 = brewery_db.breweries.all(ids: 'dZ0mKT,Bk34Go,iorTHl,yGsalR,supFO9,RNHfY1,hwiUzY,aabOus,xuSuqz,aEBj0Q')
