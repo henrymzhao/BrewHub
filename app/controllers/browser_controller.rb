@@ -39,7 +39,7 @@ class BrowserController < ApplicationController
     #@pubs = brewery_db.brewery('AAj4GG').all()
     pc = request.location.province
 
-    @pubs = brewery_db.locations.all(region: provinceConv('BC'))
+    @pubs = brewery_db.locations.all(region: provinceConv(pc))
 
     #@breweries1 = brewery_db.breweries.all(ids: 'DqlySI, GSkOGp,yagN3u,zC8X6x,Xr0G6p,AAj4GG,aywDqA,gvFuE2,SxnUb2,nVB9Cq')
     #@breweries2 = brewery_db.breweries.all(ids: 'dZ0mKT,Bk34Go,iorTHl,yGsalR,supFO9,RNHfY1,hwiUzY,aabOus,xuSuqz,aEBj0Q')
