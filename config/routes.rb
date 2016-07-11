@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/pubs' => 'browser#pubs'
   get '/pub/:id' => 'browser#pub'
 
-  #facebook login
+  #facebook and google login
   get '/auth/:provider/callback' => 'sessions#createfb'
   get 'auth/failure', to: redirect('sessions#new')
 
