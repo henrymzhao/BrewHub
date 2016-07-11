@@ -1,10 +1,24 @@
-<h1>Browser#pubs</h1>
-<p>Find me in app/views/browser/pubs.html.erb</p>
 
 
 
-<p>Currently pulling beers from BC</p>
+<h1 style="text-indent: 50px;">Breweries</h1>
 
-<%@pubs.each do |p|%><!--- Add @allbreweries.each do |brewery| then interate over brewery for the method using IDs, trevor has saved the old code  --->
-  <p><%=p.brewery.name%> <a href=/pub/<%= p.id %>>More Info</a></p>
-<%end%>
+<div class="contentbox1">
+
+  <%@pubs.each do |p|%><!--- Add @allbreweries.each do |brewery| then interate over brewery for the method using IDs, trevor has saved the old code  --->
+    <!--<a href=/pub/<%= p.id %>>-->
+      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';">
+        <p class="brewery"><%= p.brewery.name %></p>
+        <p class="location"><%= p.locality %></p>
+      </div>
+    <!--</a>-->
+  <%end%>
+
+</div>
+
+<div class="contentbox2">
+
+  <p class="bname" id="breweryname"> Select a brewery to see details </p>
+  <p class="bdesc" id="bewerydesc"></p>
+
+</div>

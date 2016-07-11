@@ -1,6 +1,15 @@
 <h1>Brewery Info</h1>
+<br>
+<h3><%= @pub.brewery.name %></h3>
+<p><%= @pub.brewery.description %></p>
+<p><%= @pub.street_address %></p>
+<p>lat:<%=  @pub.latitude %>, long:<%=  @pub.longitude %></p>
+<% begin
+  @pub.brewery.images.medium %>
+  <img src="<%= @pub.brewery.images.medium %>" alt="Picture">
+<% rescue %>
+<% end %>
 
-<p>Currently pulling beers from BC, for a specific brewery</p>
 
 Note: this is debug output, it very much needs to be made "pretty"
 
