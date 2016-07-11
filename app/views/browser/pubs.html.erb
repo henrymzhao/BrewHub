@@ -16,17 +16,20 @@
 
 </div>
 
-<div class="contentbox2">
+<!---<div class="contentbox2">
 
   <p class="bname" id="breweryname"> Select a brewery to see details </p>
   <p class="bdesc" id="bewerydesc"></p>
+  <iframe id="rightFrame" height=""
+          frameBorder="2"></iframe>
 
-</div>
+</div>--->
 
 
 <script>
   function displayRight(id){
     //This needs to actually displayRight
-    window.location.href = "/pub/" + id;
+    //window.location.href = "/pub/" + id;
+    document.getElementById("rightFrame").src = "/pub/" + id;
   }
 </script>

@@ -40,6 +40,7 @@ class BrowserController < ApplicationController
     brewery_db = tryAll()
     #@pub = brewery_db.brewery(params[:id]).all
     @pub = brewery_db.locations.find(params[:id])
+    render :layout => 'blank'
   end
   def tryAll
     begin
