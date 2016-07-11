@@ -5,9 +5,9 @@
 
 <div class="contentbox1">
 
-  <%@pubs.each do |p|%><!--- Add @allbreweries.each do |brewery| then interate over brewery for the method using IDs, trevor has saved the old code  --->
+  <%@pubs.each do |p|%>
     <!--<a href=/pub/<%= p.id %>>-->
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';">
+      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="displayRight(&quot;<%= p.id %>&quot;)">
         <p class="brewery"><%= p.brewery.name %></p>
         <p class="location"><%= p.locality %></p>
       </div>
@@ -22,3 +22,11 @@
   <p class="bdesc" id="bewerydesc"></p>
 
 </div>
+
+
+<script>
+  function displayRight(id){
+    //This needs to actually displayRight
+    window.location.href = "/pub/" + id;
+  }
+</script>
