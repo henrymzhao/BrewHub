@@ -1,6 +1,6 @@
 API_KEY = '209c8e0eec82b6f0ce64e8bc51b5385b'
 #the above is the main api key.
-#this is the backup api key
+#backup api keys are held below.
 BACKUP_API_KEY_1 = 'c9e1468f26f184bc9be0613538219ec6'
 BACKUP_API_KEY_2 = '00bc94878037b3456ef88e617be4aa11'
 BACKUP_API_KEY_3 = '5ea639b24acb73277ab7f74c87722541'

@@ -31,7 +31,7 @@ class BrowserController < ApplicationController
     #pc = request.location.province
     
     
-    #get the user's location.  If blank, default to BC.  This should only happen when being run locally.
+    #get the user's province/state.  If blank, default to British Columbia.  This should only happen when being run locally.
     pc = request.location.province
     if (pc == "")
       pc = "British Columbia"

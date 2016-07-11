@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  #the typical user functionality is contained here, nothing too special.
   def index
     @users = User.all
   end
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  #ban functionality exists - a simple t/f in the user attributes.
   def ban
     @user = User.find(params[:id])
     if !@user.banned
@@ -22,6 +24,7 @@ class UsersController < ApplicationController
     @user.save
   end
 
+  #a simple set of admin attributes.
   def admin
     @user = User.find(params[:id])
     if !@user.admin
@@ -32,6 +35,7 @@ class UsersController < ApplicationController
     @user.save
   end
 
+  #simple user creation
   def create
     @user = User.new(user_params)
     respond_to do |format|

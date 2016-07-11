@@ -1,5 +1,6 @@
 <h1>Brewery Info</h1>
-<h2>Test: <%=request.location.state%></h2>
+  <%=#a placeholder page to display all possible Brewery data for this singular brewery.
+  %>
 <br>
 <h3><%= @pub.brewery.name %></h3>
 <p><%= @pub.brewery.description %></p>
@@ -10,7 +11,6 @@
   <img src="<%= @pub.brewery.images.medium %>" alt="Picture">
 <% rescue %>
 <% end %>
-
 
 Note: this is debug output, it very much needs to be made "pretty"
 

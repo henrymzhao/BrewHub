@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+#routes should be fairly self-explanatory.
   get 'browser/beers'
-
+  
   get 'browser/pubs'
 
   get 'welcome/index'

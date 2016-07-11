@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  #the user model.  converts characters into standard form, then checks against each other.
   before_save {self.email = email.downcase}
 
+  #simple uname, name, email checking for valid characters.
+  
   VALID_USERNAME_REGEX = /\A[a-z0-9\-_]+\z/i
   validates :username, presence: true, length:{maximum: 50, minimum:4},
                        format:{with: VALID_USERNAME_REGEX},
@@ -17,6 +20,7 @@ class User < ActiveRecord::Base
                     format:{with: VALID_EMAIL_REGEX},
                     uniqueness: {case_sensitive:false }
 
+  #validate password.  Allows nil is required for facebook login - password cant be changed if it doesnt validate, other fields can.
   has_secure_password
   validates :password, presence: true, length:{minimum:6, maximum:18}, allow_nil: true
 end

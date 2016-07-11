@@ -1,4 +1,7 @@
 <% if current_user.id == @user.id or current_user.admin  %><!--- Remove current_user.admin to disallow admin editing of accounts -->
+
+    <%=#The user edit form for their own profile.
+  %>
   <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
 
