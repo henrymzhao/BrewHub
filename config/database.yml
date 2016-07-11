@@ -17,8 +17,6 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: postgres
-  password: pgpassword
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
@@ -26,8 +24,6 @@ default: &default
 development:
   <<: *default
   database: BrewHub_development
-  username: postgres
-  password: pgpassword
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,8 +58,7 @@ development:
 test:
   <<: *default
   database: BrewHub_test
-  username: postgres
-  password: pgpassword
+
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -86,5 +81,3 @@ test:
 production:
   <<: *default
   database: BrewHub_production
-  username: postgres
-  password: pgpassword

@@ -65,9 +65,30 @@ class UsersController < ApplicationController
     end
   end
 
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.firstname = "fuckthisshit"
+      user.lastname = "fuckthisshit"
+      user.username = "fuckthisshit"
+      user.email = "none@none.com"
+      user.password = "nonenone"
+      user.password_confirmation = "nonenone"
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["info"]["name"]
+      user.oauth_token = auth["credentials"]["token"]
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+    end
+  end
+
+  def self.find_by_provider_and_uid(provider, uid)
+    where(provider: provider, uid: uid).first
+  end
+
   private
     def user_params
-      params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :banned, :admin)
+      params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :banned, :admin, :provider, :uid)
     end
 
 end
