@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 20160711043355) do
     t.string   "password_digest"
     t.boolean  "admin",           default: false, null: false
     t.boolean  "banned",          default: false, null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
