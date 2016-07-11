@@ -1,63 +1,83 @@
 <script>
 
-  function water() {
-    document.getElementById("bname").innerHTML = "Water";
-    document.getElementById("bdesc").innerHTML = ""
-    + "Beer is composed mostly of water. Regions have water with different"
-    + " mineral components; as a result, different regions were originally"
-    + " better suited to making certain types of beer, thus giving them a"
-    + " regional character. For example, Dublin has hard water well-suited"
-    + " to making stout, such as Guinness; while the Plzeň Region has soft"
-    + " water well-suited to making Pilsner (pale lager), such as Pilsner"
-    + " Urquell. The waters of Burton in England contain gypsum, which"
-    + " benefits making pale ale to such a degree that brewers of pale"
-    + " ales will add gypsum to the local water in a process known as"
-    + " Burtonisation.";
+  function clarifyingagent() {
+    document.getElementById("bname").innerHTML = "Clarifying Agent";
+    document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/ingredients/clarifyingagent.txt' %>"
+  }
+  function hops() {
+    document.getElementById("bname").innerHTML = "Hops";
+    document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/ingredients/hops.txt' %>"
   }
   function starchsource() {
     document.getElementById("bname").innerHTML = "Starch Source";
-    document.getElementById("bdesc").innerHTML = ""
-    + "The starch source in a beer provides the fermentable material and"
-    + " is a key determinant of the strength and flavour of the beer. The"
-    + " most common starch source used in beer is malted grain. Grain is"
-    + " malted by soaking it in water, allowing it to begin germination,"
-    + " and then drying the partially germinated grain in a kiln. Malting"
-    + " grain produces enzymes that convert starches in the grain into"
-    + " fermentable sugars. Different roasting times and temperatures are"
-    + " used to produce different colours of malt from the same grain."
-    + " Darker malts will produce darker beers."
-    + "<br>"
-    + "Nearly all beer includes barley malt as the majority of the starch."
-    + " Other malted and unmalted grains (including wheat, rice, oats, and"
-    + " rye, and less frequently, corn and sorghum) may be used. Some brewers"
-    + " have produced gluten-free beer, made with sorghum with no barley"
-    + " malt, for those who cannot consume gluten-containing grains like"
-    + " wheat, barley, and rye."
-
-
-
-
+    document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/ingredients/starchsource.txt' %>"
   }
-
-
-
-
+  function water() {
+      document.getElementById("bname").innerHTML = "Water";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/ingredients/water.txt' %>"
+  }
+  function yeast() {
+      document.getElementById("bname").innerHTML = "Yeast";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/ingredients/yeast.txt' %>"
+  }
 
 
   function ale() {
       document.getElementById("bname").innerHTML = "Ale";
-      document.getElementById("bdesc").innerHTML = "Ale is a type of beer brewed"
-      + " using a warm fermentation method, resulting in a sweet, full-bodied"
-      + " and fruity taste. Historically, the term referred to a drink brewed"
-      + " without hops. As with most beers, ale typically has a bittering agent"
-      + " to balance the sweetness of the malt and act as a preservative. Ale"
-      + " was originally bittered with gruit, a mixture of herbs or spices"
-      + " boiled in the wort before fermentation. Later, hops replaced gruit"
-      + " as the bittering agent.";
-    }
-
-
-
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/ale.txt' %>"
+  }
+  function brownale() {
+      document.getElementById("bname").innerHTML = "Brown Ale";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/brownale.txt' %>"
+  }
+  function darklager() {
+      document.getElementById("bname").innerHTML = "Dark Lager (Bock)";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/darklager.txt' %>"
+  }
+  function ipa() {
+      document.getElementById("bname").innerHTML = "India Pale Ale (IPA)";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/ipa.txt' %>"
+  }
+  function lager() {
+      document.getElementById("bname").innerHTML = "Lager";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/lager.txt' %>"
+  }
+  function lambic() {
+      document.getElementById("bname").innerHTML = "Lambic";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/lambic.txt' %>"
+  }
+  function mildale() {
+      document.getElementById("bname").innerHTML = "Mild Ale";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/mildale.txt' %>"
+  }
+  function milkstout() {
+      document.getElementById("bname").innerHTML = "Milk Stout";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/milkstout.txt' %>"
+  }
+  function paleale() {
+      document.getElementById("bname").innerHTML = "Pale Ale";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/paleale.txt' %>"
+  }
+  function palelager() {
+      document.getElementById("bname").innerHTML = "Pale Lager";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/palelager.txt' %>"
+  }
+  function porter() {
+      document.getElementById("bname").innerHTML = "Porter";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/porter.txt' %>"
+  }
+  function stout() {
+      document.getElementById("bname").innerHTML = "Stout";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/stout.txt' %>"
+  }
+  function viennalager() {
+      document.getElementById("bname").innerHTML = "Vienna Lager";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/viennalager.txt' %>"
+  }
+  function wheatbeer() {
+      document.getElementById("bname").innerHTML = "Wheat Beer";
+      document.getElementById("bdesc").innerHTML = "<%= render :file => '/app/assets/textfiles/beertypes/wheatbeer.txt' %>"
+  }
 
 </script>
 
@@ -94,7 +114,7 @@
       <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="ipa()">
         <p class="brewery2">India Pale Ale</p>
       </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="paleale())">
+      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="paleale()">
         <p class="brewery2">Pale Ale</p>
       </div>
       <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="mildale()">
@@ -134,11 +154,9 @@
 
 </div>
 
-
-
 <div class="contentbox2">
 
-  <p class="bname" id="bname"> Select a beer for details </p>
-  <p class="bdesc" id="bdesc"></p>
+  <p class="bname" id="bname"> Beer </p>
+  <p class="bdesc" id="bdesc"><%= render :file => '/app/assets/textfiles/beertypes/beer.txt' %></p>
 
 </div>
