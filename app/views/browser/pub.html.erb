@@ -1,5 +1,5 @@
-<h1>Brewery Info</h1>
-<h3><%= @pub.brewery.name %></h3>
+<!---<h1>Brewery Info</h1>--->
+<h2><%= @pub.brewery.name %></h2>
 <% begin
   @pub.brewery.images.medium %>
   <img src="<%= @pub.brewery.images.medium %>" alt="Picture">
@@ -7,7 +7,7 @@
 <% end %>
 <p><%= @pub.brewery.description %></p>
 <p><%= @pub.street_address %></p>
-<p>lat:<%=  @pub.latitude %>, long:<%=  @pub.longitude %></p>
+
 
 
 
@@ -15,7 +15,7 @@
 <style>
   #map {
     height: 300px;
-    width: 600px;
+    width: 400px;
   }
 </style>
   <div id="map"></div>
