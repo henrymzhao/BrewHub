@@ -19,7 +19,7 @@
 
 	<nav>
     <div class="nav-wrapper brown darken-2 white-text" style="margin-top: 20px">
-      <a href="/" class="brand-logo" style="margin-top:10px"><%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>331, :height => 48)%></a>
+      <a href="/" class="brand-logo" style="margin-top:10px; margin-left:20px;"><%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>331, :height => 48)%></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">≡</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/beers">Beers</a></li>
@@ -50,7 +50,7 @@
 
 </body>
 
-<div class="mainbox">
+<div id="mainbox" style="margin-left:100px; margin-top:20px; margin-right: 100px; margin-bottom:100px;">
     <%= yield %>
 </div>
 </html>
