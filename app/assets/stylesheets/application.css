@@ -1,89 +1,3 @@
-body
-{
-  margin: 20px 0 0 0;
-}
-ul.nav
-{
-  list-style-type: none;
-  margin:0;
-  padding:0;
-  overflow:hidden;
-  background-color:#333;
-}
-
-ul.nav li
-{
-  float:right;
-}
-
-ul.nav li a
-{
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  transition: 0.3s;
-  font: 30px Arial;
-}
-
-ul.nav li a:hover
-{
-  background-color: #111;
-}
-
-ul.nav li.icon
-{
-  display:none;
-}
-
-/*media queries for small screens*/
-@media screen and (max-width:800px)
-{
-  ul.nav li:not(:first-child)
-  {
-    display: none;
-  }
-  ul.nav li.icon
-  {
-    float:right;
-    display: inline-block;
-  }
-}
-
-@media screen and (max-width:800px)
-{
-  ul.nav.responsive
-  {
-    position: relative;
-  }
-  ul.nav.responsive li.icon
-  {
-    position:absolute;
-    right:0;
-    top: 0;
-  }
-  ul.nav.responsive li
-  {
-    float: none;
-    display: inline;
-  }
-  ul.nav.responsive li a
-  {
-    display:block;
-    text-align: left;
-  }
-}
-
-
-
-
-
-
-div.mainbox {
-  min-width: 2000px
-}
-
 div.contentbox1 {
   width: 370px;
   background-color:white;
@@ -92,6 +6,17 @@ div.contentbox1 {
   height: 700px;
   float: left;
   margin-left:50px;
+}
+
+div.beers_info
+{
+  width: 30%;
+  background-color: white;
+  overflow:hidden;
+  height: 460px;
+  float: left;
+  margin-right:30px;
+  overflow-y:scroll;
 }
 
 div.contentbox2 {
@@ -115,7 +40,7 @@ iframe.contentbox2 {
 }
 
 div.pubbox {
-  width: 300px;
+  width: auto;
   background-color:white;
   padding:20px;
   border-top: 1px solid #cccccc;
