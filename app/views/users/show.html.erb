@@ -1,11 +1,15 @@
 <%=#The display for a user - this is a placeholder, no real user profile yet exists, but this will eventually include a profile picture, as well as the user's information.
-  %>
+%>
 
 <% provide(:title, @user.username) %>
 <h1>
-  <%= gravatar_for @user %>
-  <%= @user.username %>
+  <b>Welcome, </b><%= @user.username %>
 </h1>
+
+<div style = "margin-left:50px;">
+
+</br>
+</br>
 
 <p><b>Username: </b><%= @user.username %></p>
 <p><b>First Name: </b><%= @user.firstname %></p>
@@ -13,6 +17,10 @@
 <p><b>Email: </b><%= @user.email %></p>
 </br>
 </br>
+
+</div>
+
+
 <%= link_to "Edit your user profile", edit_user_path(current_user) %>
 </br>
 <%= link_to "Logout", '/logout' %>
