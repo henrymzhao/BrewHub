@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 #routes should be fairly self-explanatory.
   get 'browser/beers'
-  
+
   get 'browser/pubs'
 
   get 'welcome/index'
@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get '/pubs' => 'browser#pubs'
   get '/pub/:id' => 'browser#pub'
 
+  #facebook and google login
+  get '/auth/:provider/callback' => 'sessions#createfb'
+  get 'auth/failure', to: redirect('sessions#new')
 
   match 'users/:id/ban', :to => 'users#ban', :as => 'user_ban', :via => :post
   match 'users/:id/admin', :to => 'users#admin', :as => 'user_admin', :via => :post
