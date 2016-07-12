@@ -55,7 +55,6 @@ class BrowserController < ApplicationController
     brewery_db = tryAll()
     #@pub = brewery_db.brewery(params[:id]).all
     @pub = brewery_db.locations.find(params[:id])
-    render :layout => 'blank'
   end
   
   #here we deal with our API keys - we need a whole bunch for testing purposes, so that we don't run into a request limit.

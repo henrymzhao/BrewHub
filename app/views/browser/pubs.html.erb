@@ -1,10 +1,11 @@
 <h1 style="text-indent: 50px;">Breweries</h1>
 
 <div class="contentbox1">
-
-  <%@pubs.each do |p|%>
+  <%=#Displaying all pubs in a nice little box - no further data for now, just names and a link to that brewery.
+  %>
+  <%@pubs.each do |p|%><!--- Add @allbreweries.each do |brewery| then interate over brewery for the method using IDs, trevor has saved the old code  --->
     <!--<a href=/pub/<%= p.id %>>-->
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="displayRight(&quot;<%= p.id %>&quot;)">
+      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';">
         <p class="brewery"><%= p.brewery.name %></p>
         <p class="location"><%= p.locality %></p>
       </div>
@@ -13,23 +14,9 @@
 
 </div>
 
-<!---<div class="contentbox2">
+<div class="contentbox2">
 
   <p class="bname" id="breweryname"> Select a brewery to see details </p>
   <p class="bdesc" id="bewerydesc"></p>
-  <iframe id="rightFrame" height=""
-          frameBorder="2"></iframe>
 
-</div>--->
-
-<iframe id="rightFrame" class="contentbox2"
-        frameBorder="2"></iframe>
-
-
-<script>
-  function displayRight(id){
-    //This needs to actually displayRight
-    //window.location.href = "/pub/" + id;
-    document.getElementById("rightFrame").src = "/pub/" + id;
-  }
-</script>
+</div>

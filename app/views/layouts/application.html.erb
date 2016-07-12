@@ -3,7 +3,6 @@
   %>
 <html>
 <head>
-  <meta name="google-site-verification" content="YNqAgQ4ZivsTSMaE2jt6KN38MWuI9gKxjBAkiXUqmkE" />
   <title>BrewHub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'materialize', media: 'all', 'data-turbolinks-track' => true %>
@@ -23,11 +22,9 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">≡</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/beers">Beers</a></li>
-        <li><a href="/pubs">Breweries</a></li>
+        <li><a href="/breweries">Breweries</a></li>
         <li><a href="#">Social</a></li>
-        <% if current_user && !current_user.name.blank? %>
-          <li><a href="/users"><%=  current_user.name %></a></li>
-        <% elsif current_user %>
+        <% if current_user %>
           <li><a href="/users"><%= current_user.username %></a></li>
         <% else %>
           <li><a href="/login">Login</a></li>
@@ -35,11 +32,9 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="/beers">Beers</a></li>
-        <li><a href="/pubs">Breweries</a></li>
+        <li><a href="/breweriess">Breweries</a></li>
         <li><a href="#">Social</a></li>
-        <% if current_user && !current_user.name.blank? %>
-          <li><a href="/users"><%= current_user.name %></a></li>
-        <% elsif current_user %>
+        <% if current_user %>
           <li><a href="/users"><%= current_user.username %></a></li>
         <% else %>
           <li><a href="/login">Login</a></li>
