@@ -1,24 +1,31 @@
-<h1 style="text-indent: 50px;">Breweries</h1>
-
-<div class="breweries_info">
-
-  <%@pubs.each do |p|%>
-    <!--<a href=/pub/<%= p.id %>>-->
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="displayRight(&quot;<%= p.id %>&quot;)">
-        <p class="brewery"><%= p.brewery.name %></p>
-        <p class="location"><%= p.locality %></p>
-      </div>
-    <!--</a>-->
+<ul id="nav-mobile" class="side-nav fixed" style="overflow: auto; translate(0%); margin-top: 64px;">
+  <li class = "bold">
+    <div >
+      <a href="#" class="waves-effect waves-teal">Breweries</a>
+    </div>
+  </li>
+  <%@pubs.each do |p| %>
+    <li>
+      <a class="waves-effect waves-teal" style="padding-left:30px";
+      onclick="displayRight(&quot;<%= p.id %>&quot;)"><%=p.brewery.name%></a>
+    </li>
   <%end%>
+  <!-- <li class = "search">
+    <div class = "search-wrapper card">
+      <input id="search" />
+      <i class ="material-icons">search</i>
+      <div class="search-results"></div>
+    </div>
+  </li> -->
 
-</div>
+</ul>
 
 <!---<div class="contentbox2">
 
-  <p class="bname" id="breweryname"> Select a brewery to see details </p>
-  <p class="bdesc" id="bewerydesc"></p>
-  <iframe id="rightFrame" height=""
-          frameBorder="2"></iframe>
+<p class="bname" id="breweryname"> Select a brewery to see details </p>
+<p class="bdesc" id="bewerydesc"></p>
+<iframe id="rightFrame" height=""
+frameBorder="2"></iframe>
 
 </div>--->
 
@@ -26,9 +33,14 @@
 
 
 <script>
-  function displayRight(id){
-    //This needs to actually displayRight
-    //window.location.href = "/pub/" + id;
-    document.getElementById("rightFrame").src = "/pub/" + id;
-  }
+function displayRight(id){
+  //This needs to actually displayRight
+  //window.location.href = "/pub/" + id;
+  document.getElementById("rightFrame").src = "/pub/" + id;
+}
+
+$('li > a').click(function() {
+    $('li').removeClass();
+    $(this).parent().addClass('active');
+});
 </script>
