@@ -14,9 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-function myFunction()
-{
-  document.getElementsByClassName("nav")
-  [0].classList.toggle("responsive");
-}
+//= require materialize-sprockets
+//= require materialize/extras/nouislider

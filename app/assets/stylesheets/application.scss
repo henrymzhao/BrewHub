@@ -1,3 +1,9 @@
+@import "materialize";
+@import "materialize/components/color";
+$primary-color: color("blue", "lighten-2") !default;
+@import 'materialize';
+@import "materialize/extras/nouislider";
+
 div.contentbox1 {
   width: 370px;
   background-color:white;
@@ -37,7 +43,7 @@ iframe.breweries_info
   overflow:hidden;
   overflow-y:scroll;
   height: 70vh;
-  float: left;  
+  float: left;
 }
 
 div.contentbox2 {

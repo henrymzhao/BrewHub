@@ -1,36 +1,34 @@
 <!DOCTYPE html>
-    <%=#Our display.  There's nothing exciting here, just styles and tags with our topbar.
-  %>
+<%=#Our display.  There's nothing exciting here, just styles and tags with our topbar.
+%>
 <html>
 <head>
-  <meta name="google-site-verification" content="YNqAgQ4ZivsTSMaE2jt6KN38MWuI9gKxjBAkiXUqmkE" />
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
+  <meta name="google-site-verification" content="YNqAgQ4ZivsTSMaE2jt6KN38MWuI9gKxjBAkiXUqmkE" /> <!--Import Google Icon Font-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BrewHub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'materialize', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'materialize.min', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'materialize', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'materialize.min', 'data-turbolinks-track' => true %>
-
   <%= csrf_meta_tags %>
 </head>
 
 <body style="background-color: RGB(233,235,238)">
 
-	<nav>
-    <div class="nav-wrapper brown darken-2 white-text" style="margin-top: 20px">
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper brown darken-2 white-text">
       <a href="/" class="brand-logo" style="margin-top:10px; margin-left:20px;"><%=image_tag("/assets/LOGO.png", :alt => "Home Page", :width =>331, :height => 48)%></a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">≡</i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/beers">Beers</a></li>
         <li><a href="/pubs">Breweries</a></li>
         <li><a href="#">Social</a></li>
         <% if current_user && !current_user.name.blank? %>
-          <li><a href="/users/<%= current_user.id %>"><%=  current_user.name %></a></li>
+        <li><a href="/users/<%= current_user.id %>"><%=  current_user.name %></a></li>
         <% elsif current_user %>
-          <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
+        <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
         <% else %>
-          <li><a href="/login">Login</a></li>
+        <li><a href="/login">Login</a></li>
         <% end %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
@@ -38,19 +36,28 @@
         <li><a href="/pubs">Breweries</a></li>
         <li><a href="#">Social</a></li>
         <% if current_user && !current_user.name.blank? %>
-          <li><a href="/users/<%= current_user.id %>"><%= current_user.name %></a></li>
+        <li><a href="/users/<%= current_user.id %>"><%= current_user.name %></a></li>
         <% elsif current_user %>
-          <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
+        <li><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></li>
         <% else %>
-          <li><a href="/login">Login</a></li>
+        <li><a href="/login">Login</a></li>
         <% end %>
       </ul>
     </div>
-    </nav>
+  </nav>
+</div>
+
+
+<script>
+$( document ).ready(function(){})
+{
+  $(".button-collapse").sideNav();
+}
+</script>
 
 </body>
 
 <div id="mainbox" style="margin-left:100px; margin-top:20px; margin-right: 100px; margin-bottom:100px;">
-    <%= yield %>
+  <%= yield %>
 </div>
 </html>

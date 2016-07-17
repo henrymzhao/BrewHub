@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'materialize-sass'
 gem 'coffee-script-source', '1.8.0'
 gem 'rails_12factor', group: :production
 
