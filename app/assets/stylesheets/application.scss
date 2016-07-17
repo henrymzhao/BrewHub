@@ -4,6 +4,14 @@ $primary-color: color("blue", "lighten-2") !default;
 @import 'materialize';
 @import "materialize/extras/nouislider";
 
+#mainbox
+{
+  margin-left:100px;
+  margin-top:20px;
+  margin-right: 100px;
+  margin-bottom:100px;
+}
+
 div.contentbox1 {
   width: 370px;
   background-color:white;

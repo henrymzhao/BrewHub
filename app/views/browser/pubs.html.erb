@@ -1,36 +1,57 @@
+<style>
+/*header, main, footer
+{
+padding-left: 240px;
+}*/
+
+body, html
+{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: show;
+}
+
+#rightFrame
+{
+  position:absolute;
+  left:240px;
+  right:-240px;
+  bottom:0;
+  top:64px;
+}
+
+#wrap { width: 600px; height: 390px; padding: 0; overflow: hidden; }
+#rightFrame { width: 800px; height: 520px; border: 1px solid black; }
+#rightFrame {
+  -ms-zoom: 0.75;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.75);
+  -webkit-transform-origin: 0 0;
+}
+</style>
+
 <ul id="nav-mobile" class="side-nav fixed" style="overflow: auto; translate(0%); margin-top: 64px;">
   <li class = "bold">
     <div >
-      <a href="#" class="waves-effect waves-teal">Breweries</a>
+      <a ><b>Breweries</b></a>
     </div>
   </li>
   <%@pubs.each do |p| %>
-    <li>
-      <a class="waves-effect waves-teal" style="padding-left:30px";
-      onclick="displayRight(&quot;<%= p.id %>&quot;)"><%=p.brewery.name%></a>
-    </li>
+  <li class="bold">
+    <a class="waves-effect waves-teal"; onclick="displayRight(&quot;<%= p.id %>&quot;)">
+      <%=p.brewery.name%>
+    </a>
+  </li>
   <%end%>
-  <!-- <li class = "search">
-    <div class = "search-wrapper card">
-      <input id="search" />
-      <i class ="material-icons">search</i>
-      <div class="search-results"></div>
-    </div>
-  </li> -->
-
 </ul>
 
-<!---<div class="contentbox2">
-
-<p class="bname" id="breweryname"> Select a brewery to see details </p>
-<p class="bdesc" id="bewerydesc"></p>
-<iframe id="rightFrame" height=""
-frameBorder="2"></iframe>
-
-</div>--->
-
-<iframe id="rightFrame" class="breweries_info" style="width:60%; float: right;" frameBorder="2"></iframe>
-
+<div class="wrap">
+  <iframe id="rightFrame" class="breweries_info" style="height:100%; width:100%; frameborder="0""></iframe>
+</div>
 
 <script>
 function displayRight(id){
@@ -40,7 +61,9 @@ function displayRight(id){
 }
 
 $('li > a').click(function() {
-    $('li').removeClass();
-    $(this).parent().addClass('active');
+  $('li').removeClass();
+  $(this).parent().addClass('active');
 });
+
+$('#rightFrame').contents().find('body').css("word-wrap", "break-word");
 </script>
