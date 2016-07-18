@@ -14,24 +14,12 @@ body, html
 
 #rightFrame
 {
-  position:absolute;
   left:240px;
-  right:-240px;
+  right:0;
   bottom:0;
   top:64px;
 }
 
-#wrap { width: 600px; height: 390px; padding: 0; overflow: hidden; }
-#rightFrame { width: 800px; height: 520px; border: 1px solid black; }
-#rightFrame {
-  -ms-zoom: 0.75;
-  -moz-transform: scale(0.75);
-  -moz-transform-origin: 0 0;
-  -o-transform: scale(0.75);
-  -o-transform-origin: 0 0;
-  -webkit-transform: scale(0.75);
-  -webkit-transform-origin: 0 0;
-}
 </style>
 
 <ul id="nav-mobile" class="side-nav fixed" style="overflow: auto; translate(0%); margin-top: 64px;">
@@ -49,9 +37,8 @@ body, html
   <%end%>
 </ul>
 
-<div class="wrap">
-  <iframe id="rightFrame" class="breweries_info" style="height:100%; width:100%; frameborder="0""></iframe>
-</div>
+<iframe id="rightFrame" class="breweries_info"  frameborder="0" style="height:100%; width:100%; border:0; position:fixed; wordwrap: break-word"></iframe>
+
 
 <script>
 function displayRight(id){
@@ -65,5 +52,6 @@ $('li > a').click(function() {
   $(this).parent().addClass('active');
 });
 
-$('#rightFrame').contents().find('body').css("word-wrap", "break-word");
+rightFrame.document.body.style.wordWrap = 'break-word';
+
 </script>
