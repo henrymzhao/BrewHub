@@ -1,21 +1,62 @@
+<style>
+/*header, main, footer
+{
+padding-left: 240px;
+}*/
+
+body, html
+{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: show;
+}
+
+#rightFrame
+{
+  left:240px;
+  right:0;
+  bottom:0;
+  top:64px;
+}
+
+</style>
+
 <ul id="nav-mobile" class="side-nav fixed" style="overflow: auto; translate(0%); margin-top: 64px;">
   <li class = "bold">
     <div>
       <a><b>Breweries</b></a>
       <ul class="collapsible" data-collapsible="accordion">
          <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First Section</div>
-            <div class="collapsible-body"><p style="padding-top:0px; padding-bottom:0px">This is first section.</p></div>
-            <div class="collapsible-body"><p style="padding-top:0px; padding-bottom:0px">This is Second section.</p></div>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Components</div>
+            <div class="collapsible-body" onclick="water()"><p style="padding-top:0px; padding-bottom:0px">Water</p></div>
+            <div class="collapsible-body" onclick="hops()"><p style="padding-top:0px; padding-bottom:0px">Hops</p></div>
+            <div class="collapsible-body" onclick="starchsource()"><p style="padding-top:0px; padding-bottom:0px">Starch Source</p></div>
+            <div class="collapsible-body" onclick="yeast()"><p style="padding-top:0px; padding-bottom:0px">Yeast</p></div>
+            <div class="collapsible-body" onclick="clarifyingagent()"><p style="padding-top:0px; padding-bottom:0px">Clarifying Agent</p></div>
          </li>
          <li>
-            <div class="collapsible-header"><i class="material-icons">place</i>Second Section</div>
-            <div class="collapsible-body"><p>This is second section.</p></div>
+            <div class="collapsible-header" onclick="ale()"><i class="material-icons">place</i>Ale</div>
+            <div class="collapsible-body" onclick="brownale()"><p style="padding-top:0px; padding-bottom:0px">Brown Ale</p></div>
+            <div class="collapsible-body" onclick="ipa()"><p style="padding-top:0px; padding-bottom:0px">Indian Pale Ale</p></div>
+            <div class="collapsible-body" onclick="paleale()"><p style="padding-top:0px; padding-bottom:0px">Pale Ale</p></div>
+            <div class="collapsible-body" onclick="mildale()"><p style="padding-top:0px; padding-bottom:0px">Mild Ale</p></div>
          </li>
          <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third Section</div>
-            <div class="collapsible-body"><p>This is third section.</p></div>
-         </li>
+            <div class="collapsible-header" onclick="lager()"><i class="material-icons">whatshot</i>Lager</div>
+            <div class="collapsible-body" onclick="palelager()"><p style="padding-top:0px; padding-bottom:0px">Pale Lager</p></div>
+            <div class="collapsible-body" onclick="viennalager()"><p style="padding-top:0px; padding-bottom:0px">Vienna Lager</p></div>
+            <div class="collapsible-body" onclick="darklager()"><p style="padding-top:0px; padding-bottom:0px">Dark Lager</p></div>
+          </li>
+          <li>
+             <div class="collapsible-header" onclick="stout()"><i class="material-icons">whatshot</i>Stout</div>
+             <div class="collapsible-body" onclick="milkstout()"><p style="padding-top:0px; padding-bottom:0px">Milk Stout</p></div>
+             <div class="collapsible-body" onclick="porter()"><p style="padding-top:0px; padding-bottom:0px">Porter</p></div>
+           </li>
+           <li>
+              <div class="collapsible-header" onclick="wheatbeer()"><i class="material-icons">whatshot</i>Wheat Beer</div>
+              <div class="collapsible-body" onclick="lambic()"><p style="padding-top:0px; padding-bottom:0px">Lambic</p></div>
+            </li>
       </ul>
     </div>
   </li>
@@ -108,81 +149,7 @@
 
 </script>
 
-
-  <%=# This is styling/display info.
-  %>
-<h1 style="text-indent: 50px;">Beers</h1>
-
-<div class="contentbox1">
-  <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="hops()">
-    <p class="brewery">Hops</p>
-  </div>
-  <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="water()">
-    <p class="brewery">Water</p>
-  </div>
-  <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="starchsource()">
-    <p class="brewery">Starch Source</p>
-  </div>
-  <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="yeast()">
-    <p class="brewery">Yeast</p>
-  </div>
-  <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="clarifyingagent()">
-    <p class="brewery">Clarifying Agent</p>
-  </div>
-</div>
-
-<div class="contentbox1">
-
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="ale()">
-        <p class="brewery">Ale</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="brownale()">
-        <p class="brewery2">Brown Ale</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="ipa()">
-        <p class="brewery2">India Pale Ale</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="paleale()">
-        <p class="brewery2">Pale Ale</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="mildale()">
-        <p class="brewery2">Mild Ale</p>
-      </div>
-
-
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="lager()">
-        <p class="brewery">Lager</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="palelager()">
-        <p class="brewery2">Pale Lager</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="viennalager()">
-        <p class="brewery2">Vienna Lager</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="darklager()">
-        <p class="brewery2">Dark Lager</p>
-      </div>
-
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="stout()">
-        <p class="brewery">Stout</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="milkstout()">
-        <p class="brewery2">Milk Stout</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="porter()">
-        <p class="brewery2">Porter</p>
-      </div>
-
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="wheatbeer()">
-        <p class="brewery">Wheat Beer</p>
-      </div>
-      <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="lambic()">
-        <p class="brewery2">Lambic</p>
-      </div>
-
-</div>
-
-<div class="contentbox2">
+<div class="contentbox2" style="margin-left:240px; height: 100%; width: 100%">
 
   <p class="bname" id="bname"> Beer </p>
   <p class="bdesc" id="bdesc"><%= render :file => '/app/assets/textfiles/beertypes/beer.txt' %></p>
