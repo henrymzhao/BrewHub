@@ -8,7 +8,6 @@ class CreateBeers < ActiveRecord::Migration
       t.integer :srmId
       t.string :beer_brewery_id
       t.string :beer_id
-
       t.timestamps null: false
     end
   end
