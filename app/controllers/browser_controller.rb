@@ -124,8 +124,7 @@ class BrowserController < ApplicationController
     brewery_db = tryAll()
     #@pub = brewery_db.brewery(params[:id]).all
     @pub = Brewery.find(params[:id])
-    @thisBrewID = @pub.brew_id
-    @pubBeers = Beer.where(@thisBrewID == :beer_brewery_id)
+    @pubBeers = Beer.where(:brewery_id => @pub.id)
     
 #    @breweries.each do |b|
 #    %>

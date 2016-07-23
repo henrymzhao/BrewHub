@@ -20,12 +20,33 @@
   }
 </style>
   <div id="map"></div>
+  <h5>Beers at this Location:</h5>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Bitterness</td>
+        <td>Alcohol Content</td>
+        <td>Style</td>
+        <td>Lightness</td>
+      </tr>
+    </thead>
+    <tbody>
   <%
   @pubBeers.each do |pb|
     %>
-    <p><%=pb.name%></p><%
+    <tr>
+      <td><%=pb.name%></td>
+      <td><%=pb.ibu%></td>
+      <td><%=pb.abv%></td>
+      <td><%=pb.styleId%></td>
+      <td><%=pb.srmId%></td>
+    </tr>
+    <%
   end
   %>
+  </tbody>
+  </table>
   <script>
     var map;
     function initMap() {
