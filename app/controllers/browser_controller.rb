@@ -6,7 +6,6 @@ class BrowserController < ApplicationController
   #a placeholder for now, will in the future be a page to more easily add beers and breweries.
   def new
     @browser = Browser.new
-    @beer = Beer.new
   end
   
   def showLoaded
@@ -22,22 +21,41 @@ class BrowserController < ApplicationController
       pc = "British Columbia"
     end
     
+    #locality, description, imgUrl
+    
     @pubs = brewery_db.locations.all(region: pc)
     
     @pubs.each do |p|
       
-    @brewery = Brewery.new(brew_id: p.id,
+      begin
+        p.brewery.images.medium.blank?
+        @brewery = Brewery.new(brew_id: p.id,
                              name: p.brewery.name,
                              latitude: p.latitude,
                              longitude: p.longitude,
                              gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
                              address: p.street_address,
-                              website: p.brewery.website)
+                             locality: p.locality,
+                             description: p.description,
+                             imgUrl: p.brewery.images.medium,
+                            website: p.brewery.website)
+        rescue
+          @brewery = Brewery.new(brew_id: p.id,
+                             name: p.brewery.name,
+                             latitude: p.latitude,
+                             longitude: p.longitude,
+                             gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
+                             address: p.street_address,
+                             locality: p.locality,
+                             description: p.description,
+                             #imgUrl: p.brewery.images.medium,
+                            website: p.brewery.website)
+      end
     @brewery.save!
       
     @beers = brewery_db.brewery(p.id).beers
       @beers.each do |b|
-        @thisBeerRightHere = Beer.new(beer_brewery_id: p.brewery.id,
+        @thisBeerRightHere = Beer.new(beer_brewery_id: p.id,
                                       beer_id: b.id,
                                       name: b.name,
                                       ibu: b.ibu,
@@ -71,11 +89,17 @@ class BrowserController < ApplicationController
     #@pubs = brewery_db.brewery('AAj4GG').all()
     #pc = request.location.province
     
+    @pubs = Brewery.all
     
     #get the user's province/state.  If blank, default to British Columbia.  This should only happen when being run locally.
-    pc = request.location.province
-    if (pc == "")
-      pc = "British Columbia"
+    pc = ""
+    
+    begin
+      pc = request.location.province
+    rescue
+      if (pc == "")
+        pc = "British Columbia"
+      end
     end
     
     #grab all breweries from the user'slocation
@@ -97,7 +121,8 @@ class BrowserController < ApplicationController
   def pub
     brewery_db = tryAll()
     #@pub = brewery_db.brewery(params[:id]).all
-    @pub = brewery_db.locations.find(params[:id])
+    @pub = brewery_db.find(params[:id]).all
+    #@pub = brewery_db.locations.find(params[:id])
     render :layout => 'blank'
     
     

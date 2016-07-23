@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :users
-  resources :beers
-  resources :breweries
+  #resources :beers
+  #resources :breweries
   root 'welcome#index'
   #temporary homepage
 

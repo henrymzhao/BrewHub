@@ -5,7 +5,7 @@
   <%@pubs.each do |p|%>
     <!--<a href=/pub/<%= p.id %>>-->
       <div class="pubbox" onmouseover="this.style.background='beige';" onmouseout="this.style.background='white';" onclick="displayRight(&quot;<%= p.id %>&quot;)">
-        <p class="brewery"><%= p.brewery.name %></p>
+        <p class="brewery"><%= p.name %></p>
         <p class="location"><%= p.locality %></p>
       </div>
     <!--</a>-->
