@@ -1,12 +1,13 @@
 <!---<h1>Brewery Info</h1>--->
-<h2><%= @pub.brewery.name %></h2>
+<h2><%= @pub.name %></h2>
 <% begin
-  @pub.brewery.images.medium %>
-  <img src="<%= @pub.brewery.images.medium %>" alt="Picture">
+  @pub.imgUrl %>
+  <img src="<%= @pub.imgUrl %>" alt="Picture">
 <% rescue %>
 <% end %>
-<p><%= @pub.brewery.description %></p>
-<p><%= @pub.street_address %></p>
+<p style="font-weight:bold"><%= @pub.address %></p>
+<p><%= @pub.description %></p>
+
 
 
 
@@ -19,6 +20,12 @@
   }
 </style>
   <div id="map"></div>
+  <%
+  @pubBeers.each do |pb|
+    %>
+    <p><%=pb.name%></p><%
+  end
+  %>
   <script>
     var map;
     function initMap() {

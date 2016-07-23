@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723060005) do
+ActiveRecord::Schema.define(version: 20160723221958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20160723060005) do
     t.integer  "abv"
     t.integer  "styleId"
     t.integer  "srmId"
-    t.string   "beer_brewery_id"
+    t.string   "brewery_id"
     t.string   "beer_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "breweries", force: :cascade do |t|
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160723060005) do
     t.string   "gpsLocation"
     t.string   "latitude"
     t.string   "longitude"
-    t.string   "brew_id"
+    t.string   "brewery_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "locality"

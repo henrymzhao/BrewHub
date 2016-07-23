@@ -9,7 +9,7 @@ class BrowserController < ApplicationController
   end
   
   def showLoaded
-    @beers = Beer.all
+    @allbeers = Beer.all
     @breweries = Brewery.all
   end
   
@@ -29,34 +29,36 @@ class BrowserController < ApplicationController
       
       begin
         p.brewery.images.medium.blank?
-        @brewery = Brewery.new(brew_id: p.id,
+        @brewery = Brewery.new(brewery_id: p.id,
                              name: p.brewery.name,
                              latitude: p.latitude,
                              longitude: p.longitude,
                              gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
                              address: p.street_address,
                              locality: p.locality,
-                             description: p.description,
+                             description: p.brewery.description,
                              imgUrl: p.brewery.images.medium,
                             website: p.brewery.website)
         rescue
-          @brewery = Brewery.new(brew_id: p.id,
+          @brewery = Brewery.new(brewery_id: p.id,
                              name: p.brewery.name,
                              latitude: p.latitude,
                              longitude: p.longitude,
                              gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
                              address: p.street_address,
                              locality: p.locality,
-                             description: p.description,
+                             description: p.brewery.description,
                              #imgUrl: p.brewery.images.medium,
                             website: p.brewery.website)
       end
-    @brewery.save!
       
+    @brewery.save!
+    
     @beers = brewery_db.brewery(p.id).beers
+    
+#    @beer = @brewery.beers.create
       @beers.each do |b|
-        @thisBeerRightHere = Beer.new(beer_brewery_id: p.id,
-                                      beer_id: b.id,
+        @thisBeerRightHere = @brewery.beers.create(beer_id: b.id,
                                       name: b.name,
                                       ibu: b.ibu,
                                       abv: b.abv,
@@ -121,19 +123,23 @@ class BrowserController < ApplicationController
   def pub
     brewery_db = tryAll()
     #@pub = brewery_db.brewery(params[:id]).all
-    @pub = brewery_db.find(params[:id]).all
+    @pub = Brewery.find(params[:id])
+    @thisBrewID = @pub.brew_id
+    @pubBeers = Beer.where(@thisBrewID == :beer_brewery_id)
+    
+#    @breweries.each do |b|
+#    %>
+#<p><%=b.name%>, <%=b.id%>, <%=b.brew_id%>, <%=b.gpsLocation%></p>
+#<%
+#  @brewerysBeers = Beer.where(b.brew_id == :beer_brewery_id)
+#  @brewerysBeers.each do |bb| %>
+#    <p><%=bb.name%></p>
+#<%end
+#end%>
+    
+    
     #@pub = brewery_db.locations.find(params[:id])
     render :layout => 'blank'
-    
-    
-    
-    if Brewery.where(:name => @pub.brewery.name).blank?
-      flash[:notice] = "No Record exists."
-        #code
-    else
-      flash[:notice] = "Record exists."
-    end
-    
     
     
     

@@ -7,7 +7,7 @@ class CreateBreweries < ActiveRecord::Migration
       t.string :gpsLocation
       t.string :latitude
       t.string :longitude
-      t.string :brew_id
+      t.string :brewery_id
       t.string :imgUrl
       t.text   :description
       t.string :locality
