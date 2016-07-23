@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   get 'browser/beers'
 
   get 'browser/pubs'
-
+  get 'browser/load'
+  get 'browser/showLoaded'
   get 'welcome/index'
 
   resources :users
+  resources :beers
+  resources :breweries
   root 'welcome#index'
   #temporary homepage
 
@@ -22,6 +25,8 @@ Rails.application.routes.draw do
   get '/beers' => 'browser#beers'
   get '/pubs' => 'browser#pubs'
   get '/pub/:id' => 'browser#pub'
+  get '/load' => 'browser#load'
+  get '/showLoaded' => 'browser#showLoaded'
 
   #facebook and google login
   get '/auth/:provider/callback' => 'sessions#createfb'

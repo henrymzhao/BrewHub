@@ -8,6 +8,46 @@ class BrowserController < ApplicationController
     @browser = Browser.new
     @beer = Beer.new
   end
+  
+  def showLoaded
+    @beers = Beer.all
+    @breweries = Brewery.all
+  end
+  
+  def load
+    brewery_db = tryAll()
+    
+    pc = request.location.province
+    if (pc == "")
+      pc = "British Columbia"
+    end
+    
+    @pubs = brewery_db.locations.all(region: pc)
+    
+    @pubs.each do |p|
+      
+    @brewery = Brewery.new(brew_id: p.id,
+                             name: p.brewery.name,
+                             latitude: p.latitude,
+                             longitude: p.longitude,
+                             gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
+                             address: p.street_address,
+                              website: p.brewery.website)
+    @brewery.save!
+      
+    @beers = brewery_db.brewery(p.id).beers
+      @beers.each do |b|
+        @thisBeerRightHere = Beer.new(beer_brewery_id: p.brewery.id,
+                                      beer_id: b.id,
+                                      name: b.name,
+                                      ibu: b.ibu,
+                                      abv: b.abv,
+                                      styleId: b.styleId,
+                                      srmId: b.srmId)
+        @thisBeerRightHere.save!
+      end
+    end
+  end
 
   #a page for listing information about beers.  Currently, this controller is of no consequence to the actual page.
   def beers
@@ -18,7 +58,8 @@ class BrowserController < ApplicationController
     ##We need to localise this
     #@beers = brewery_db.beers.all(withBreweries: 'Y')
 
-    @beers = brewery_db.beers.all(abv: '5.5')
+    @nonOrgbeers = brewery_db.beers.all(availableId:'1')
+    
   end
 
   #a page for showing all breweries in an area.
@@ -38,8 +79,10 @@ class BrowserController < ApplicationController
     end
     
     #grab all breweries from the user'slocation
-    @pubs = brewery_db.locations.all(region: pc)
 
+    
+    
+    
     #old code for grabbing all bc breweries, kept for reference purposes.
     #@breweries1 = brewery_db.breweries.all(ids: 'DqlySI, GSkOGp,yagN3u,zC8X6x,Xr0G6p,AAj4GG,aywDqA,gvFuE2,SxnUb2,nVB9Cq')
     #@breweries2 = brewery_db.breweries.all(ids: 'dZ0mKT,Bk34Go,iorTHl,yGsalR,supFO9,RNHfY1,hwiUzY,aabOus,xuSuqz,aEBj0Q')
@@ -56,6 +99,36 @@ class BrowserController < ApplicationController
     #@pub = brewery_db.brewery(params[:id]).all
     @pub = brewery_db.locations.find(params[:id])
     render :layout => 'blank'
+    
+    
+    
+    if Brewery.where(:name => @pub.brewery.name).blank?
+      flash[:notice] = "No Record exists."
+        #code
+    else
+      flash[:notice] = "Record exists."
+    end
+    
+    
+    
+    
+    #@brewery = Brewery.new(name: @pub.brewery.name,
+     #                      latitude: @pub.latitude,
+      #                     longitude: @pub.longitude,
+       #                    gpsLocation: (@pub.latitude).to_s + ", " + (@pub.longitude).to_s,
+        #                   address: @pub.street_address,
+         #                 website: @pub.brewery.website,
+          #                 hoursOfOperation: @pub.hoursOfOperation)
+    
+    
+#    if (!@brewery.save!)
+ #     flash[:notice] = @brewery.errors
+  #  end
+    
+    
+    
+    
+    
   end
   
   #here we deal with our API keys - we need a whole bunch for testing purposes, so that we don't run into a request limit.

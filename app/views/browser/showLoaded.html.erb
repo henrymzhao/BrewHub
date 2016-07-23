@@ -1,0 +1,18 @@
+<h1>Breweries</h1>
+<p>Listed: Name, Brewery ID, GPS Location</p>
+  <%
+  @breweries.each do |b|
+    %>
+<p><%=b.name%>, <%=b.brew_id%>, <%=b.gpsLocation%></p>
+<%
+end
+  %>
+<h1>Beers</h1>
+<p>Listed: Name, ID, Associated Brewery ID.</p>
+<%
+  @beers.each do |b|
+    
+    %>
+    <p><%=b.name%>, <%=b.beer_id%>, <%=b.beer_brewery_id%></p>
+    <%
+    end%>
