@@ -44,24 +44,15 @@ div.breweries_info
   margin-right:100px;
 }
 
-iframe.breweries_info
-{
-  width:30%;
-  background-color: white;
-  overflow:hidden;
-  overflow-y:scroll;
-  height: 70vh;
-  float: left;
-}
-
 div.contentbox2 {
-  width: 500px;
+  // width: 500px;
   background-color:white;
   padding:20px;
-  overflow-y:scroll;
-  height: 500px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  // height: 500px;
   float: left;
-  margin-left:50px;
+  // margin-left:50px;
 }
 
 iframe.contentbox2 {

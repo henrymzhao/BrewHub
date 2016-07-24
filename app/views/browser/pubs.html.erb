@@ -9,15 +9,25 @@ body, html
   margin: 0;
   padding: 0;
   height: 100%;
+  width:100%;
   overflow: show;
 }
 
 #rightFrame
 {
-  left:240px;
-  right:0;
-  bottom:0;
-  top:64px;
+  background-color: white;
+  margin-left:240px;
+  height: 100%;
+}
+
+#mainbox
+{
+  height:100%;
+  width:100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 </style>
@@ -37,7 +47,7 @@ body, html
   <%end%>
 </ul>
 
-<iframe id="rightFrame" class="breweries_info"  frameborder="0" style="height:100%; width:100%; border:0; position:fixed; wordwrap: break-word"></iframe>
+<iframe id="rightFrame" class="breweries_info"  frameborder="0" style="width: 100%-240px;"></iframe>
 
 
 <script>
@@ -45,6 +55,7 @@ function displayRight(id){
   //This needs to actually displayRight
   //window.location.href = "/pub/" + id;
   document.getElementById("rightFrame").src = "/pub/" + id;
+  alert(getWidth());
 }
 
 $('li > a').click(function() {
@@ -52,6 +63,16 @@ $('li > a').click(function() {
   $(this).parent().addClass('active');
 });
 
-// rightFrame.document.body.style.wordWrap = 'break-word';
+function getHeight()
+{
+  var h = window.innerHeight;
+  return h;
+};
+
+function getWidth()
+{
+  var h = window.innerWidth;
+  return h;
+};
 
 </script>
