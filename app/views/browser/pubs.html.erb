@@ -17,7 +17,8 @@ body, html
 {
   background-color: white;
   margin-left:240px;
-  height: 100%;
+  height: 100vh;
+  width: calc(100% - 240px);
 }
 
 #mainbox
@@ -47,7 +48,7 @@ body, html
   <%end%>
 </ul>
 
-<iframe id="rightFrame" class="breweries_info"  frameborder="0" style="width: 100%-240px;"></iframe>
+<iframe id="rightFrame" class="breweries_info"  frameborder="0"></iframe>
 
 
 <script>
@@ -55,7 +56,6 @@ function displayRight(id){
   //This needs to actually displayRight
   //window.location.href = "/pub/" + id;
   document.getElementById("rightFrame").src = "/pub/" + id;
-  alert(getWidth());
 }
 
 $('li > a').click(function() {
