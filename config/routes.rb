@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'social/meetup'
+
+  get 'social/closest'
+
 #routes should be fairly self-explanatory.
   get 'browser/beers'
 
@@ -7,6 +11,10 @@ Rails.application.routes.draw do
   get 'browser/showLoaded'
   get 'welcome/index'
 
+  #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
+  resource :user, path: "", only: [:edit, :update]
+  #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
+  
   resources :users
   resources :breweries do
     resources :beers
@@ -28,6 +36,7 @@ Rails.application.routes.draw do
   get '/pub/:id' => 'browser#pub'
   get '/load' => 'browser#load'
   get '/showLoaded' => 'browser#showLoaded'
+  get '/meetup' => 'social#meetup'
 
   #facebook and google login
   get '/auth/:provider/callback' => 'sessions#createfb'
