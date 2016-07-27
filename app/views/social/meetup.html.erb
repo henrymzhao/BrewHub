@@ -1,4 +1,18 @@
 <h1>Social#meetup</h1>
 <p>Find me in app/views/social/meetup.html.erb</p>
 
-<p>User Location is: <%=@user.lat%>, <%=@user.lon%></p>
+<p>This user's Location is: <%=@user.lat%>, <%=@user.lon%></p>
+
+<!-- Need something here to group users into a... group.-->
+<!-- -->
+
+<%
+
+@breweries.each do |b|
+    %>
+    <p>Name: <%=b.name%>, Latlng: <%=b.gpsLocation%></p>
+    <%
+  end
+%>
+<p>Central Latitude: <%=@centralLat%></p>
+%>

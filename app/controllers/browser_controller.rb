@@ -17,13 +17,31 @@ class BrowserController < ApplicationController
     brewery_db = tryAll()
     
     pc = request.location.province
+    
+    
     if (pc == "")
       pc = "British Columbia"
     end
     
-    #locality, description, imgUrl
+    
+    #this is where we read in the API data and store it in our database.
+    @styles = brewery_db.styles.all()
+    
+    @styles.each do |s|
+      @oppa = Style.new(style_id: s.id,
+                        name: s.name,
+                        description: s.description,
+                        ibuMin: s.ibuMin,
+                        ibuMax: s.ibuMax,
+                        abvMin: s.abvMin,
+                        abvMax: s.abvMax,
+                        srmMin: s.srmMin,
+                        srmMax: s.srmMax)
+      @oppa.save!
+    end
     
     @pubs = brewery_db.locations.all(region: pc)
+    
     
     @pubs.each do |p|
       
@@ -35,6 +53,7 @@ class BrowserController < ApplicationController
                              longitude: p.longitude,
                              gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
                              address: p.street_address,
+                             province: p.region,
                              locality: p.locality,
                              description: p.brewery.description,
                              imgUrl: p.brewery.images.medium,
@@ -62,11 +81,13 @@ class BrowserController < ApplicationController
                                       name: b.name,
                                       ibu: b.ibu,
                                       abv: b.abv,
-                                      styleId: b.styleId,
+                                      style_id: b.styleId,
                                       srmId: b.srmId)
         @thisBeerRightHere.save!
       end
     end
+    
+    
   end
 
   #a page for listing information about beers.  Currently, this controller is of no consequence to the actual page.
@@ -91,7 +112,7 @@ class BrowserController < ApplicationController
     #@pubs = brewery_db.brewery('AAj4GG').all()
     #pc = request.location.province
     
-    @pubs = Brewery.all
+    
     
     #get the user's province/state.  If blank, default to British Columbia.  This should only happen when being run locally.
     pc = ""
@@ -104,8 +125,10 @@ class BrowserController < ApplicationController
       end
     end
     
+    
+    
     #grab all breweries from the user'slocation
-
+    @pubs = Brewery.where(:province == pc)
     
     
     

@@ -11,6 +11,7 @@ class CreateBreweries < ActiveRecord::Migration
       t.string :imgUrl
       t.text   :description
       t.string :locality
+      t.string :province
 
       t.timestamps null: false
     end
