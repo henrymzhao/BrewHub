@@ -30,13 +30,7 @@ class User < ActiveRecord::Base
     read_attribute('avatar') || DEFAULT_AVATAR
   end
   # standard validation
-  validates :avatar, :url => true
-  # with allow_nil
-  #validates :avatar, :url => {:allow_nil => true}
-  # with allow_blank
-  validates :avatar, :url => {:allow_blank => true}
-  # without local hostnames
-  validates :avatar, :url => {:no_local => true}
+  validates :avatar, :url => true, :url => {:allow_nil => true}, :url => {:allow_blank => true}, :url => {:no_local => true}
 
   #validates :avatar, :presence => true, :avatar => true
 
