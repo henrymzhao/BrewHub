@@ -16,3 +16,19 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize/extras/nouislider
+
+function getHeight()
+{
+  var h = window.innerHeight;
+  return h;
+};
+
+function getWidth(param)
+{
+  var h = window.innerWidth;
+  if (param === "half")
+  {
+    return h/2;
+  }
+  return h;
+};
