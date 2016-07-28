@@ -1,5 +1,4 @@
-<%=#The display for a user - this is a placeholder, no real user profile yet exists, but this will eventually include a profile picture, as well as the user's information.
-%>
+<body>
 
 <% provide(:title, @user.username) %>
 <h1>
@@ -35,7 +34,7 @@
 <%= link_to "Edit your user profile", edit_user_path(current_user) %>
 </br>
 <%= link_to "Logout", '/logout' %>
-
+</body>
 
 <script>
 function test(){
