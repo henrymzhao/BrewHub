@@ -6,7 +6,96 @@ class BrowserController < ApplicationController
   #a placeholder for now, will in the future be a page to more easily add beers and breweries.
   def new
     @browser = Browser.new
-    @beer = Beer.new
+  end
+  
+  def byStyles
+    #separate beers into styles - a testing page for now.
+    @allbeers = Beer.all
+    @allstyles = Style.all.order("name ASC")
+    
+    @allbreweries = Brewery.all
+  end
+  
+  def showLoaded
+    @allbeers = Beer.all.order("name ASC")
+    @breweries = Brewery.all.order("name ASC")
+  end
+  
+  def load
+    brewery_db = tryAll()
+    
+    pc = request.location.province
+    
+    
+    if (pc == "")
+      pc = "British Columbia"
+    end
+    
+    
+    #this is where we read in the API data and store it in our database.
+    @styles = brewery_db.styles.all()
+    
+    @styles.each do |s|
+      @oppa = Style.new(style_id: s.id,
+                        name: s.name.titleize,
+                        description: s.description,
+                        ibuMin: s.ibuMin,
+                        ibuMax: s.ibuMax,
+                        abvMin: s.abvMin,
+                        abvMax: s.abvMax,
+                        srmMin: s.srmMin,
+                        srmMax: s.srmMax)
+      @oppa.save!
+    end
+    
+    @pubs = brewery_db.locations.all(region: pc)
+    
+    
+    @pubs.each do |p|
+      
+      begin
+        p.brewery.images.medium.blank?
+        @brewery = Brewery.new(brewery_id: p.id,
+                             name: p.brewery.name.titleize,
+                             latitude: p.latitude,
+                             longitude: p.longitude,
+                             gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
+                             address: p.street_address,
+                             province: p.region,
+                             locality: p.locality,
+                             description: p.brewery.description,
+                             imgUrl: p.brewery.images.medium,
+                            website: p.brewery.website)
+        rescue
+          @brewery = Brewery.new(brewery_id: p.id,
+                             name: p.brewery.name.titleize,
+                             latitude: p.latitude,
+                             longitude: p.longitude,
+                             gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
+                             address: p.street_address,
+                             locality: p.locality,
+                             description: p.brewery.description,
+                             #imgUrl: p.brewery.images.medium,
+                            website: p.brewery.website)
+      end
+      
+    @brewery.save!
+    
+    @beers = brewery_db.brewery(p.id).beers
+    
+#    @beer = @brewery.beers.create
+      @beers.each do |b|
+        @thisBeerRightHere = @brewery.beers.create(beer_id: b.id,
+                                      name: b.name.titleize,
+                                      ibu: b.ibu,
+                                      abv: b.abv,
+                                      style_id: b.styleId,
+                                      srmId: b.srmId)
+        @thisBeerRightHere.save!
+      end
+    end
+    
+    
   end
 
   #a page for listing information about beers.  Currently, this controller is of no consequence to the actual page.
@@ -18,7 +107,8 @@ class BrowserController < ApplicationController
     ##We need to localise this
     #@beers = brewery_db.beers.all(withBreweries: 'Y')
 
-    @beers = brewery_db.beers.all(abv: '5.5')
+    @nonOrgbeers = brewery_db.beers.all(availableId:'1')
+    
   end
 
   #a page for showing all breweries in an area.
@@ -31,15 +121,25 @@ class BrowserController < ApplicationController
     #pc = request.location.province
     
     
+    
     #get the user's province/state.  If blank, default to British Columbia.  This should only happen when being run locally.
-    pc = request.location.province
-    if (pc == "")
-      pc = "British Columbia"
+    pc = ""
+    
+    begin
+      pc = request.location.province
+    rescue
+      if (pc == "")
+        pc = "British Columbia"
+      end
     end
     
+    
+    
     #grab all breweries from the user'slocation
-    @pubs = brewery_db.locations.all(region: pc)
-
+    @pubs = Brewery.where(:province == pc).order("name ASC")
+    
+    
+    
     #old code for grabbing all bc breweries, kept for reference purposes.
     #@breweries1 = brewery_db.breweries.all(ids: 'DqlySI, GSkOGp,yagN3u,zC8X6x,Xr0G6p,AAj4GG,aywDqA,gvFuE2,SxnUb2,nVB9Cq')
     #@breweries2 = brewery_db.breweries.all(ids: 'dZ0mKT,Bk34Go,iorTHl,yGsalR,supFO9,RNHfY1,hwiUzY,aabOus,xuSuqz,aEBj0Q')
@@ -54,8 +154,42 @@ class BrowserController < ApplicationController
   def pub
     brewery_db = tryAll()
     #@pub = brewery_db.brewery(params[:id]).all
-    @pub = brewery_db.locations.find(params[:id])
+    @pub = Brewery.find(params[:id])
+    @pubBeers = Beer.where(:brewery_id => @pub.id)
+    
+#    @breweries.each do |b|
+#    %>
+#<p><%=b.name%>, <%=b.id%>, <%=b.brew_id%>, <%=b.gpsLocation%></p>
+#<%
+#  @brewerysBeers = Beer.where(b.brew_id == :beer_brewery_id)
+#  @brewerysBeers.each do |bb| %>
+#    <p><%=bb.name%></p>
+#<%end
+#end%>
+    
+    
+    #@pub = brewery_db.locations.find(params[:id])
     render :layout => 'blank'
+    
+    
+    
+    #@brewery = Brewery.new(name: @pub.brewery.name,
+     #                      latitude: @pub.latitude,
+      #                     longitude: @pub.longitude,
+       #                    gpsLocation: (@pub.latitude).to_s + ", " + (@pub.longitude).to_s,
+        #                   address: @pub.street_address,
+         #                 website: @pub.brewery.website,
+          #                 hoursOfOperation: @pub.hoursOfOperation)
+    
+    
+#    if (!@brewery.save!)
+ #     flash[:notice] = @brewery.errors
+  #  end
+    
+    
+    
+    
+    
   end
   
   #here we deal with our API keys - we need a whole bunch for testing purposes, so that we don't run into a request limit.

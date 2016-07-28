@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  ibuMin: 9.99
+  ibuMax: 9.99
+  abvMin: 9.99
+  abvMax: 9.99
+  srmMin: 9.99
+  srmMax: 9.99
+
+two:
+  name: MyString
+  description: MyText
+  ibuMin: 9.99
+  ibuMax: 9.99
+  abvMin: 9.99
+  abvMax: 9.99
+  srmMin: 9.99
+  srmMax: 9.99
