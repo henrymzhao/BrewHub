@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   # standard validation
   validates :avatar, :url => true
   # with allow_nil
-  validates :avatar, :url => {:allow_nil => true}
+  #validates :avatar, :url => {:allow_nil => true}
   # with allow_blank
   validates :avatar, :url => {:allow_blank => true}
   # without local hostnames
