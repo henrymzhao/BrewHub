@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length:{minimum:6, maximum:30}, allow_nil: true
 
-  DEFAULT_AVATAR = "/../../assets/defaultavatar.png"
+  #DEFAULT_AVATAR = "/../../assets/defaultavatar.png"
+  DEFAULT_AVATAR = "http://i.imgur.com/ls414cz.jpg"
   def avatar
     read_attribute('avatar') || DEFAULT_AVATAR
   end
