@@ -8,9 +8,17 @@ class BrowserController < ApplicationController
     @browser = Browser.new
   end
   
-  def showLoaded
+  def byStyles
+    #separate beers into styles - a testing page for now.
     @allbeers = Beer.all
-    @breweries = Brewery.all
+    @allstyles = Style.all.order("name ASC")
+    
+    @allbreweries = Brewery.all
+  end
+  
+  def showLoaded
+    @allbeers = Beer.all.order("name ASC")
+    @breweries = Brewery.all.order("name ASC")
   end
   
   def load
@@ -29,7 +37,7 @@ class BrowserController < ApplicationController
     
     @styles.each do |s|
       @oppa = Style.new(style_id: s.id,
-                        name: s.name,
+                        name: s.name.titleize,
                         description: s.description,
                         ibuMin: s.ibuMin,
                         ibuMax: s.ibuMax,
@@ -48,7 +56,7 @@ class BrowserController < ApplicationController
       begin
         p.brewery.images.medium.blank?
         @brewery = Brewery.new(brewery_id: p.id,
-                             name: p.brewery.name,
+                             name: p.brewery.name.titleize,
                              latitude: p.latitude,
                              longitude: p.longitude,
                              gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
@@ -60,7 +68,7 @@ class BrowserController < ApplicationController
                             website: p.brewery.website)
         rescue
           @brewery = Brewery.new(brewery_id: p.id,
-                             name: p.brewery.name,
+                             name: p.brewery.name.titleize,
                              latitude: p.latitude,
                              longitude: p.longitude,
                              gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
@@ -78,7 +86,7 @@ class BrowserController < ApplicationController
 #    @beer = @brewery.beers.create
       @beers.each do |b|
         @thisBeerRightHere = @brewery.beers.create(beer_id: b.id,
-                                      name: b.name,
+                                      name: b.name.titleize,
                                       ibu: b.ibu,
                                       abv: b.abv,
                                       style_id: b.styleId,
@@ -128,7 +136,7 @@ class BrowserController < ApplicationController
     
     
     #grab all breweries from the user'slocation
-    @pubs = Brewery.where(:province == pc)
+    @pubs = Brewery.where(:province == pc).order("name ASC")
     
     
     

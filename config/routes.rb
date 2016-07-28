@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'browser/pubs'
   get 'browser/load'
   get 'browser/showLoaded'
+  get 'browser/byStyles'
   get 'welcome/index'
 
   #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
@@ -36,6 +37,7 @@ Rails.application.routes.draw do
   get '/pub/:id' => 'browser#pub'
   get '/load' => 'browser#load'
   get '/showLoaded' => 'browser#showLoaded'
+  get '/op' => 'browser#byStyles'
   get '/meetup' => 'social#meetup'
 
   #facebook and google login
