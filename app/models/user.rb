@@ -30,8 +30,6 @@ class User < ActiveRecord::Base
     read_attribute('avatar') || DEFAULT_AVATAR
   end
 
-  avatar =~ /\A#{URI::regexp(['http', 'https'])}\z/
-
   def self.create_with_omniauth(auth)
     create! do |user|
       user.firstname = "example"
