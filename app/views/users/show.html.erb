@@ -1,3 +1,12 @@
+
+<script>
+function test(){
+  document.getElementById("avatar").src = "<%= image_tag("/assets/defaultavatar2.png", :width =>100, :height => 100) %>"; /*sumo*/
+}
+
+
+</script>
+
 <body>
 
 <% provide(:title, @user.username) %>
@@ -35,11 +44,3 @@
 </br>
 <%= link_to "Logout", '/logout' %>
 </body>
-
-<script>
-function test(){
-  document.getElementById("avatar").src = "<%= image_tag("/assets/defaultavatar2.png", :width =>100, :height => 100) %>"; /*sumo*/
-}
-
-
-</script>
