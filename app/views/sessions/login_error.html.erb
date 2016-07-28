@@ -1,0 +1,30 @@
+<h1>Login</h1>
+    <%=#login error display.
+  %>
+
+  <div id="error_explanation">
+    <h2>Invalid login information</h2>
+  </div>
+
+
+<%= form_tag '/login' do %>
+
+  Email: <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Submit" %>
+
+<% end %>
+
+<br>
+<br>
+<div>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+</div>
+<br>
+<div>
+      <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+</div>
+<br>
+<%= yield %>
+<br>
+<a href="/signup">Don't have an account? Sign up here</a>

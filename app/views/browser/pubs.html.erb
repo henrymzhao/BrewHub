@@ -1,0 +1,79 @@
+<style>
+/*header, main, footer
+{
+padding-left: 240px;
+}*/
+
+body, html
+{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width:100%;
+  overflow: show;
+}
+
+#rightFrame
+{
+  background-color: white;
+  margin-left:240px;
+  height: 100vh;
+  width: calc(100% - 240px);
+}
+
+#mainbox
+{
+  height:100%;
+  width:100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+</style>
+
+<ul id="nav-mobile" class="side-nav fixed" style="overflow: auto; translate(0%); margin-top: 64px;">
+  <li class = "bold">
+    <div >
+      <a ><b>Breweries</b></a>
+    </div>
+  </li>
+  <%@pubs.each do |p| %>
+  <li class="bold">
+    <a class="waves-effect waves-teal"; onclick="displayRight(&quot;<%= p.id %>&quot;)">
+      <%=p.name%>
+    </a>
+  </li>
+  <%end%>
+</ul>
+
+<iframe id="rightFrame" class="breweries_info"  frameborder="0"></iframe>
+
+
+<script>
+function displayRight(id){
+  //This needs to actually displayRight
+  //window.location.href = "/pub/" + id;
+  document.getElementById("rightFrame").src = "/pub/" + id;
+}
+
+
+$('li > a').click(function() {
+  $('li').removeClass();
+  $(this).parent().addClass('active');
+});
+
+function getHeight()
+{
+  var h = window.innerHeight;
+  return h;
+};
+
+function getWidth()
+{
+  var h = window.innerWidth;
+  return h;
+};
+
+</script>

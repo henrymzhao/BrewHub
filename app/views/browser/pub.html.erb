@@ -1,0 +1,65 @@
+<!---<h1>Brewery Info</h1>--->
+<h2><%= @pub.name %></h2>
+<% begin
+  @pub.imgUrl %>
+  <img src="<%= @pub.imgUrl %>" alt="Picture">
+<% rescue %>
+<% end %>
+<p style="font-weight:bold"><%= @pub.address %></p>
+<p><%= @pub.description %></p>
+
+
+
+
+
+
+<style>
+  #map {
+    height: 300px;
+    width: 400px;
+  }
+</style>
+  <div id="map"></div>
+  <h5>Beers at this Location:</h5>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Bitterness</td>
+        <td>Alcohol Content</td>
+        <td>Style</td>
+        <td>Lightness</td>
+      </tr>
+    </thead>
+    <tbody>
+  <%
+  @pubBeers.each do |pb|
+    %>
+    <tr>
+      <td><%=pb.name%></td>
+      <td><%=pb.ibu%></td>
+      <td><%=pb.abv%>%</td>
+      <td><%=pb.style_id%></td>
+      <td><%=pb.srmId%></td>
+    </tr>
+    <%
+  end
+  %>
+  </tbody>
+  </table>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: <%= @pub.latitude %>, lng: <%= @pub.longitude %>},
+        zoom: 15
+      });
+      var marker = new google.maps.Marker({
+        position: {lat: <%= @pub.latitude %>, lng: <%= @pub.longitude %>},
+        map: map,
+        title: 'Hello World!'
+    });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyx6w96mmMia6L8Rd__mCfaOxFO5sbFlE&callback=initMap"
+  async defer></script>

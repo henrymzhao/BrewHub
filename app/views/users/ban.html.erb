@@ -1,0 +1,12 @@
+    <%=#Display for updating ban status on a user.
+  %>
+
+<% provide(:title, @user.username) %>
+<h1>
+  <%= @user.username %>
+</h1>
+<p>
+Ban status:
+<%= @user.banned %>
+</p>
+<p>Ban status updated!</p>
