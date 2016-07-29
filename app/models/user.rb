@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   end
   # standard validation
   validates :avatar, :url => true
+  validates_format_of :avatar, :with => %r{\.(png|jpg|jpeg)$}i, :message => "Use a real image"
 
   #validates :avatar, :presence => true, :avatar => true
 
