@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   # standard validation
   validates :avatar, :url => true
 
-  validates :avatar, :presence => true, :avatar => true
+  #validates :avatar, :presence => true, :avatar => true
 
 
 
