@@ -30,8 +30,8 @@ class User < ActiveRecord::Base
     read_attribute('avatar') || DEFAULT_AVATAR
   end
   # standard validation
-  VALID_IMG_REGEX = %r{\.(png|jpg|jpeg)$}i
-  validates :avatar, :url => true, format:{with: VALID_IMG_REGEX}
+  #VALID_IMG_REGEX = %r{\.(png|jpg|jpeg)$}i
+  validates :avatar, :url => true#, format:{with: VALID_IMG_REGEX}
   #validates_format_of :avatar, :with => %r{\.(png|jpg|jpeg)$}i, :message => "Use a real image"
 
   #validates :avatar, :presence => true, :avatar => true
