@@ -8,7 +8,7 @@ class ImageValidator < ActiveModel::EachValidator
 #   rescue URI::InvalidURIError
 #      resp = false
     end
-    unless resp == :gif or :jpeg or :png 
+    unless resp == :gif || resp == :jpeg || resp == :png 
       record.errors[attribute] << (options[:message] || "is not a valid url")
     end
 
