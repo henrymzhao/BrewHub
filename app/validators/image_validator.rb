@@ -1,6 +1,6 @@
 class ImageValidator < ActiveModel::EachValidator
 
-  unless value.chars.first == "h"
+  unless value.chars.first == "c"
     record.errors[attribute] << (options[:message] || "is not a valid url")
   end
 
