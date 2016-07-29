@@ -32,3 +32,17 @@ function getWidth(param)
   }
   return h;
 };
+
+function moveCard() {
+  var elem = document.getElementById("notificationCard");
+  var pos = getHeight();
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 200) {
+      clearInterval(id);
+    } else {
+      pos--;
+      elem.style.top = pos + 'px';
+    }
+  }
+}
