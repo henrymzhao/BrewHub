@@ -4,11 +4,10 @@ class ImageValidator < ActiveModel::EachValidator
     begin
       uri = URI.parse(value)
       resp = FastImage.type(uri)
-
-#   rescue URI::InvalidURIError
-#      resp = false
+   rescue URI::InvalidURIError
+      resp = false
     end
-    unless resp == :gif || resp == :jpeg || resp == :png 
+    unless resp == :gif || resp == :jpeg || resp == :png
       record.errors[attribute] << (options[:message] || "is not a valid url")
     end
 
