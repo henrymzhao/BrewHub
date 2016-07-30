@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     read_attribute('avatar') || DEFAULT_AVATAR
   end
 
-  validates :avatar, :url => true,# :image => true
+  validates :avatar, :url => true#,# :image => true
 
 
   def self.create_with_omniauth(auth)
