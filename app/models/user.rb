@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   #validates :avatar, :url => true, :image => true
-  validates :avatar, :image => true, :if => :url
+  validates :avatar, :image => true, :if => :url=>true
 
 
   def self.create_with_omniauth(auth)
