@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
 
   validates :avatar, :url => true, :image => true
 
+  validates :avatar, :url => true, :if :url=>true :image => true
 
 
   def self.create_with_omniauth(auth)
