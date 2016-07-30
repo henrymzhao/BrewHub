@@ -1,7 +1,5 @@
 class ImageValidator < ActiveModel::EachValidator
 
-
-
   def validate_each(record, attribute, value)
     return if value.blank?
     begin
@@ -16,12 +14,7 @@ class ImageValidator < ActiveModel::EachValidator
       record.errors[attribute] << (options[:message] || "is not a valid url")
     end
 
-
-
   end
-
-
-
 
 
 end
