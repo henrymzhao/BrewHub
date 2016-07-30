@@ -24,15 +24,6 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length:{minimum:6, maximum:30}, allow_nil: true
 
-  #DEFAULT_AVATAR = "/../../assets/defaultavatar.png"
-  DEFAULT_AVATAR = "http://i.imgur.com/ls414cz.jpg"
-  def avatar
-    read_attribute('avatar') || DEFAULT_AVATAR
-  end
-
-  validates :avatar, :url => true, :image => true
-
-
   def self.create_with_omniauth(auth)
     create! do |user|
       user.firstname = "example"
