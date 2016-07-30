@@ -11,7 +11,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
 <body style="background-color: RGB(233,235,238)">
 
 <div class="navbar-fixed">
@@ -23,7 +22,7 @@
 		<li><a href="/op">Styles</a></li>
         <li><a href="/beers">Beers</a></li>
         <li><a href="/pubs">Breweries</a></li>
-        <li><a href="#">Social</a></li>
+        <li><a href="/meetup">Social</a></li>
         <% if current_user && !current_user.name.blank? %>
         <li><a href="/users/<%= current_user.id %>"><%=  current_user.name %></a></li>
         <% elsif current_user %>
@@ -35,7 +34,7 @@
       <ul class="side-nav" id="mobile-demo">
         <li><a href="/beers">Beers</a></li>
         <li><a href="/pubs">Breweries</a></li>
-        <li><a href="#">Social</a></li>
+        <li><a href="/meetup">Social</a></li>
         <% if current_user && !current_user.name.blank? %>
         <li><a href="/users/<%= current_user.id %>"><%= current_user.name %></a></li>
         <% elsif current_user %>

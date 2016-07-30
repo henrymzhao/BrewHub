@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :groups
+
   #the user model.  converts characters into standard form, then checks against each other.
   before_save {self.email = email.downcase}
 
