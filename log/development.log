@@ -1,0 +1,1540 @@
+  [1m[36mActiveRecord::SchemaMigration Load (67.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'beers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'breweries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'groups'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'styles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'beers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'breweries'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'groups'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'styles'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2016-07-30 13:37:32 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (240.2ms)
+Completed 200 OK in 13168ms (Views: 13128.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-93a14660dfadf2b6131b52f77e7d0b9a5980162331ffe0e9dc9efd25bb7b87ab.css?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/social.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/initial.self-79f269ead2aeaa809299033919f9128fa0d9700d0248cad0dcd6442ce43dc389.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/jquery.easing.1.3.self-0170bc905fbddc075a56bdccce1be6a58f3713a14137b607ba9bd9f96fd7835f.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/animation.self-a1028b0bcf2e26331bedf7b90e81103f0707e69fdec488aa951de94b51987767.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/velocity.min.self-5adbb81af5c205a959e06198156b4b31fcd57f02c592e3fb096d7b74e8f401a6.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/hammer.min.self-bf8bdb0953b1a135f96716e362e1f7a8e64168c914fa77ca31973bb70e57a731.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/jquery.hammer.self-73fd69102f356b9abfc9ee242b19895f62454f42cfcfa1f066be71d2c8f41c7a.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/global.self-90649deff3358499c5859330da1363eea3e2bef75c80df5940f3894778f95027.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/collapsible.self-4c13fea644257c8f9384721f7d3bc27bced51754ddf3602b56093e2450a5d9c2.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/dropdown.self-846e8151c8bb8f7e39464f96bd95d48a37ff9831d8f478b6bdcbd563dd2534f0.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/leanModal.self-127e920c37478ac94207994c34d28e40b2d44817a0d93176ed325bdbee80863e.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/materialbox.self-8572736f9d17261189da8a9fc91555d63b29498f4f8665328e28261c7c4cdb68.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/parallax.self-7ac34f0f3dcef83deee116ea473a2770cec13e07c8e0dcce08cc2372bbe295d3.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/tabs.self-0eee47c7ae3f1cfcf49b9619bb067eaf4fa75379be3b78469a0120a8bf972bd3.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/tooltip.self-df3538fd067523c8b7f4d50e060340ec0b551ebaba9733e157c404df9a96a185.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/waves.self-26e9b9cfaa9ccbc292ed510f654bd279d69695f5337a14c9800b36e92f96735b.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/toasts.self-1eaa9f33c4c3b83f381997876ba6ac53899a5ca72a6b401708c32625fc553adc.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/sideNav.self-196d1801e7592bfd857227ce793d1de69b06fb6ca9d908f44f5618c8564a12d0.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/scrollspy.self-2d0375d44b1d864ecb8e31c25a22c4f3be766284788b0c494ec51df71e2b0e09.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/forms.self-e70e77c2b9157926587d6cfd009e8e0eedbaf059bdaa9e1bfe27b186b345598b.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/slider.self-219e35a6b0ade584e951aa0f39fe9856b3ef0e6bb33af123dd4b8ce6757b03cb.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/cards.self-b1de04b6f5f525d63199f556bb55d5b8bdae7170b91bfcb503958bc8ed10945b.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/chips.self-9b19ca899ba360746581059852bf2a40b3338402eef9df9a7806efd8578056dd.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/pushpin.self-101d3fec3225f47ac0da9bd501200d30f92f97f70fb15500c835cb850c962816.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/buttons.self-fc0951c300b1984a00694eabc8c451531be448d646ac073b05e4d2fbf7209302.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/transitions.self-c527b205edfdd1f961487c4c7beaf83c335262accb4dff964341a86eb60fd2f2.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/scrollFire.self-9fb128253d776689dfe2091470e36d2e94c13c6340700135ee679aa20148dffd.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/date_picker/picker.self-7a9d1216fe1172f8e8fd78fb86cfd4da25c909ebd6983cba5da20817d437d92b.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/date_picker/picker.date.self-5924b278beda2df8570f137f72b37e2d0f516acbc11a0994d1abb74380f078ef.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/character_counter.self-8bb854e15067a96db5bff6896d1d9435e4df83cf5bf6877a1d606940661d2588.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/carousel.self-6f3b9002af3ab4d871a03a44d2e174370720ab31f19a4ee543c1904c32e2befa.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize-sprockets.self-4691589913babdfbd3fb736895105a8e826d4abde842e6d1e8dd2d188e255bc7.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/materialize/extras/nouislider.self-18d2d5ad521555c564cc69b1c153247aedf8c99609e154dc0bf963a5b3d7ede1.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2016-07-30 13:37:46 -0700
+
+
+Started GET "/mainpage.css" for ::1 at 2016-07-30 13:37:46 -0700
+
+ActionController::RoutingError (No route matches [GET] "/mainpage.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (100.1ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (956.7ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (567.4ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (1289.9ms)
+
+
+Started GET "/stylesheets/mainpage.css" for ::1 at 2016-07-30 13:37:49 -0700
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/mainpage.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (702.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (501.4ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (1127.8ms)
+
+
+Started GET "/mainpage.css" for ::1 at 2016-07-30 13:37:51 -0700
+
+ActionController::RoutingError (No route matches [GET] "/mainpage.css"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (676.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (474.4ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (1074.7ms)
+
+
+Started GET "/assets/LOGO.png" for ::1 at 2016-07-30 13:37:53 -0700
+
+
+Started GET "/assets/roboto/Roboto-Regular-b5c9c23bd12593523a46d79dd0aee80e3226bbde4c9ac05fc30a95e2c1510de0.woff2" for ::1 at 2016-07-30 13:37:53 -0700
+
+
+Started GET "/op" for ::1 at 2016-07-30 13:38:06 -0700
+Processing by BrowserController#byStyles as HTML
+  [1m[35mStyle Load (92.1ms)[0m  SELECT "styles".* FROM "styles"  ORDER BY name ASC
+  [1m[36m (31.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 159]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 137]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 96]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 101]]
+  [1m[36mBeer Load (21.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 101]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 32]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 32]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 34]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 34]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 41]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 41]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 37]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 37]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 109]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 109]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 103]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 103]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 99]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 158]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 158]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 43]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 43]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 30]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 30]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 93]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 93]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 94]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 94]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 95]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 100]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 102]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 102]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 25]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 25]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 98]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 98]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 97]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 40]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 40]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 42]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 42]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 29]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 35]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 156]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 105]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 74]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 104]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 104]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 87]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 86]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 85]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 54]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 54]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 61]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 61]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 64]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 64]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 58]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 58]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 57]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 57]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 167]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 68]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 67]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 66]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 62]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 62]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 63]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 63]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 60]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 69]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 59]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 59]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 65]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 65]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 46]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 46]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 76]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 76]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 147]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 39]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 39]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 17]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 17]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 16]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 18]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 18]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 110]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 110]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 168]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 122]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 1]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 1]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 23]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 23]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 123]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 123]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 149]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 149]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 152]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 165]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 143]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 28]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 115]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 116]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 79]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 163]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 163]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 107]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 140]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 166]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 162]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 150]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 12]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 12]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 11]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 2]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 10]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 10]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 6]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 83]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 130]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 130]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 5]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 5]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 120]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 161]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 24]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 72]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 72]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 151]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 71]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 71]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 26]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 26]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 119]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 119]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 155]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 155]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 114]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 114]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 55]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 90]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 90]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 91]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 89]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 45]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 45]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 77]]
+  [1m[35mBeer Load (3.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 77]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 50]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 81]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 81]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 82]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 75]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 75]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 118]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 118]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 84]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 84]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 111]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 127]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 36]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 36]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 160]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 124]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 124]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 131]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 131]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 31]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 31]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 33]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 33]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 128]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 73]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 106]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 22]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 22]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 56]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 92]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 47]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 47]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 112]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 112]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 113]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 113]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 146]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 169]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 78]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 78]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 154]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 139]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 21]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 21]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 13]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 148]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 3]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 3]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 70]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 70]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 145]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 157]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 157]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 138]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 138]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 27]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 27]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 121]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 121]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 144]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 19]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 19]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 117]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 117]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 15]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 15]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 9]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 9]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 8]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 8]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 7]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 141]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 108]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 108]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 164]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 164]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 129]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 38]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 38]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 51]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 52]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 48]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 48]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 49]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 53]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 4]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 4]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 125]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 125]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 126]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 44]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 44]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 14]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 14]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 142]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 20]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 20]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 88]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 88]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 153]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 80]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 80]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 170]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 170]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 132]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 132]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 134]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 133]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 136]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."style_id" = $1  [["style_id", 135]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."style_id" = $1[0m  [["style_id", 135]]
+  Rendered browser/byStyles.html.erb within layouts/application (609.4ms)
+Completed 200 OK in 889ms (Views: 609.3ms | ActiveRecord: 237.2ms)
+
+
+Started GET "/beers" for ::1 at 2016-07-30 13:38:07 -0700
+Processing by BrowserController#beers as HTML
+  Rendered app/assets/textfiles/ingredients/clarifyingagent.txt (0.0ms)
+  Rendered app/assets/textfiles/ingredients/hops.txt (1.0ms)
+  Rendered app/assets/textfiles/ingredients/starchsource.txt (0.0ms)
+  Rendered app/assets/textfiles/ingredients/water.txt (1.0ms)
+  Rendered app/assets/textfiles/ingredients/yeast.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/ale.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/brownale.txt (1.0ms)
+  Rendered app/assets/textfiles/beertypes/darklager.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/ipa.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/lager.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/lambic.txt (1.0ms)
+  Rendered app/assets/textfiles/beertypes/mildale.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/milkstout.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/paleale.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/palelager.txt (1.0ms)
+  Rendered app/assets/textfiles/beertypes/porter.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/stout.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/viennalager.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/wheatbeer.txt (0.0ms)
+  Rendered app/assets/textfiles/beertypes/beer.txt (0.0ms)
+  Rendered browser/beers.html.erb within layouts/application (987.7ms)
+Completed 200 OK in 2789ms (Views: 1217.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pubs" for ::1 at 2016-07-30 13:38:10 -0700
+Processing by BrowserController#pubs as HTML
+  [1m[35mBrewery Load (100.1ms)[0m  SELECT "breweries".* FROM "breweries"  ORDER BY name ASC
+  Rendered browser/pubs.html.erb within layouts/application (113.1ms)
+Completed 200 OK in 649ms (Views: 233.5ms | ActiveRecord: 100.1ms)
+
+
+Started GET "/assets/LOGO.png" for ::1 at 2016-07-30 13:38:10 -0700
+
+
+Started GET "/assets/LOGO.png" for ::1 at 2016-07-30 13:38:11 -0700
+
+
+Started GET "/assets/roboto/Roboto-Bold-8b84b2abc336ee61f48a28a697b6ace2333ea5f1868aa15d5aeb2c7beac6d716.woff2" for ::1 at 2016-07-30 13:38:11 -0700
+
+
+Started GET "/pubs" for ::1 at 2016-07-30 13:38:16 -0700
+Processing by BrowserController#pubs as HTML
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT "breweries".* FROM "breweries"  ORDER BY name ASC[0m
+  Rendered browser/pubs.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 546ms (Views: 214.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/LOGO.png" for ::1 at 2016-07-30 13:38:19 -0700
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 13:38:19 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 324ms (Views: 30.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/308" for ::1 at 2016-07-30 13:38:23 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"308"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 308]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "308"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 370ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/297" for ::1 at 2016-07-30 13:38:27 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"297"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 297]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "297"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 340ms (Views: 36.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/266" for ::1 at 2016-07-30 13:38:34 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"266"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 266]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "266"]]
+  Rendered browser/pub.html.erb within layouts/blank (1.0ms)
+Completed 200 OK in 386ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/297" for ::1 at 2016-07-30 13:45:16 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"297"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 297]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "297"]]
+  Rendered browser/pub.html.erb within layouts/blank (1.0ms)
+Completed 200 OK in 425ms (Views: 31.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/315" for ::1 at 2016-07-30 13:45:18 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"315"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 315]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "315"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 301ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pubs" for ::1 at 2016-07-30 13:46:36 -0700
+Processing by BrowserController#pubs as HTML
+  [1m[35mBrewery Load (2.0ms)[0m  SELECT "breweries".* FROM "breweries"  ORDER BY name ASC
+  Rendered browser/pubs.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 638ms (Views: 245.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.self-93a14660dfadf2b6131b52f77e7d0b9a5980162331ffe0e9dc9efd25bb7b87ab.css?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/social.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/initial.self-79f269ead2aeaa809299033919f9128fa0d9700d0248cad0dcd6442ce43dc389.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/jquery.easing.1.3.self-0170bc905fbddc075a56bdccce1be6a58f3713a14137b607ba9bd9f96fd7835f.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/animation.self-a1028b0bcf2e26331bedf7b90e81103f0707e69fdec488aa951de94b51987767.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/velocity.min.self-5adbb81af5c205a959e06198156b4b31fcd57f02c592e3fb096d7b74e8f401a6.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/hammer.min.self-bf8bdb0953b1a135f96716e362e1f7a8e64168c914fa77ca31973bb70e57a731.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/jquery.hammer.self-73fd69102f356b9abfc9ee242b19895f62454f42cfcfa1f066be71d2c8f41c7a.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/global.self-90649deff3358499c5859330da1363eea3e2bef75c80df5940f3894778f95027.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/collapsible.self-4c13fea644257c8f9384721f7d3bc27bced51754ddf3602b56093e2450a5d9c2.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/dropdown.self-846e8151c8bb8f7e39464f96bd95d48a37ff9831d8f478b6bdcbd563dd2534f0.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/leanModal.self-127e920c37478ac94207994c34d28e40b2d44817a0d93176ed325bdbee80863e.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/materialbox.self-8572736f9d17261189da8a9fc91555d63b29498f4f8665328e28261c7c4cdb68.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/parallax.self-7ac34f0f3dcef83deee116ea473a2770cec13e07c8e0dcce08cc2372bbe295d3.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/tabs.self-0eee47c7ae3f1cfcf49b9619bb067eaf4fa75379be3b78469a0120a8bf972bd3.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/tooltip.self-df3538fd067523c8b7f4d50e060340ec0b551ebaba9733e157c404df9a96a185.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/waves.self-26e9b9cfaa9ccbc292ed510f654bd279d69695f5337a14c9800b36e92f96735b.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/toasts.self-1eaa9f33c4c3b83f381997876ba6ac53899a5ca72a6b401708c32625fc553adc.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/sideNav.self-196d1801e7592bfd857227ce793d1de69b06fb6ca9d908f44f5618c8564a12d0.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/scrollspy.self-2d0375d44b1d864ecb8e31c25a22c4f3be766284788b0c494ec51df71e2b0e09.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/forms.self-e70e77c2b9157926587d6cfd009e8e0eedbaf059bdaa9e1bfe27b186b345598b.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/slider.self-219e35a6b0ade584e951aa0f39fe9856b3ef0e6bb33af123dd4b8ce6757b03cb.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/cards.self-b1de04b6f5f525d63199f556bb55d5b8bdae7170b91bfcb503958bc8ed10945b.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/chips.self-9b19ca899ba360746581059852bf2a40b3338402eef9df9a7806efd8578056dd.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/pushpin.self-101d3fec3225f47ac0da9bd501200d30f92f97f70fb15500c835cb850c962816.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/buttons.self-fc0951c300b1984a00694eabc8c451531be448d646ac073b05e4d2fbf7209302.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/transitions.self-c527b205edfdd1f961487c4c7beaf83c335262accb4dff964341a86eb60fd2f2.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/scrollFire.self-9fb128253d776689dfe2091470e36d2e94c13c6340700135ee679aa20148dffd.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/date_picker/picker.self-7a9d1216fe1172f8e8fd78fb86cfd4da25c909ebd6983cba5da20817d437d92b.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/date_picker/picker.date.self-5924b278beda2df8570f137f72b37e2d0f516acbc11a0994d1abb74380f078ef.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/character_counter.self-8bb854e15067a96db5bff6896d1d9435e4df83cf5bf6877a1d606940661d2588.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/carousel.self-6f3b9002af3ab4d871a03a44d2e174370720ab31f19a4ee543c1904c32e2befa.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize-sprockets.self-4691589913babdfbd3fb736895105a8e826d4abde842e6d1e8dd2d188e255bc7.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/materialize/extras/nouislider.self-18d2d5ad521555c564cc69b1c153247aedf8c99609e154dc0bf963a5b3d7ede1.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/assets/LOGO.png" for ::1 at 2016-07-30 13:46:38 -0700
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 13:46:40 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (7.0ms)
+Completed 200 OK in 398ms (Views: 36.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/308" for ::1 at 2016-07-30 13:46:48 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"308"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 308]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "308"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 469ms (Views: 32.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/308" for ::1 at 2016-07-30 13:47:44 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"308"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 308]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "308"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 1333ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/336" for ::1 at 2016-07-30 13:50:42 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"336"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 336]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "336"]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "336"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 1337ms (Views: 31.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/pubs" for ::1 at 2016-07-30 13:50:54 -0700
+Processing by BrowserController#pubs as HTML
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT "breweries".* FROM "breweries"  ORDER BY name ASC
+  Rendered browser/pubs.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 559ms (Views: 249.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-93a14660dfadf2b6131b52f77e7d0b9a5980162331ffe0e9dc9efd25bb7b87ab.css?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/social.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/materialize/initial.self-79f269ead2aeaa809299033919f9128fa0d9700d0248cad0dcd6442ce43dc389.js?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/materialize/jquery.easing.1.3.self-0170bc905fbddc075a56bdccce1be6a58f3713a14137b607ba9bd9f96fd7835f.js?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/materialize/animation.self-a1028b0bcf2e26331bedf7b90e81103f0707e69fdec488aa951de94b51987767.js?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/materialize/velocity.min.self-5adbb81af5c205a959e06198156b4b31fcd57f02c592e3fb096d7b74e8f401a6.js?body=1" for ::1 at 2016-07-30 13:50:55 -0700
+
+
+Started GET "/assets/materialize/hammer.min.self-bf8bdb0953b1a135f96716e362e1f7a8e64168c914fa77ca31973bb70e57a731.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/global.self-90649deff3358499c5859330da1363eea3e2bef75c80df5940f3894778f95027.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/jquery.hammer.self-73fd69102f356b9abfc9ee242b19895f62454f42cfcfa1f066be71d2c8f41c7a.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/materialbox.self-8572736f9d17261189da8a9fc91555d63b29498f4f8665328e28261c7c4cdb68.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/leanModal.self-127e920c37478ac94207994c34d28e40b2d44817a0d93176ed325bdbee80863e.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/dropdown.self-846e8151c8bb8f7e39464f96bd95d48a37ff9831d8f478b6bdcbd563dd2534f0.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/collapsible.self-4c13fea644257c8f9384721f7d3bc27bced51754ddf3602b56093e2450a5d9c2.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/parallax.self-7ac34f0f3dcef83deee116ea473a2770cec13e07c8e0dcce08cc2372bbe295d3.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/tabs.self-0eee47c7ae3f1cfcf49b9619bb067eaf4fa75379be3b78469a0120a8bf972bd3.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/tooltip.self-df3538fd067523c8b7f4d50e060340ec0b551ebaba9733e157c404df9a96a185.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/waves.self-26e9b9cfaa9ccbc292ed510f654bd279d69695f5337a14c9800b36e92f96735b.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/sideNav.self-196d1801e7592bfd857227ce793d1de69b06fb6ca9d908f44f5618c8564a12d0.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/toasts.self-1eaa9f33c4c3b83f381997876ba6ac53899a5ca72a6b401708c32625fc553adc.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/slider.self-219e35a6b0ade584e951aa0f39fe9856b3ef0e6bb33af123dd4b8ce6757b03cb.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/forms.self-e70e77c2b9157926587d6cfd009e8e0eedbaf059bdaa9e1bfe27b186b345598b.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/scrollspy.self-2d0375d44b1d864ecb8e31c25a22c4f3be766284788b0c494ec51df71e2b0e09.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/cards.self-b1de04b6f5f525d63199f556bb55d5b8bdae7170b91bfcb503958bc8ed10945b.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/chips.self-9b19ca899ba360746581059852bf2a40b3338402eef9df9a7806efd8578056dd.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/pushpin.self-101d3fec3225f47ac0da9bd501200d30f92f97f70fb15500c835cb850c962816.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/buttons.self-fc0951c300b1984a00694eabc8c451531be448d646ac073b05e4d2fbf7209302.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/transitions.self-c527b205edfdd1f961487c4c7beaf83c335262accb4dff964341a86eb60fd2f2.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/scrollFire.self-9fb128253d776689dfe2091470e36d2e94c13c6340700135ee679aa20148dffd.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/date_picker/picker.self-7a9d1216fe1172f8e8fd78fb86cfd4da25c909ebd6983cba5da20817d437d92b.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/date_picker/picker.date.self-5924b278beda2df8570f137f72b37e2d0f516acbc11a0994d1abb74380f078ef.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/character_counter.self-8bb854e15067a96db5bff6896d1d9435e4df83cf5bf6877a1d606940661d2588.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/carousel.self-6f3b9002af3ab4d871a03a44d2e174370720ab31f19a4ee543c1904c32e2befa.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize-sprockets.self-4691589913babdfbd3fb736895105a8e826d4abde842e6d1e8dd2d188e255bc7.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/materialize/extras/nouislider.self-18d2d5ad521555c564cc69b1c153247aedf8c99609e154dc0bf963a5b3d7ede1.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/assets/LOGO.png" for ::1 at 2016-07-30 13:50:56 -0700
+
+
+Started GET "/pub/336" for ::1 at 2016-07-30 13:50:59 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"336"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 336]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "336"]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "336"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 294ms (Views: 31.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/336" for ::1 at 2016-07-30 13:51:24 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"336"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 336]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "336"]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "336"]]
+  Rendered browser/pub.html.erb within layouts/blank (6.0ms)
+Completed 200 OK in 305ms (Views: 37.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/336" for ::1 at 2016-07-30 13:51:27 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"336"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 336]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "336"]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "336"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 271ms (Views: 31.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/336" for ::1 at 2016-07-30 13:51:30 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"336"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 336]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "336"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "336"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 419ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/267" for ::1 at 2016-07-30 13:51:44 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"267"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 267]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "267"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "267"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 7335ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/267" for ::1 at 2016-07-30 13:51:51 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"267"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 267]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "267"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "267"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 289ms (Views: 31.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/267" for ::1 at 2016-07-30 13:52:09 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"267"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 267]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "267"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "267"]]
+  Rendered browser/pub.html.erb within layouts/blank (5.0ms)
+Completed 200 OK in 304ms (Views: 38.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/267" for ::1 at 2016-07-30 13:52:18 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"267"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 267]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "267"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "267"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 288ms (Views: 39.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/267" for ::1 at 2016-07-30 13:54:46 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"267"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 267]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "267"]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "267"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 3469ms (Views: 32.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/267" for ::1 at 2016-07-30 13:56:42 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"267"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 267]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "267"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "267"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 403ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/267" for ::1 at 2016-07-30 13:57:06 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"267"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 267]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "267"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "267"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 352ms (Views: 35.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/312" for ::1 at 2016-07-30 13:57:49 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"312"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 312]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "312"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "312"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 428ms (Views: 31.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/267" for ::1 at 2016-07-30 13:57:50 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"267"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 267]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "267"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "267"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 359ms (Views: 31.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/280" for ::1 at 2016-07-30 13:57:55 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"280"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 280]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "280"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "280"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 381ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 13:57:59 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 414ms (Views: 31.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 13:58:16 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 339ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/266" for ::1 at 2016-07-30 14:00:40 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"266"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 266]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "266"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 348ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:00:43 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 331ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:00:56 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 516ms (Views: 29.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/266" for ::1 at 2016-07-30 14:01:27 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"266"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 266]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "266"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 368ms (Views: 29.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:01:28 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 343ms (Views: 33.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/308" for ::1 at 2016-07-30 14:01:40 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"308"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 308]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "308"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 1505ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:01:43 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 323ms (Views: 30.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:01:55 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 376ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:01:59 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 387ms (Views: 31.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:02:15 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 335ms (Views: 33.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:02:25 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 360ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:02:40 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 1485ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:03:37 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 327ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pubs" for ::1 at 2016-07-30 14:03:49 -0700
+Processing by BrowserController#pubs as HTML
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT "breweries".* FROM "breweries"  ORDER BY name ASC[0m
+  Rendered browser/pubs.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 1606ms (Views: 241.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/LOGO.png" for ::1 at 2016-07-30 14:03:52 -0700
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:04:01 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 419ms (Views: 31.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:04:52 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 1380ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:05:03 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 674ms (Views: 35.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:05:49 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 285ms (Views: 30.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:06:05 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 333ms (Views: 29.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:07:06 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 352ms (Views: 30.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:07:24 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 333ms (Views: 38.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:07:35 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (5.0ms)
+Completed 200 OK in 303ms (Views: 32.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:07:56 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 306ms (Views: 30.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:08:30 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (0.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 360ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:10:38 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 1402ms (Views: 27.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/308" for ::1 at 2016-07-30 14:10:43 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"308"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 308]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "308"]]
+  Rendered browser/pub.html.erb within layouts/blank (1.0ms)
+Completed 200 OK in 333ms (Views: 31.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/297" for ::1 at 2016-07-30 14:10:47 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"297"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 297]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "297"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 343ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pub/266" for ::1 at 2016-07-30 14:10:51 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"266"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 266]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "266"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 338ms (Views: 30.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/315" for ::1 at 2016-07-30 14:10:54 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"315"}
+  [1m[36mBrewery Load (1.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 315]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "315"]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "315"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 402ms (Views: 33.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:11:36 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (1.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (0.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (4.0ms)
+Completed 200 OK in 373ms (Views: 36.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:12:20 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 274]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  [1m[36mBeer Load (1.0ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (3.0ms)
+Completed 200 OK in 1331ms (Views: 28.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pub/308" for ::1 at 2016-07-30 14:12:24 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"308"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 308]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "308"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 313ms (Views: 30.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/274" for ::1 at 2016-07-30 14:13:11 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"274"}
+  [1m[35mBrewery Load (0.0ms)[0m  SELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1  [["id", 274]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1[0m  [["brewery_id", "274"]]
+  [1m[35mBeer Load (1.0ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "274"]]
+  Rendered browser/pub.html.erb within layouts/blank (5.0ms)
+Completed 200 OK in 334ms (Views: 33.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pub/308" for ::1 at 2016-07-30 14:13:13 -0700
+Processing by BrowserController#pub as HTML
+  Parameters: {"id"=>"308"}
+  [1m[36mBrewery Load (0.0ms)[0m  [1mSELECT  "breweries".* FROM "breweries" WHERE "breweries"."id" = $1 LIMIT 1[0m  [["id", 308]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = $1  [["brewery_id", "308"]]
+  Rendered browser/pub.html.erb within layouts/blank (2.0ms)
+Completed 200 OK in 314ms (Views: 31.1ms | ActiveRecord: 0.0ms)

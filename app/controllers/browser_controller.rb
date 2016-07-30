@@ -114,7 +114,7 @@ class BrowserController < ApplicationController
   #a page for showing all breweries in an area.
   def pubs
     #find a working API key within tryAll
-    brewery_db = tryAll()
+    @brewery_db = tryAll()
 
     #example API code for reference purposes
     #@pubs = brewery_db.brewery('AAj4GG').all()

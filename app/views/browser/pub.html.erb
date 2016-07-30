@@ -6,7 +6,7 @@
 <% rescue %>
 <% end %>
 <p style="font-weight:bold"><%= @pub.address %></p>
-<p><%= @pub.description %></p>
+<p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @pub.description %></p>
 
 
 
@@ -20,6 +20,11 @@
   }
 </style>
   <div id="map"></div>
+  <%
+  if @pubBeers.count > 0
+  %>
+  
+  
   <h5>Beers at this Location:</h5>
   <table>
     <thead>
@@ -47,6 +52,8 @@
   %>
   </tbody>
   </table>
+  
+<%end%>
   <script>
     var map;
     function initMap() {
