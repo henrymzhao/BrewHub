@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <%=#The display for a user - this is a placeholder, no real user profile yet exists, but this will eventually include a profile picture, as well as the user's information.
 %>
+=======
+
+<body>
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
 
 <% provide(:title, @user.username) %>
 <h1>
@@ -9,12 +14,26 @@
 <div style = "margin-left:50px;">
 
 </br>
+<<<<<<< HEAD
+=======
+
+<div>
+  <p>
+    <%=image_tag(@user.avatar, :width =>125, :height => 125)%>
+  </p>
+</div>
+
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
 </br>
 
 <p><b>Username: </b><%= @user.username %></p>
 <p><b>First Name: </b><%= @user.firstname %></p>
 <p><b>Last Name: </b><%= @user.lastname %></p>
 <p><b>Email: </b><%= @user.email %></p>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
 </br>
 </br>
 
@@ -24,3 +43,7 @@
 <%= link_to "Edit your user profile", edit_user_path(current_user) %>
 </br>
 <%= link_to "Logout", '/logout' %>
+<<<<<<< HEAD
+=======
+</body>
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd

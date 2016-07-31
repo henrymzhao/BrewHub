@@ -36,6 +36,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+<<<<<<< HEAD
+=======
+    addressable (2.4.0)
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
     arel (6.0.3)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x86-mingw32)
@@ -62,6 +66,11 @@ GEM
       multipart-post (~> 1.2.0)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
+<<<<<<< HEAD
+=======
+    fastimage (2.0.0)
+      addressable (~> 2)
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
     geocoder (1.3.7)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -182,6 +191,12 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+<<<<<<< HEAD
+=======
+    validate_url (1.0.2)
+      activemodel (>= 3.0.0)
+      addressable
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -198,6 +213,10 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   coffee-script-source (= 1.8.0)
+<<<<<<< HEAD
+=======
+  fastimage
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
@@ -212,6 +231,10 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
+<<<<<<< HEAD
+=======
+  validate_url
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
   web-console (~> 2.0)
 
 BUNDLED WITH

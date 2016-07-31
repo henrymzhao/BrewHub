@@ -24,6 +24,23 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length:{minimum:6, maximum:30}, allow_nil: true
 
+<<<<<<< HEAD
+=======
+  #DEFAULT_AVATAR = "/../../assets/defaultavatar.png"
+  DEFAULT_AVATAR = "http://i.imgur.com/ls414cz.jpg"
+  def avatar
+    read_attribute('avatar') || DEFAULT_AVATAR
+  end
+
+  validates :avatar, :url => true, :image => true
+
+    
+
+
+
+
+
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
   def self.create_with_omniauth(auth)
     create! do |user|
       user.firstname = "example"
@@ -45,4 +62,8 @@ class User < ActiveRecord::Base
   def self.find_by_provider_and_uid(provider, uid)
     where(provider: provider, uid: uid).first
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
