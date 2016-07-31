@@ -1,11 +1,18 @@
+<h1> GROUP NAMES </h1>
+<body>
 
-
-  <%= form_for :social, url: '/meetup' do |f| %>
+  <%= form_for :groups, url: '/groups' do |f| %>
 
     <%= f.label :name %>
     <%= f.text_field :name %>
-
-      <br>
+    <br>
 
     <%= f.submit "Create Group" %>
   <% end %>
+
+<br>
+
+
+
+
+</body>

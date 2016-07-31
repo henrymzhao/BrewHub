@@ -29,4 +29,29 @@ class SocialController < ApplicationController
     @centralLat = @centralLat / @breweries.count
     
   end
+
+  def create
+    @group = Group.new(params[:group])
+      if @group.save
+        flash[:notice] = "Group Created, user is a member in it"
+        current_user.group_id = @group.group_id
+        redirect_to '/meetup'
+      else
+        flash[:notice] = "Group Created, user not in it"
+        # current_user.group_id = @group.group_id
+        redirect_to '/meetup'
+      end
+  end
+
+  def index
+    @groups = Group.all
+  end
+
+  def show
+    @group = Group.find(params[:id])
+  end
+
+  def new
+    @group = Group.new
+  end
 end

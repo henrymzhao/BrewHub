@@ -5,7 +5,8 @@
 <body>
 
 	<% if current_user && current_user.group_id.blank? %>
-		<%= render 'form' %>
+		<a href="/groups">Create a group here</a>
+
 	<% elsif current_user && !current_user.group_id.blank? %>
 		"you are in group <%= current_user.group_id %>"
 	<% end %>
