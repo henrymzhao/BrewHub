@@ -78,6 +78,7 @@
     // SHOWS DIV
     $("a[id^=open_]").click(function () {
       var id = this.id.split("_")[1];
+      console.log(id);
       $("#" + id).removeClass("movedown").addClass("moveup");
     });
 
