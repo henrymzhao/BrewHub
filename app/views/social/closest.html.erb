@@ -14,12 +14,12 @@
 	<% if current_user && !current_user.name.blank? %>
 	  <div>
 	    <script src="https://www.shoutbox.com/chat/chat.js.php"></script>
-	    <script>var chat = new Chat(6180,"<%=  current_user.name %>");</script>
+	    <script>var chat = new Chat(<%= current_user.group_id %>,"<%=  current_user.name %>");</script>
 	  </div>
 	<% elsif current_user && !current_user.username.blank? %>
 	  <div>
 	    <script src="https://www.shoutbox.com/chat/chat.js.php"></script>
-	    <script>var chat = new Chat(6180,"<%=  current_user.username %>");</script>
+	    <script>var chat = new Chat(<%= current_user.group_id %>,"<%=  current_user.username %>");</script>
 	  </div>
 	<% end %>
 	<style>
