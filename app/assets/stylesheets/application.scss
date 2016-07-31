@@ -8,10 +8,18 @@ div.overlay {
 	width: 100%;
 	position: fixed;
 	min-height: 100%;
-	background: red;
 	margin-top: 50px;
 	top: 100%;
 	left: 0;
+}
+
+div.fadingBlack
+{
+	z-index: 5;
+	background-color: RGBA(0,0,0,0.9);
+	height: 100vh;
+	width: 200vh;
+	position: fixed;
 }
 
 div.movedown {
