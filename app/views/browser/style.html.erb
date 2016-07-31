@@ -1,4 +1,11 @@
 <!---<h1>Brewery Info</h1>--->
+
+<script>
+  function goBack() {
+    window.history.back();
+}
+</script>
+<div onclick="goBack()" style="display:inline; text-align: right; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
 <h2><%= @style.name %></h2>
 
 <p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @style.description %></p>
@@ -25,7 +32,7 @@
   <%
   @styleBeers.each do |sb|
     
-    @thisBrewery = Brewery.where(:id => sb.brewery_id).first
+    @thisBrewery = Brewery.where(:id => sb.brewery_id.to_i).first
     %>
     <tr>
       <td><%=sb.name%></td>
