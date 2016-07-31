@@ -21,31 +21,35 @@ class BrowserController < ApplicationController
     @breweries = Brewery.all.order("name ASC")
   end
 
-  def load
+  def load(pc)
     #brewery_db = tryAll()#in theory we don't need this anymore -- nevermind it's needed for styles...should be fixed later
 
-    pc = request.location.province
+    #pc = request.location.province
 
-
-    if (pc == "")
-      pc = "British Columbia"
-    end
+    #if (pc == "")
+    #  pc = "British Columbia"
+    #end
 
 
     #this is where we read in the API data and store it in our database.
-    @styles = brewery_db.styles.all()
+    #@styles = brewery_db.styles.all()
 
-    @styles.each do |s|
-      @oppa = Style.new(style_id: s.id,
-                        name: s.name.titleize,
-                        description: s.description,
-                        ibuMin: s.ibuMin,
-                        ibuMax: s.ibuMax,
-                        abvMin: s.abvMin,
-                        abvMax: s.abvMax,
-                        srmMin: s.srmMin,
-                        srmMax: s.srmMax)
-      @oppa.save!
+    ##We need to load styles only if we have none since we load all of them
+    if Style.count == 0
+      @styles = tryStyles()
+
+      @styles.each do |s|
+        @oppa = Style.new(style_id: s.id,
+                          name: s.name.titleize,
+                          description: s.description,
+                          ibuMin: s.ibuMin,
+                          ibuMax: s.ibuMax,
+                          abvMin: s.abvMin,
+                          abvMax: s.abvMax,
+                          srmMin: s.srmMin,
+                          srmMax: s.srmMax)
+        @oppa.save!
+      end
     end
 
     #@pubs = brewery_db.locations.all(region: pc)
@@ -87,15 +91,17 @@ class BrowserController < ApplicationController
       @beers = tryBeer(p.id)
 
 #     @beer = @brewery.beers.create
-      @beers.each do |b|
-        @thisBeerRightHere = @brewery.beers.create(beer_id: b.id,
-                                      name: b.name.titleize,
-                                      ibu: b.ibu,
-                                      abv: b.abv,
-                                      style_id: b.styleId,
-                                      srmId: b.srmId,
-                                      loc: pc)
-        @thisBeerRightHere.save!
+      unless @beers.nil?
+        @beers.each do |b|
+          @thisBeerRightHere = @brewery.beers.create(beer_id: b.id,
+                                        name: b.name.titleize,
+                                        ibu: b.ibu,
+                                        abv: b.abv,
+                                        style_id: b.styleId,
+                                        srmId: b.srmId,
+                                        loc: pc)
+          @thisBeerRightHere.save!
+        end
       end
     end
   end
@@ -130,7 +136,7 @@ class BrowserController < ApplicationController
     pc = ""
     pc = request.location.province
     if (pc == "")
-      pc = "British Columbia"
+      pc = "Ontario"
     end
     #pc= "Alberta"
     #pc = "British Columbia"
@@ -139,7 +145,10 @@ class BrowserController < ApplicationController
     #grab all breweries from the user'slocation
     #pubs = Brewery.where(:province == pc).order("name ASC")
     @pubs = Brewery.where("loc = ?", pc).order("name ASC")
-
+    if @pubs.count == 0
+      load(pc)
+      @pubs = Brewery.where("loc = ?", pc).order("name ASC")
+    end
 
 
     #old code for grabbing all bc breweries, kept for reference purposes.
@@ -376,43 +385,43 @@ class BrowserController < ApplicationController
       brewery_db = BreweryDB::Client.new do |config|
         config.api_key = API_KEY
       end
-      beers = brewery_db.brewery(brewID).beers
+      styles = brewery_db.styles.all()
     rescue
       begin
         brewery_db = BreweryDB::Client.new do |config|
           config.api_key = BACKUP_API_KEY_1
         end
-        beers = brewery_db.brewery(brewID).beers
+        styles = brewery_db.styles.all()
       rescue
         begin
           brewery_db = BreweryDB::Client.new do |config|
             config.api_key = BACKUP_API_KEY_2
           end
-          beers = brewery_db.brewery(brewID).beers
+          styles = brewery_db.styles.all()
         rescue
           begin
             brewery_db = BreweryDB::Client.new do |config|
               config.api_key = BACKUP_API_KEY_3
             end
-            beers = brewery_db.brewery(brewID).beers
+            styles = brewery_db.styles.all()
           rescue
             begin
               brewery_db = BreweryDB::Client.new do |config|
                 config.api_key = BACKUP_API_KEY_4
               end
-              beers = brewery_db.brewery(brewID).beers
+              styles = brewery_db.styles.all()
             rescue
               begin
                 brewery_db = BreweryDB::Client.new do |config|
                   config.api_key = BACKUP_API_KEY_5
                 end
-                beers = brewery_db.brewery(brewID).beers
+                styles = brewery_db.styles.all()
               rescue
                 begin
                   brewery_db = BreweryDB::Client.new do |config|
                     config.api_key = BACKUP_API_KEY_6
                   end
-                  beers = brewery_db.brewery(brewID).beers
+                  styles = brewery_db.styles.all()
                 rescue
                   brewery_db = BreweryDB::Client.new do |config|
                     config.api_key = BACKUP_API_KEY_7
@@ -425,7 +434,7 @@ class BrowserController < ApplicationController
       end
     end
     #Return the working key
-    return beers
+    return styles
   end
 
 end

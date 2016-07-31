@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'browser/beers'
 
   get 'browser/pubs'
-  get 'browser/load'
+  #get 'browser/load'#No longer needed
   get 'browser/showLoaded'
   get 'browser/byStyles'
   get 'welcome/index'
