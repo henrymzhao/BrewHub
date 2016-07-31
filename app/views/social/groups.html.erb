@@ -12,7 +12,7 @@
     <% @allGroups.each do |g| %>
       <% current_user.group_id.each do |c| %>
         <% if c == g.id %>
-          <%= g.name %>
+          <p><%= g.name %><p>
         <% end %>
       <% end %>
     <% end %>

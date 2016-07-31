@@ -5657,3 +5657,46 @@ Processing by UsersController#show as HTML
   [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
   Rendered users/show.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 1.0ms)
+  [1m[36m (5009.4ms)[0m  [1mDROP DATABASE IF EXISTS "BrewHub_development"[0m
+  [1m[35m (105.5ms)[0m  DROP DATABASE IF EXISTS "BrewHub_test"
+  [1m[36m (0.5ms)[0m  [1mCREATE DATABASE "BrewHub_development" ENCODING = 'unicode'[0m
+  [1m[35m (232.1ms)[0m  CREATE DATABASE "BrewHub_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.5ms)[0m  DROP TABLE "beers" CASCADE
+  [1m[36m (8.6ms)[0m  [1mCREATE TABLE "beers" ("id" serial primary key, "name" character varying, "ibu" integer, "abv" integer, "style_id" integer, "srmId" integer, "brewery_id" character varying, "beer_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  DROP TABLE "breweries" CASCADE
+  [1m[36m (8.1ms)[0m  [1mCREATE TABLE "breweries" ("id" serial primary key, "name" character varying, "website" character varying, "address" character varying, "gpsLocation" character varying, "latitude" character varying, "longitude" character varying, "brewery_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "locality" character varying, "description" character varying, "imgUrl" character varying, "province" character varying) [0m
+  [1m[35m (1.8ms)[0m  DROP TABLE "groups" CASCADE
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "groups" ("id" serial primary key, "name" character varying, "group_id" integer DEFAULT 123 NOT NULL, "leader" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "styles" CASCADE
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "styles" ("id" serial primary key, "name" character varying, "description" text, "ibuMin" decimal, "ibuMax" decimal, "abvMin" decimal, "abvMax" decimal, "srmMin" decimal, "srmMax" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "style_id" integer) [0m
+  [1m[35m (2.3ms)[0m  DROP TABLE "users" CASCADE
+  [1m[36m (8.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "admin" boolean DEFAULT 'f' NOT NULL, "banned" boolean DEFAULT 'f' NOT NULL, "provider" character varying, "uid" character varying, "name" character varying, "oauth_token" character varying, "oauth_expires_at" timestamp, "lat" decimal(10,6), "lon" decimal(10,6), "group_id" text, "pending_group_id" text) [0m
+  [1m[35m (3.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (3.2ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_username" ON "users" USING btree ("username")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.9ms)[0m  CREATE TABLE "beers" ("id" serial primary key, "name" character varying, "ibu" integer, "abv" integer, "style_id" integer, "srmId" integer, "brewery_id" character varying, "beer_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "breweries" ("id" serial primary key, "name" character varying, "website" character varying, "address" character varying, "gpsLocation" character varying, "latitude" character varying, "longitude" character varying, "brewery_id" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "locality" character varying, "description" character varying, "imgUrl" character varying, "province" character varying) [0m
+  [1m[35m (6.2ms)[0m  CREATE TABLE "groups" ("id" serial primary key, "name" character varying, "group_id" integer DEFAULT 123 NOT NULL, "leader" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (6.1ms)[0m  [1mCREATE TABLE "styles" ("id" serial primary key, "name" character varying, "description" text, "ibuMin" decimal, "ibuMax" decimal, "abvMin" decimal, "abvMax" decimal, "srmMin" decimal, "srmMax" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "style_id" integer) [0m
+  [1m[35m (8.7ms)[0m  CREATE TABLE "users" ("id" serial primary key, "username" character varying, "firstname" character varying, "lastname" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "admin" boolean DEFAULT 'f' NOT NULL, "banned" boolean DEFAULT 'f' NOT NULL, "provider" character varying, "uid" character varying, "name" character varying, "oauth_token" character varying, "oauth_expires_at" timestamp, "lat" decimal(10,6), "lon" decimal(10,6), "group_id" text, "pending_group_id" text) 
+  [1m[36m (3.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (3.5ms)[0m  CREATE UNIQUE INDEX  "index_users_on_username" ON "users" USING btree ("username")
+  [1m[36m (3.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (3.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160727054906')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160611051306')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160723040240')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160711043355')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160727053131')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160611050837')[0m
+  [1m[35m (1.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160723040032')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160708211103')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160611054403')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160619025846')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609221551')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160727053724')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160618095845')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
