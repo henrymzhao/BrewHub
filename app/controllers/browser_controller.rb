@@ -136,7 +136,7 @@ class BrowserController < ApplicationController
     pc = ""
     pc = request.location.province
     if (pc == "")
-      pc = "Ontario"
+      pc = "British Columbia"
     end
     #pc= "Alberta"
     #pc = "British Columbia"
