@@ -1,0 +1,51 @@
+<!---<h1>Brewery Info</h1>--->
+<h2><%= @style.name %></h2>
+
+<p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @style.description %></p>
+
+  <%
+  if @styleBeers.count > 0
+  %>
+  
+  
+  <h5>Beers for this Style:</h5>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Bitterness</td>
+        <td>Alcohol Content</td>
+        <td>Style</td>
+        <td>Lightness</td>
+        <td>Link to Brewery</td>
+        <td>Link to Company (External)</td>
+      </tr>
+    </thead>
+    <tbody>
+  <%
+  @styleBeers.each do |sb|
+    
+    @thisBrewery = Brewery.where(:id => sb.brewery_id).first
+    %>
+    <tr>
+      <td><%=sb.name%></td>
+      <td><%=sb.ibu%></td>
+      <td><%=sb.abv%>%</td>
+      <td><%=sb.style_id%></td>
+      <td><%=sb.srmId%></td>
+      <% #The associated brewery for this beer.
+      
+       #document.getElementById("rightFrame").src = "/pub/" + id;
+      %>
+      
+      <td><a href="/pub/<%=sb.brewery_id%>"><%=@thisBrewery.name%></a></td>
+      <td><a href="<%=@thisBrewery.website%>">Website</a></td>
+    </tr>
+    <%
+  end
+  %>
+  </tbody>
+  </table>
+  
+<%end%>
+

@@ -123,20 +123,20 @@ class BrowserController < ApplicationController
     
     
     #get the user's province/state.  If blank, default to British Columbia.  This should only happen when being run locally.
-    pc = ""
+    @pc = ""
     
     begin
-      pc = request.location.province
+      @pc = request.location.province
     rescue
-      if (pc == "")
-        pc = "British Columbia"
+      if (@pc == "")
+        @pc = "British Columbia"
       end
     end
     
     
     
     #grab all breweries from the user'slocation
-    @pubs = Brewery.where(:province == pc).order("name ASC")
+    @pubs = Brewery.where(:province == @pc).order("name ASC")
     
     
     
@@ -189,6 +189,50 @@ class BrowserController < ApplicationController
     
     
     
+    
+  end
+  
+  
+  def style
+    
+     @pc = ""
+    
+    @pc = request.location.province
+    if (@pc == "")
+      @pc = "British Columbia"
+    end
+    @styleBeers = []
+    
+    #@pub = brewery_db.brewery(params[:id]).all
+    #find this particular style.
+    @style = Style.find(params[:id])
+    
+    #A list of all beers associated with this style.
+    @allStyleBeers = Beer.where(:style_id => @style.style_id)
+    
+    
+    #filter down to user's location.
+    
+    #find breweries associated with these styles.
+    @allStyleBeers.each do |asb|
+      
+      #find the associated Brewery so that we can determine it's location.  
+      @asbBreweries = Brewery.where(:id => asb.brewery_id)
+      
+      @asbBreweries.each do |asbB|
+        @thisBrewery = asbB
+      end
+      
+      #if the brewery we just found is in the user's province, add it to StyleBeers.
+      if @pc.to_s.titleize.strip == @thisBrewery.province.to_s.titleize.strip
+        @styleBeers << asb
+      else
+        @temp = "ABC"
+      end
+      
+    end
+    
+    render :layout => 'blank'
     
   end
   

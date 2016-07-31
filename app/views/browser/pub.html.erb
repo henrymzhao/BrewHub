@@ -1,3 +1,9 @@
+<script>
+  function goBack() {
+    window.history.back();
+}
+</script>
+<div onclick="goBack()" style="display:inline; text-align: right; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
 <!---<h1>Brewery Info</h1>--->
 <h2><%= @pub.name %></h2>
 <% begin
@@ -24,16 +30,16 @@
   if @pubBeers.count > 0
   %>
   
-  
   <h5>Beers at this Location:</h5>
   <table>
     <thead>
       <tr>
-        <td>Name</td>
-        <td>Bitterness</td>
-        <td>Alcohol Content</td>
-        <td>Style</td>
-        <td>Lightness</td>
+        <td><b><p>Name</p></b></td>
+        <td><b><p>Bitterness</p></b></td>
+        <td><b><p>Alcohol Content</p></b></td>
+        <td><b><p>Style</p></b></td>
+        <td><b><p>Lightness</p></b></td>
+        
       </tr>
     </thead>
     <tbody>
@@ -41,6 +47,7 @@
   @pubBeers.each do |pb|
     %>
     <tr>
+      
       <td><%=pb.name%></td>
       <td><%=pb.ibu%></td>
       <td><%=pb.abv%>%</td>

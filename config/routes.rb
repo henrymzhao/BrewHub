@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
 #routes should be fairly self-explanatory.
   get 'browser/beers'
-
   get 'browser/pubs'
   get 'browser/load'
   get 'browser/showLoaded'
@@ -35,6 +34,7 @@ Rails.application.routes.draw do
   get '/beers' => 'browser#beers'
   get '/pubs' => 'browser#pubs'
   get '/pub/:id' => 'browser#pub'
+  get '/style/:id' => 'browser#style'
   get '/load' => 'browser#load'
   get '/showLoaded' => 'browser#showLoaded'
   get '/op' => 'browser#byStyles'
