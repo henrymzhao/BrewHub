@@ -19,14 +19,11 @@ gem 'omniauth-facebook'
 # google omniauth
 gem "omniauth-google-oauth2"
 
-<<<<<<< HEAD
-=======
 # url validator -used for profile pics
 gem "validate_url"
 # image validator -used for profile pics
 gem 'fastimage'
 
->>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
