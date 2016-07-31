@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160730041755) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.integer  "abv"
     t.integer  "style_id"
     t.integer  "srmId"
-    t.string   "brewery_id"
+    t.integer  "brewery_id"
     t.string   "beer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,13 +38,12 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.string   "latitude"
     t.string   "longitude"
     t.string   "brewery_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "locality"
-    t.string   "description"
     t.string   "imgUrl"
+    t.text     "description"
+    t.string   "locality"
     t.string   "province"
     t.string   "loc"
+
   end
 
   create_table "groups", force: :cascade do |t|
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160730041755) do
   create_table "styles", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "style_id"
     t.decimal  "ibuMin"
     t.decimal  "ibuMax"
     t.decimal  "abvMin"
@@ -65,7 +66,6 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.decimal  "srmMax"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "style_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,11 +73,11 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "email"
-    t.datetime "created_at",                                                null: false
-    t.datetime "updated_at",                                                null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "password_digest"
-    t.boolean  "admin",                                     default: false, null: false
-    t.boolean  "banned",                                    default: false, null: false
+    t.boolean  "admin",            default: false, null: false
+    t.boolean  "banned",           default: false, null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "name"

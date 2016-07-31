@@ -4,13 +4,151 @@ $primary-color: color("blue", "lighten-2") !default;
 @import 'materialize';
 @import "materialize/extras/nouislider";
 
+div.overlay {
+	width: 100%;
+	position: fixed;
+	min-height: 100%;
+	margin-top: 50px;
+	top: 100%;
+	left: 0;
+}
+
+div.fadingInBlack
+{
+	z-index: 5;
+	height: 100vh;
+	width: 200vh;
+	position: fixed;
+	background-color: rgba(0,0,0,0.75);
+
+	animation-name: fadeIn;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+div.fadingOutBlack
+{
+	z-index: 5;
+	height: 100vh;
+	width: 200vh;
+	position: fixed;
+	background-color: rgba(0,0,0,0);
+
+	animation-name: fadeOut;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        background-color: rgba(0,0,0,0);
+    }
+    to {
+        background-color: rgba(0,0,0,0.75);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        background-color: rgba(0,0,0,0.75);
+    }
+    to {
+        background-color: rgba(0,0,0,0);
+    }
+}
+
+div.movedown {
+	z-index: 10;
+	top: 100%;
+	-webkit-animation: movedown 0.75s ease-in-out; /* Safari and Chrome */
+       -moz-animation: movedown 0.75s ease-in-out; /* Firefox */
+        -ms-animation: movedown 0.75s ease-in-out; /* Internet Explorer */
+         -o-animation: movedown 0.75s ease-in-out; /* Opera */
+            animation: movedown 0.75s ease-in-out;
+}
+
+div.moveup {
+	z-index: 11;
+	top: 50px;
+	-webkit-animation: moveup 0.75s ease-in-out; /* Safari and Chrome */
+       -moz-animation: moveup 0.75s ease-in-out; /* Firefox */
+        -ms-animation: moveup 0.75s ease-in-out; /* Internet Explorer */
+         -o-animation: moveup 0.75s ease-in-out; /* Opera */
+            animation: moveup 0.75s ease-in-out;
+}
+
+/* KEYFRAMES MOVEUP */
+@keyframes moveup {
+    	0% { top: 100%; }
+      100% { top: 50px;    }
+}
+
+/* Firefox */
+@-moz-keyframes moveup {
+    	0% { top: 100%; }
+      100% { top: 50px;    }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes moveup {
+    	0% { top: 100%; }
+      100% { top: 50px;    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes moveup {
+    	0% { top: 100%; }
+      100% { top: 50px;    }
+}
+
+/* Opera */
+@-o-keyframes moveup {
+    	0% { top: 100%; }
+      100% { top: 50px;    }
+}
+
+
+/* KEYFRAMES MOVEDOWN */
+@keyframes movedown {
+    	0% { top: 50px;    }
+      100% { top: 100%; }
+}
+
+/* Firefox */
+@-moz-keyframes movedown {
+    	0% { top: 50px;    }
+      100% { top: 100%; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes movedown {
+    	0% { top: 50px;    }
+      100% { top: 100%; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes movedown {
+    	0% { top: 50px;    }
+      100% { top: 100%; }
+}
+
+/* Opera */
+@-o-keyframes movedown {
+    	0% { top: 50px;    }
+      100% { top: 100%; }
+}
+
 #mainbox
 {
   background-color: white;
   padding: 20px;
-  margin-left:100px;
+  margin-left:5%;
   margin-top:20px;
-  margin-right: 100px;
+  margin-right: 5%;
   margin-bottom:100px;
 }
 
@@ -33,17 +171,6 @@ div.beers_info
   float: left;
   margin-right:30px;
   overflow-y:scroll;
-}
-
-div.breweries_info
-{
-  width:30%;
-  background-color: white;
-  overflow:hidden;
-  overflow-y:scroll;
-  height: 70vh;
-  float: left;
-  margin-right:100px;
 }
 
 iframe.contentbox2 {
