@@ -12,10 +12,12 @@ Rails.application.routes.draw do
   get 'browser/byStyles'
   get 'welcome/index'
 
-  #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
-  #resource :user, path: "", only: [:edit, :update]
-  #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
+  get 'social/groups'
 
+  #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
+  resource :user, path: "", only: [:edit, :update]
+  #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
+  
   resources :users
   resources :breweries do
     resources :beers
@@ -26,6 +28,10 @@ Rails.application.routes.draw do
   #create a new user
   get '/signup' => 'users#new'
   get '/users' => 'users#create'
+
+  #create new group
+  get '/groups' => 'social#groups'
+  post '/groups' => 'social#create'
 
   # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'
@@ -38,7 +44,7 @@ Rails.application.routes.draw do
   get '/load' => 'browser#load'
   get '/showLoaded' => 'browser#showLoaded'
   get '/op' => 'browser#byStyles'
-  get '/meetup' => 'social#meetup'
+  get '/meetup' => 'social#closest'
 
   #facebook and google login
   get '/auth/:provider/callback' => 'sessions#createfb'
