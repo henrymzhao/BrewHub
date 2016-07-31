@@ -1,3 +1,11 @@
+<script>
+  function goBack() {
+    window.history.back();
+}
+</script>
+
+<div onclick="goBack()" style="display:inline; text-align: left; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
+<div style="text-align: center">
 <!---<h1>Brewery Info</h1>--->
 <h2><%= @pub.name %></h2>
 <% begin
@@ -6,7 +14,9 @@
 <% rescue %>
 <% end %>
 
-<p style="font-weight:bold"><%= @pub.address %><br><%= @pub.locality %></p>
+<p style="font-weight:bold"><%= @pub.address %>, <%= @pub.locality%></p>
+<a target="_blank" href="<%=@pub.website%>"><p><%=@pub.website%></p></a>
+
 <p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @pub.description %></p>
 
 
@@ -16,6 +26,7 @@
 
 <style>
   #map {
+    display: inline-block;
     height: 300px;
     width: 400px;
   }
@@ -26,15 +37,16 @@
   %>
 
 
-  <h5>Beers at this Location:</h5>
-  <table>
+  <h3>Beers at this Location:</h3>
+  <table style="display: inline-block; text-align: center;">
     <thead>
-      <tr>
-        <td>Name</td>
-        <td>Bitterness</td>
-        <td>Alcohol Content</td>
-        <td>Style</td>
-        <td>Lightness</td>
+      <tr style="text-decoration: underline">
+        <td><b><p>Name</p></b></td>
+        <td><b><p>Bitterness</p></b></td>
+        <td><b><p>Alcohol Content</p></b></td>
+        <td><b><p>Lightness</p></b></td>
+        <td><b><p>Style</p></b></td>
+
       </tr>
     </thead>
     <tbody>
@@ -42,11 +54,35 @@
   @pubBeers.each do |pb|
     %>
     <tr>
+      <%
+      #@pub = Brewery.find(params[:id])
+      @assocStyle = Style.where(:style_id => pb.style_id).first
+      %>
       <td><%=pb.name%></td>
       <td><%=pb.ibu%></td>
+
+      <%
+      if pb.abv.blank?
+        %>
+        <td><%=pb.abv%></td>
+        <%
+      else
+        %>
       <td><%=pb.abv%>%</td>
-      <td><%=pb.style_id%></td>
+      <%
+      end
+
+      %>
+
       <td><%=pb.srmId%></td>
+      <%
+      if @assocStyle
+        %>
+        <td><a href="/style/<%=@assocStyle.id%>"><%=@assocStyle.name%></a></td>
+        <%
+      end
+
+      %>
     </tr>
     <%
   end
@@ -55,6 +91,7 @@
   </table>
 
 <%end%>
+</div>
   <script>
     var map;
     function initMap() {

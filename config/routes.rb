@@ -5,11 +5,10 @@ Rails.application.routes.draw do
 
 #routes should be fairly self-explanatory.
   get 'browser/beers'
-
   get 'browser/pubs'
   #get 'browser/load'#No longer needed
   get 'browser/showLoaded'
-  get 'browser/byStyles'
+  get 'browser/styles'
   get 'welcome/index'
 
   #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
@@ -35,9 +34,10 @@ Rails.application.routes.draw do
   get '/beers' => 'browser#beers'
   get '/pubs' => 'browser#pubs'
   get '/pub/:id' => 'browser#pub'
+  get '/style/:id' => 'browser#style'
   get '/load' => 'browser#load'
   get '/showLoaded' => 'browser#showLoaded'
-  get '/op' => 'browser#byStyles'
+  get '/styles' => 'browser#styles'
   get '/meetup' => 'social#meetup'
 
   #facebook and google login

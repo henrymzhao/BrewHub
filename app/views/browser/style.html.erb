@@ -1,0 +1,61 @@
+<!---<h1>Brewery Info</h1>--->
+
+<script>
+  function goBack() {
+    window.history.back();
+}
+</script>
+<div onclick="goBack()" style="display:inline; text-align: left; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
+
+<div style="text-align: center">
+  
+<h2><%= @style.name %></h2>
+
+<p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @style.description %></p>
+
+  <%
+  if @styleBeers.count > 0
+  %>
+  
+  
+  <h3>Beers for this Style:</h3>
+  <table style="display: inline-block; text-align: center;">
+    <thead>
+      <tr style="text-decoration: underline">
+        <td>Name</td>
+        <td>Bitterness</td>
+        <td>Alcohol Content</td>
+        <td>Style</td>
+        <td>Lightness</td>
+        <td>Link to Brewery</td>
+        <td>Link to Company (External)</td>
+      </tr>
+    </thead>
+    <tbody>
+  <%
+  @styleBeers.each do |sb|
+    
+    @thisBrewery = Brewery.where(:id => sb.brewery_id.to_i).first
+    %>
+    <tr>
+      <td><%=sb.name%></td>
+      <td><%=sb.ibu%></td>
+      <td><%=sb.abv%>%</td>
+      <td><%=sb.style_id%></td>
+      <td><%=sb.srmId%></td>
+      <% #The associated brewery for this beer.
+      
+       #document.getElementById("rightFrame").src = "/pub/" + id;
+      %>
+      
+      <td><a href="/pub/<%=sb.brewery_id%>"><%=@thisBrewery.name%></a></td>
+      <td><a target="_blank" href="<%=@thisBrewery.website%>">Website</a></td>
+    </tr>
+    <%
+  end
+  %>
+  </tbody>
+  </table>
+<%end%>
+</div>
+
