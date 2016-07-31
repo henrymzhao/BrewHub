@@ -13,13 +13,52 @@ div.overlay {
 	left: 0;
 }
 
-div.fadingBlack
+div.fadingInBlack
 {
 	z-index: 5;
-	background-color: RGBA(0,0,0,0.9);
 	height: 100vh;
 	width: 200vh;
 	position: fixed;
+	background-color: rgba(0,0,0,0.75);
+
+	animation-name: fadeIn;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+div.fadingOutBlack
+{
+	z-index: 5;
+	height: 100vh;
+	width: 200vh;
+	position: fixed;
+	background-color: rgba(0,0,0,0);
+
+	animation-name: fadeOut;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        background-color: rgba(0,0,0,0);
+    }
+    to {
+        background-color: rgba(0,0,0,0.75);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        background-color: rgba(0,0,0,0.75);
+    }
+    to {
+        background-color: rgba(0,0,0,0);
+    }
 }
 
 div.movedown {

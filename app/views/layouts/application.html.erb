@@ -81,26 +81,42 @@
     $(".button-collapse").sideNav();
     // SHOWS DIV
     $("a[id^=openNotification]").click(function () {
-      $('#fadingWrapper').append("<div class='fadingBlack'></div>")
+      $('#fadingWrapper').append("<div class='fadingInBlack' id='fadingBlack'></div>")
       $("#notificationCard").removeClass("movedown").addClass("moveup");
     });
 
     // HIDES DIV
     $("a[id^=closeNotification]").click(function () {
-      console.log("1");
-      var remove = document.getElementById("fadingBlack");
-        console.log("2");
       $("#notificationCard").removeClass("moveup").addClass("movedown");
-        console.log("3");
-      remove.parentNode.removeChild(remove);
-        console.log("4");
+      let hue = document.getElementById('fadingBlack');
+      $("#fadingBlack").attr("class", "fadingOutBlack");
+      console.log(hue);
+      $("div").on(
+        "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+        function() {
+          hue.parentNode.removeChild(hue);
+          console.log("here");
+        }
+      );
+
     });
   });
 
-  function fadeOut()
-  {
-    var box = document.getElementById("fadingBlack");
-  };
+  // function fadeOut()
+  // {
+  //   let box = document.getElementById("fadingBlack");
+  //   let alpha = 1;
+  //   // window.setInterval(function(){
+  //   //   while (alpha >= 0)
+  //   //   {
+  //   //     console.log(box.style.backgroundColor);
+  //   //     box.style.backgroundColor = 'RGBA(0,0,0,' + alpha + ')';
+  //   //     alpha-=0.1;
+  //   //   }
+  //   // }, 75);
+  //   $('#fadingBlack').animate({ "backgroundColor" : "rgba(0,0,0, .1)"}, 400)
+  // };
+
   </script>
 
 </body>
