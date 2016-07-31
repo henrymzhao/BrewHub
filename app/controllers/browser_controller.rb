@@ -8,7 +8,7 @@ class BrowserController < ApplicationController
     @browser = Browser.new
   end
   
-  def byStyles
+  def styles
     #separate beers into styles - a testing page for now.
     @allbeers = Beer.all
     @allstyles = Style.all.order("name ASC")
