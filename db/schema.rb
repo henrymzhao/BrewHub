@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.decimal  "lat",              precision: 10, scale: 6
     t.decimal  "lon",              precision: 10, scale: 6
     t.decimal  "group_id"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
