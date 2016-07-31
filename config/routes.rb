@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'social/groups'
 
   #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
-  resource :user, path: "", only: [:edit, :update]
+  #resource :user, path: "", only: [:edit, :update]
   #http://stackoverflow.com/questions/34575953/ruby-on-rails-update-current-user
 
   resources :users
