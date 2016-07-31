@@ -57,7 +57,7 @@
       var marker = new google.maps.Marker({
         position: {lat: <%= @pub.latitude %>, lng: <%= @pub.longitude %>},
         map: map,
-        title: 'Hello World!'
+        title: '<%= @pub.name %>'
     });
     }
   </script>

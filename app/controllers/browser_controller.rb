@@ -2,39 +2,39 @@ class BrowserController < ApplicationController
   #BrowserController is a hold-all for search functionality.  Currently, it holds the functionaliy to list beers, to list all pubs in British Columbia,
   #to show the API details of individual pubs, and to use back-up API keys if the first API key's requests have been exhausted.
   #Obviously, in a working environment, we would be paying for the full BreweryDB functionality.  However, since this is a student project, we just have a bunch of free keys.
-  
+
   #a placeholder for now, will in the future be a page to more easily add beers and breweries.
   def new
     @browser = Browser.new
   end
-  
+
   def byStyles
     #separate beers into styles - a testing page for now.
     @allbeers = Beer.all
     @allstyles = Style.all.order("name ASC")
-    
+
     @allbreweries = Brewery.all
   end
-  
+
   def showLoaded
     @allbeers = Beer.all.order("name ASC")
     @breweries = Brewery.all.order("name ASC")
   end
-  
+
   def load
-    brewery_db = tryAll()
-    
+    #brewery_db = tryAll()#in theory we don't need this anymore -- nevermind it's needed for styles...should be fixed later
+
     pc = request.location.province
-    
-    
+
+
     if (pc == "")
       pc = "British Columbia"
     end
-    
-    
+
+
     #this is where we read in the API data and store it in our database.
     @styles = brewery_db.styles.all()
-    
+
     @styles.each do |s|
       @oppa = Style.new(style_id: s.id,
                         name: s.name.titleize,
@@ -47,99 +47,101 @@ class BrowserController < ApplicationController
                         srmMax: s.srmMax)
       @oppa.save!
     end
-    
-    @pubs = brewery_db.locations.all(region: pc)
-    
-    
+
+    #@pubs = brewery_db.locations.all(region: pc)
+    @pubs = tryBrewery(pc)
+
     @pubs.each do |p|
-      
+
       begin
         p.brewery.images.medium.blank?
         @brewery = Brewery.new(brewery_id: p.id,
-                             name: p.brewery.name.titleize,
-                             latitude: p.latitude,
-                             longitude: p.longitude,
-                             gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
-                             address: p.street_address,
-                             province: p.region,
-                             locality: p.locality,
-                             description: p.brewery.description,
-                             imgUrl: p.brewery.images.medium,
-                            website: p.brewery.website)
-        rescue
-          @brewery = Brewery.new(brewery_id: p.id,
-                             name: p.brewery.name.titleize,
-                             latitude: p.latitude,
-                             longitude: p.longitude,
-                             gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
-                             address: p.street_address,
-                             locality: p.locality,
-                             description: p.brewery.description,
-                             #imgUrl: p.brewery.images.medium,
-                            website: p.brewery.website)
+                            name: p.brewery.name.titleize,
+                            latitude: p.latitude,
+                            longitude: p.longitude,
+                            gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
+                            address: p.street_address,
+                            province: p.region,
+                            locality: p.locality,
+                            description: p.brewery.description,
+                            imgUrl: p.brewery.images.medium,
+                            website: p.brewery.website,
+                            loc: pc)
+      rescue
+        @brewery = Brewery.new(brewery_id: p.id,
+                            name: p.brewery.name.titleize,
+                            latitude: p.latitude,
+                            longitude: p.longitude,
+                            gpsLocation: (p.latitude).to_s + ", " + (p.longitude).to_s,
+                            address: p.street_address,
+                            locality: p.locality,
+                            description: p.brewery.description,
+                            #imgUrl: p.brewery.images.medium,
+                            website: p.brewery.website,
+                            loc: pc)
       end
-      
-    @brewery.save!
-    
-    @beers = brewery_db.brewery(p.id).beers
-    
-#    @beer = @brewery.beers.create
+
+      @brewery.save!
+
+      #@beers = brewery_db.brewery(p.id).beers#theoretically we also don't need this anymore
+      @beers = tryBeer(p.id)
+
+#     @beer = @brewery.beers.create
       @beers.each do |b|
         @thisBeerRightHere = @brewery.beers.create(beer_id: b.id,
                                       name: b.name.titleize,
                                       ibu: b.ibu,
                                       abv: b.abv,
                                       style_id: b.styleId,
-                                      srmId: b.srmId)
+                                      srmId: b.srmId,
+                                      loc: pc)
         @thisBeerRightHere.save!
       end
     end
-    
-    
   end
 
   #a page for listing information about beers.  Currently, this controller is of no consequence to the actual page.
   def beers
-    brewery_db = tryAll()
+    #For the time being at least nothing in beers is loaded from DBs
+
+    #brewery_db = tryAll()
 
     #@beers = brewery_db.beers.all(withBreweries: 'Y')
     #@beers = brewery_db.beers.all(abv: '5.5')
     ##We need to localise this
     #@beers = brewery_db.beers.all(withBreweries: 'Y')
 
-    @nonOrgbeers = brewery_db.beers.all(availableId:'1')
-    
+    #@nonOrgbeers = brewery_db.beers.all(availableId:'1')
+
   end
 
   #a page for showing all breweries in an area.
   def pubs
     #find a working API key within tryAll
-    brewery_db = tryAll()
+    ##brewery_db = tryAll()
 
     #example API code for reference purposes
     #@pubs = brewery_db.brewery('AAj4GG').all()
     #pc = request.location.province
-    
-    
-    
+
+
+
     #get the user's province/state.  If blank, default to British Columbia.  This should only happen when being run locally.
     pc = ""
-    
-    begin
-      pc = request.location.province
-    rescue
-      if (pc == "")
-        pc = "British Columbia"
-      end
+    pc = request.location.province
+    if (pc == "")
+      pc = "British Columbia"
     end
-    
-    
-    
+    #pc= "Alberta"
+    #pc = "British Columbia"
+
+
     #grab all breweries from the user'slocation
-    @pubs = Brewery.where(:province == pc).order("name ASC")
-    
-    
-    
+    #pubs = Brewery.where(:province == pc).order("name ASC")
+    @pubs = Brewery.where("loc = ?", pc).order("name ASC")
+
+
+
     #old code for grabbing all bc breweries, kept for reference purposes.
     #@breweries1 = brewery_db.breweries.all(ids: 'DqlySI, GSkOGp,yagN3u,zC8X6x,Xr0G6p,AAj4GG,aywDqA,gvFuE2,SxnUb2,nVB9Cq')
     #@breweries2 = brewery_db.breweries.all(ids: 'dZ0mKT,Bk34Go,iorTHl,yGsalR,supFO9,RNHfY1,hwiUzY,aabOus,xuSuqz,aEBj0Q')
@@ -152,11 +154,11 @@ class BrowserController < ApplicationController
 
   #an individual brewery - pass in the appropriate information to the page as a parameter.
   def pub
-    brewery_db = tryAll()
+    #brewery_db = tryAll()
     #@pub = brewery_db.brewery(params[:id]).all
     @pub = Brewery.find(params[:id])
     @pubBeers = Beer.where(:brewery_id => @pub.id)
-    
+
 #    @breweries.each do |b|
 #    %>
 #<p><%=b.name%>, <%=b.id%>, <%=b.brew_id%>, <%=b.gpsLocation%></p>
@@ -166,13 +168,13 @@ class BrowserController < ApplicationController
 #    <p><%=bb.name%></p>
 #<%end
 #end%>
-    
-    
+
+
     #@pub = brewery_db.locations.find(params[:id])
     render :layout => 'blank'
-    
-    
-    
+
+
+
     #@brewery = Brewery.new(name: @pub.brewery.name,
      #                      latitude: @pub.latitude,
       #                     longitude: @pub.longitude,
@@ -180,62 +182,121 @@ class BrowserController < ApplicationController
         #                   address: @pub.street_address,
          #                 website: @pub.brewery.website,
           #                 hoursOfOperation: @pub.hoursOfOperation)
-    
-    
+
+
 #    if (!@brewery.save!)
  #     flash[:notice] = @brewery.errors
   #  end
-    
-    
-    
-    
-    
+
+
+
+
+
   end
-  
+
   #here we deal with our API keys - we need a whole bunch for testing purposes, so that we don't run into a request limit.
-  def tryAll
+#  def tryAll
+#    #a bunch of nested try/catch blocks, basically, along with code to validate connection. keys are stored in the environment.
+#    begin
+#      brewery_db = BreweryDB::Client.new do |config|
+#        config.api_key = API_KEY
+#      end
+#      @pubs = brewery_db.brewery('AAj4GG').beers
+#    rescue
+#      begin
+#        brewery_db = BreweryDB::Client.new do |config|
+#          config.api_key = BACKUP_API_KEY_1
+#        end
+#        @pubs = brewery_db.brewery('AAj4GG').beers
+#      rescue
+#        begin
+#          brewery_db = BreweryDB::Client.new do |config|
+#            config.api_key = BACKUP_API_KEY_2
+#          end
+#          @pubs = brewery_db.brewery('AAj4GG').beers
+#        rescue
+#          begin
+#            brewery_db = BreweryDB::Client.new do |config|
+#              config.api_key = BACKUP_API_KEY_3
+#            end
+#            @pubs = brewery_db.brewery('AAj4GG').beers
+#          rescue
+#            begin
+#              brewery_db = BreweryDB::Client.new do |config|
+#                config.api_key = BACKUP_API_KEY_4
+#              end
+#              @pubs = brewery_db.brewery('AAj4GG').beers
+#            rescue
+#              begin
+#                brewery_db = BreweryDB::Client.new do |config|
+#                  config.api_key = BACKUP_API_KEY_5
+#                end
+#                @pubs = brewery_db.brewery('AAj4GG').beers
+#              rescue
+#                begin
+#                  brewery_db = BreweryDB::Client.new do |config|
+#                    config.api_key = BACKUP_API_KEY_6
+#                  end
+#                  @pubs = brewery_db.brewery('AAj4GG').beers
+#                rescue
+#                  brewery_db = BreweryDB::Client.new do |config|
+#                    config.api_key = BACKUP_API_KEY_7
+#                  end
+#                end
+#              end
+#            end
+#          end
+#        end
+#      end
+#    end
+#    #Return the working key
+#    return brewery_db
+#  end
+
+
+  def tryBrewery(provLoc)
     #a bunch of nested try/catch blocks, basically, along with code to validate connection. keys are stored in the environment.
     begin
       brewery_db = BreweryDB::Client.new do |config|
         config.api_key = API_KEY
       end
-      @pubs = brewery_db.brewery('AAj4GG').beers
+      pubs = brewery_db.locations.all(region: provLoc)
     rescue
       begin
         brewery_db = BreweryDB::Client.new do |config|
           config.api_key = BACKUP_API_KEY_1
         end
-        @pubs = brewery_db.brewery('AAj4GG').beers
+        pubs = brewery_db.locations.all(region: provLoc)
       rescue
         begin
           brewery_db = BreweryDB::Client.new do |config|
             config.api_key = BACKUP_API_KEY_2
           end
-          @pubs = brewery_db.brewery('AAj4GG').beers
+          pubs = brewery_db.locations.all(region: provLoc)
         rescue
           begin
             brewery_db = BreweryDB::Client.new do |config|
               config.api_key = BACKUP_API_KEY_3
             end
-            @pubs = brewery_db.brewery('AAj4GG').beers
+            pubs = brewery_db.locations.all(region: provLoc)
           rescue
             begin
               brewery_db = BreweryDB::Client.new do |config|
                 config.api_key = BACKUP_API_KEY_4
               end
-              @pubs = brewery_db.brewery('AAj4GG').beers
+              pubs = brewery_db.locations.all(region: provLoc)
             rescue
               begin
                 brewery_db = BreweryDB::Client.new do |config|
                   config.api_key = BACKUP_API_KEY_5
                 end
-                @pubs = brewery_db.brewery('AAj4GG').beers
+                pubs = brewery_db.locations.all(region: provLoc)
               rescue
                 begin
                   brewery_db = BreweryDB::Client.new do |config|
                     config.api_key = BACKUP_API_KEY_6
                   end
-                  @pubs = brewery_db.brewery('AAj4GG').beers
+                  pubs = brewery_db.locations.all(region: provLoc)
                 rescue
                   brewery_db = BreweryDB::Client.new do |config|
                     config.api_key = BACKUP_API_KEY_7
@@ -248,6 +309,123 @@ class BrowserController < ApplicationController
       end
     end
     #Return the working key
-    return brewery_db
+    return pubs
   end
+
+  def tryBeer(brewID)
+    #a bunch of nested try/catch blocks, basically, along with code to validate connection. keys are stored in the environment.
+    begin
+      brewery_db = BreweryDB::Client.new do |config|
+        config.api_key = API_KEY
+      end
+      beers = brewery_db.brewery(brewID).beers
+    rescue
+      begin
+        brewery_db = BreweryDB::Client.new do |config|
+          config.api_key = BACKUP_API_KEY_1
+        end
+        beers = brewery_db.brewery(brewID).beers
+      rescue
+        begin
+          brewery_db = BreweryDB::Client.new do |config|
+            config.api_key = BACKUP_API_KEY_2
+          end
+          beers = brewery_db.brewery(brewID).beers
+        rescue
+          begin
+            brewery_db = BreweryDB::Client.new do |config|
+              config.api_key = BACKUP_API_KEY_3
+            end
+            beers = brewery_db.brewery(brewID).beers
+          rescue
+            begin
+              brewery_db = BreweryDB::Client.new do |config|
+                config.api_key = BACKUP_API_KEY_4
+              end
+              beers = brewery_db.brewery(brewID).beers
+            rescue
+              begin
+                brewery_db = BreweryDB::Client.new do |config|
+                  config.api_key = BACKUP_API_KEY_5
+                end
+                beers = brewery_db.brewery(brewID).beers
+              rescue
+                begin
+                  brewery_db = BreweryDB::Client.new do |config|
+                    config.api_key = BACKUP_API_KEY_6
+                  end
+                  beers = brewery_db.brewery(brewID).beers
+                rescue
+                  brewery_db = BreweryDB::Client.new do |config|
+                    config.api_key = BACKUP_API_KEY_7
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+    #Return the working key
+    return beers
+  end
+
+  def tryStyles
+    #a bunch of nested try/catch blocks, basically, along with code to validate connection. keys are stored in the environment.
+    begin
+      brewery_db = BreweryDB::Client.new do |config|
+        config.api_key = API_KEY
+      end
+      beers = brewery_db.brewery(brewID).beers
+    rescue
+      begin
+        brewery_db = BreweryDB::Client.new do |config|
+          config.api_key = BACKUP_API_KEY_1
+        end
+        beers = brewery_db.brewery(brewID).beers
+      rescue
+        begin
+          brewery_db = BreweryDB::Client.new do |config|
+            config.api_key = BACKUP_API_KEY_2
+          end
+          beers = brewery_db.brewery(brewID).beers
+        rescue
+          begin
+            brewery_db = BreweryDB::Client.new do |config|
+              config.api_key = BACKUP_API_KEY_3
+            end
+            beers = brewery_db.brewery(brewID).beers
+          rescue
+            begin
+              brewery_db = BreweryDB::Client.new do |config|
+                config.api_key = BACKUP_API_KEY_4
+              end
+              beers = brewery_db.brewery(brewID).beers
+            rescue
+              begin
+                brewery_db = BreweryDB::Client.new do |config|
+                  config.api_key = BACKUP_API_KEY_5
+                end
+                beers = brewery_db.brewery(brewID).beers
+              rescue
+                begin
+                  brewery_db = BreweryDB::Client.new do |config|
+                    config.api_key = BACKUP_API_KEY_6
+                  end
+                  beers = brewery_db.brewery(brewID).beers
+                rescue
+                  brewery_db = BreweryDB::Client.new do |config|
+                    config.api_key = BACKUP_API_KEY_7
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+    #Return the working key
+    return beers
+  end
+
 end
