@@ -87,15 +87,23 @@
 
     // HIDES DIV
     $("a[id^=closeNotification]").click(function () {
+      var hue = document.getElementById('fadingBlack');
       $("#notificationCard").removeClass("moveup").addClass("movedown");
-      let hue = document.getElementById('fadingBlack');
       $("#fadingBlack").attr("class", "fadingOutBlack");
       console.log(hue);
       $("div").on(
         "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
         function() {
+          // if (!hue)
+          // {
+          //   return false;
+          // }
           hue.parentNode.removeChild(hue);
           console.log("here");
+          if (!hue)
+          {
+            return false;
+          }
         }
       );
 
