@@ -32,7 +32,7 @@
 </div> -->
 
 <div class="overlay" id="001">
-<a href="javascript:void(0)" id="close_001">CLOSE</a>
+<a href="javascript:void(0)" id="closeNotification">CLOSE</a>
 <p>Lorem ipsum</p>
 </div>
 
@@ -76,14 +76,14 @@
   $(document).ready(function() {
     $(".button-collapse").sideNav();
     // SHOWS DIV
-    $("a[id^=open_]").click(function () {
-      var id = this.id.split("_")[1];
+    $("a[id^=openNotification]").click(function () {
+      var id = this.id;
       console.log(id);
       $("#" + id).removeClass("movedown").addClass("moveup");
     });
 
     // HIDES DIV
-    $("a[id^=close_]").click(function () {
+    $("a[id^=closeNotification]").click(function () {
       var id = this.id.split("_")[1];
       $("#" + id).removeClass("moveup").addClass("movedown");
     });
