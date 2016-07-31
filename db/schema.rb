@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20160727054906) do
     t.decimal  "lat",              precision: 10, scale: 6
     t.decimal  "lon",              precision: 10, scale: 6
     t.text  "group_id"
+    t.text  "pending_group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

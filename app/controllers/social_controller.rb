@@ -57,4 +57,8 @@ class SocialController < ApplicationController
     @group = Group.new
   end
 
+  def groups
+    @allGroups = Group.all
+  end
+
 end
