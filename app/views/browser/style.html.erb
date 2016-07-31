@@ -5,7 +5,10 @@
     window.history.back();
 }
 </script>
-<div onclick="goBack()" style="display:inline; text-align: right; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
+<div onclick="goBack()" style="display:inline; text-align: left; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
+
+<div style="text-align: center">
+  
 <h2><%= @style.name %></h2>
 
 <p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @style.description %></p>
@@ -15,10 +18,10 @@
   %>
   
   
-  <h5>Beers for this Style:</h5>
-  <table>
+  <h3>Beers for this Style:</h3>
+  <table style="display: inline-block; text-align: center;">
     <thead>
-      <tr>
+      <tr style="text-decoration: underline">
         <td>Name</td>
         <td>Bitterness</td>
         <td>Alcohol Content</td>
@@ -46,13 +49,13 @@
       %>
       
       <td><a href="/pub/<%=sb.brewery_id%>"><%=@thisBrewery.name%></a></td>
-      <td><a href="<%=@thisBrewery.website%>">Website</a></td>
+      <td><a target="_blank" href="<%=@thisBrewery.website%>">Website</a></td>
     </tr>
     <%
   end
   %>
   </tbody>
   </table>
-  
 <%end%>
+</div>
 

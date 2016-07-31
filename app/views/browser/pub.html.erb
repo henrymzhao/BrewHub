@@ -3,7 +3,9 @@
     window.history.back();
 }
 </script>
-<div onclick="goBack()" style="display:inline; text-align: right; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
+
+<div onclick="goBack()" style="display:inline; text-align: left; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
+<div style="text-align: center">
 <!---<h1>Brewery Info</h1>--->
 <h2><%= @pub.name %></h2>
 <% begin
@@ -11,7 +13,8 @@
   <img src="<%= @pub.imgUrl %>" alt="Picture">
 <% rescue %>
 <% end %>
-<p style="font-weight:bold"><%= @pub.address %></p>
+<p style="font-weight:bold"><%= @pub.address %>, <%= @pub.locality%></p>
+<a target="_blank" href="<%=@pub.website%>"><p><%=@pub.website%></p></a>
 <p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @pub.description %></p>
 
 
@@ -21,6 +24,7 @@
 
 <style>
   #map {
+    display: inline-block;
     height: 300px;
     width: 400px;
   }
@@ -30,10 +34,10 @@
   if @pubBeers.count > 0
   %>
   
-  <h5>Beers at this Location:</h5>
-  <table>
+  <h3>Beers at this Location:</h3>
+  <table style="display: inline-block; text-align: center;">
     <thead>
-      <tr>
+      <tr style="text-decoration: underline">
         <td><b><p>Name</p></b></td>
         <td><b><p>Bitterness</p></b></td>
         <td><b><p>Alcohol Content</p></b></td>
@@ -84,6 +88,7 @@
   </table>
   
 <%end%>
+</div>
   <script>
     var map;
     function initMap() {
