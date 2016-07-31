@@ -77,36 +77,45 @@
 
 
   <script>
+  function openNoti()
+  {
+    $('#fadingWrapper').append("<div class='fadingInBlack' id='fadingBlack'></div>")
+    $("#notificationCard").removeClass("movedown").addClass("moveup");
+  };
+
+  function closeNoti()
+  {
+    var hue = document.getElementById('fadingBlack');
+    $("#notificationCard").removeClass("moveup").addClass("movedown");
+    $("#fadingBlack").attr("class", "fadingOutBlack");
+    console.log(hue);
+    $("div").on(
+      "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+      function() {
+        // if (!hue)
+        // {
+        //   return false;
+        // }
+        hue.parentNode.removeChild(hue);
+        console.log("here");
+        if (!hue)
+        {
+          return false;
+        }
+      }
+    );
+  };
+
   $(document).ready(function() {
     $(".button-collapse").sideNav();
     // SHOWS DIV
     $("a[id^=openNotification]").click(function () {
-      $('#fadingWrapper').append("<div class='fadingInBlack' id='fadingBlack'></div>")
-      $("#notificationCard").removeClass("movedown").addClass("moveup");
+      openNoti();
     });
 
     // HIDES DIV
-    $("a[id^=closeNotification]").click(function () {
-      var hue = document.getElementById('fadingBlack');
-      $("#notificationCard").removeClass("moveup").addClass("movedown");
-      $("#fadingBlack").attr("class", "fadingOutBlack");
-      console.log(hue);
-      $("div").on(
-        "transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
-        function() {
-          // if (!hue)
-          // {
-          //   return false;
-          // }
-          hue.parentNode.removeChild(hue);
-          console.log("here");
-          if (!hue)
-          {
-            return false;
-          }
-        }
-      );
-
+    $("a[id^=closeNotification]").click(function (){
+      closeNoti();
     });
   });
 
