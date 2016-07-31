@@ -42,7 +42,7 @@
 		<li><a href="/beers">Beer 101</a></li>
 		<li><a href="/styles">Styles</a></li>
         <li><a href="/pubs">Breweries</a></li>
-        <li><a href="#">Social</a></li>
+        <li><a href="/groups">Social</a></li>
         <% if current_user && !current_user.name.blank? %>
         <li><a href="/users/<%= current_user.id %>"><%=  current_user.name %></a></li>
         <% elsif current_user %>
@@ -55,7 +55,7 @@
         <li><a href="/beers">Beer 101</a></li>
 		<li><a href="/styles">Styles</a></li>
         <li><a href="/pubs">Breweries</a></li>
-        <li><a href="#">Social</a></li>
+        <li><a href="/groups">Social</a></li>
         <% if current_user && !current_user.name.blank? %>
         <li><a href="/users/<%= current_user.id %>"><%= current_user.name %></a></li>
         <% elsif current_user %>

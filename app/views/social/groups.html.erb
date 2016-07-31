@@ -1,0 +1,27 @@
+<h1> GROUP NAMES </h1>
+<body>
+  <% if current_user %>
+    <%= form_for :groups, url: '/groups' do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+
+      <%= f.submit "Create Group" %>
+    <% end %>
+    <% @allGroups.each do |g| %>
+      <% current_user.group_id.each do |c| %>
+        <% if c == g.id %>
+          <p><%= g.name %><p>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p>Sorry, you have to sign in to access the group features</p>
+  <% end %>
+<br>
+
+
+
+
+</body>

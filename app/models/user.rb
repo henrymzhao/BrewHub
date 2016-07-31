@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :groups
+
   #the user model.  converts characters into standard form, then checks against each other.
   before_save {self.email = email.downcase}
 
@@ -30,6 +32,10 @@ class User < ActiveRecord::Base
     read_attribute('avatar') || DEFAULT_AVATAR
   end
   validates :avatar, :url => true, :image => true
+
+  serialize :group_id, Array
+  serialize :pending_group_id, Array
+
 
   def self.create_with_omniauth(auth)
     create! do |user|

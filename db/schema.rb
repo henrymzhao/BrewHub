@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160730041755) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
-    t.integer  "brewery_id"
+    t.integer  "group_id", default: 123, null: false
     t.integer  "leader"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -85,8 +85,9 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.datetime "oauth_expires_at"
     t.decimal  "lat",              precision: 10, scale: 6
     t.decimal  "lon",              precision: 10, scale: 6
-    t.decimal  "group_id"
     t.string   "avatar"
+    t.text  "group_id"
+    t.text  "pending_group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
