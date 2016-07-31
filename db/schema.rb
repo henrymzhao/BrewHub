@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20160727054906) do
     t.datetime "oauth_expires_at"
     t.decimal  "lat",              precision: 10, scale: 6
     t.decimal  "lon",              precision: 10, scale: 6
-    t.integer  "group_id"
+    t.text  "group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

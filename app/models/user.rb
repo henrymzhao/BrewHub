@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length:{minimum:6, maximum:30}, allow_nil: true
 
+  serialize :group_id, Array
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.firstname = "example"

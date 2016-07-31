@@ -12,32 +12,34 @@ class SocialController < ApplicationController
     #this is functionality for finding the nearest brewery to a given location - this might be a page in page for Meetup?
     #user should perhaps be directed here if not logged in.
   end
-  
+
   #should eventually take in a user as an 'argument'
   #then will query this group for all users with the user's same 'group value'.
   def centralize
     #testing with brewery location data for now.
     @breweries = Brewery.where(:locality => "Surrey")
-    
-    
+
+
     @centralLat = 0
-    
+
     @breweries.each do |b|
       @centralLat += b.latitude.to_f
     end
-    
+
     @centralLat = @centralLat / @breweries.count
-    
+
   end
 
   def create
-    @group = Group.new(params[:group])
+    params.permit!
+    @group = Group.new(params[:groups])
       if @group.save
         flash[:notice] = "Group Created, user is a member in it"
-        current_user.group_id = @group.group_id
+        current_user.group_id.push(@group.id)
+        @current_user.save
         redirect_to '/meetup'
       else
-        flash[:notice] = "Group Created, user not in it"
+        flash[:notice] = "Group Created, user not in it"#Would this ever be seen?
         # current_user.group_id = @group.group_id
         redirect_to '/meetup'
       end
@@ -54,4 +56,5 @@ class SocialController < ApplicationController
   def new
     @group = Group.new
   end
+
 end
