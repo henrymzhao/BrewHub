@@ -53,4 +53,3 @@ class User < ActiveRecord::Base
     where(provider: provider, uid: uid).first
   end
 end
-end
