@@ -52,8 +52,5 @@ class User < ActiveRecord::Base
   def self.find_by_provider_and_uid(provider, uid)
     where(provider: provider, uid: uid).first
   end
-<<<<<<< HEAD
 end
-=======
 end
->>>>>>> 3d17e84cd69763de69fba4f405575f1a46b56afd
