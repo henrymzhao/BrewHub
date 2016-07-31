@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160727054906) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
-    t.integer  "group_id", default: rand 100000
+    t.integer  "group_id", default: 123, null: false
     t.integer  "leader"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,11 +71,11 @@ ActiveRecord::Schema.define(version: 20160727054906) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "email"
-    t.datetime "created_at",                                                null: false
-    t.datetime "updated_at",                                                null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "password_digest"
-    t.boolean  "admin",                                     default: false, null: false
-    t.boolean  "banned",                                    default: false, null: false
+    t.boolean  "admin",              default: false, null: false
+    t.boolean  "banned",             default: false, null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
