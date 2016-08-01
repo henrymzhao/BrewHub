@@ -160,8 +160,8 @@ class BrowserController < ApplicationController
     if @pubs.count == 0
         load(pc)
     end
-    @pubs = Brewery.where("loc = ?", pc).order("name ASC")
-    #@pubs = Brewery.near([request.location.latitude, request.location.longitude], 6).order("name ASC")
+    #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
+    @pubs = Brewery.near([request.location.latitude, request.location.longitude], 6).order("name ASC")
     
     
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
