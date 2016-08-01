@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160730041755) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,27 +30,26 @@ ActiveRecord::Schema.define(version: 20160730041755) do
   end
 
   create_table "breweries", force: :cascade do |t|
-    t.string   "name"
-    t.string   "website"
-    t.string   "address"
-    t.string   "gpsLocation"
-    t.string   "latitude"
-    t.string   "longitude"
-    t.string   "brewery_id"
-    t.string   "imgUrl"
-    t.text     "description"
-    t.string   "locality"
-    t.string   "province"
-    t.string   "loc"
-
+    t.string "name"
+    t.string "website"
+    t.string "address"
+    t.string "gpsLocation"
+    t.string "latitude"
+    t.string "longitude"
+    t.string "brewery_id"
+    t.string "imgUrl"
+    t.text   "description"
+    t.string "locality"
+    t.string "province"
+    t.string "loc"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
-    t.integer  "group_id", default: 123, null: false
+    t.integer  "group_id",   default: 123, null: false
     t.integer  "leader"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "styles", force: :cascade do |t|
@@ -73,11 +71,11 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "email"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
     t.string   "password_digest"
-    t.boolean  "admin",            default: false, null: false
-    t.boolean  "banned",           default: false, null: false
+    t.boolean  "admin",                                     default: false, null: false
+    t.boolean  "banned",                                    default: false, null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
@@ -86,8 +84,8 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.decimal  "lat",              precision: 10, scale: 6
     t.decimal  "lon",              precision: 10, scale: 6
     t.string   "avatar"
-    t.text  "group_id"
-    t.text  "pending_group_id"
+    t.text     "group_id"
+    t.text     "pending_group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

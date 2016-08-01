@@ -138,7 +138,6 @@ class BrowserController < ApplicationController
     pc = request.location.province
     if (pc == "")
       pc = "British Columbia"
-
     #@pc = ""
 
     #begin
@@ -254,7 +253,8 @@ class BrowserController < ApplicationController
       end
 
     end
-
+    
+    
     render :layout => 'blank'
 
   end
