@@ -7335,3 +7335,25 @@ ActionController::RoutingError (No route matches [POST] "/chat/ajax.php"):
 
   Rendered /usr/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
   Rendered /usr/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (6.1ms)
+
+
+Started GET "/groups" for 127.0.0.1 at 2016-07-31 22:26:34 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SocialController#groups as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  Rendered social/groups.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 504ms (Views: 489.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/LOGO.png" for 127.0.0.1 at 2016-07-31 22:26:35 -0700
+
+
+Started GET "/group/4" for 127.0.0.1 at 2016-07-31 22:26:37 -0700
+Processing by SocialController#group as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mGroup Load (0.8ms)[0m  SELECT  "groups".* FROM "groups" WHERE "groups"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered social/group.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 73ms (Views: 69.2ms | ActiveRecord: 1.3ms)
