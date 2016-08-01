@@ -26,15 +26,19 @@
         <% else %>
           <p><%= u.username %> </p>
         <% end %>
-          <p><%= u.lat %> <%= u.lon %> 
-            <%= @sumLat+=u.lat %> <%= @sumLon+=u.lon %> <%= @count+=1%>
+          <p>
+            <% @sumLat+=u.lat %> <% @sumLon+=u.lon %> <% @count+=1%>
           </p>
       <%end%>
     <%end%>
   <%end %>
-  <p>average lat = <%= @sumLat/@count %><br>
+  <% if @sumLat %>
+  <p>
+    average lat = <%= @sumLat/@count %><br>
     average lon = <%= @sumLon/@count %>
   </p>
+  <% end %>
+
 
   <br><br>
   Pending members:<br>

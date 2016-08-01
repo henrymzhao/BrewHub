@@ -15,19 +15,27 @@ class SocialController < ApplicationController
 
   #should eventually take in a user as an 'argument'
   #then will query this group for all users with the user's same 'group value'.
-  def centralize
+  def centralize(gid)
     #testing with brewery location data for now.
-    @breweries = Brewery.where(:locality => "Surrey")
+    breweries = Brewery.all
 
-
-    @centralLat = 0
-
-    @breweries.each do |b|
-      @centralLat += b.latitude.to_f
+    allUsers = User.all
+    centralLat = 0.0
+    centralLon = 0.0
+    groupSize = 0
+    allUsers.each do |u|
+      u.group_id.each do |b|
+        if b == gid
+          centralLat += u.lat.to_f
+          centralLon += u.lon.to_f
+          groupSize += 1
+        end
+      end
     end
 
-    @centralLat = @centralLat / @breweries.count
-
+    centralLat = centralLat / groupSize
+    centralLon = centralLon / groupSize
+    #Right here we need to put the code to get a central brewery selected
   end
 
   def create
@@ -64,6 +72,7 @@ class SocialController < ApplicationController
   def group
     @group = Group.find(params[:id])
     @allUsers = User.all
+    centralize(@group.id)
   end
 
   def request_member

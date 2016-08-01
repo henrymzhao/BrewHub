@@ -158,7 +158,17 @@
   // };
 
   </script>
-
+<%
+if current_user
+  current_user.lat = request.location.latitude
+  current_user.lon = request.location.longitude
+  current_user.lat = 49.278094
+  current_user.lon = -122.919883
+  #unless current_user.lat.to_f == 0.0 && current_user.lat.to_f == 0.0
+  current_user.save
+  #end
+end
+%>
 </body>
 <div id="mainbox">
   <!-- <p><a href="javascript:void(0)" id="open_001">item 01:</a> Lorem ipsum</p> -->

@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801032942) do
+ActiveRecord::Schema.define(version: 20160730041755) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +35,15 @@ ActiveRecord::Schema.define(version: 20160801032942) do
     t.string   "website"
     t.string   "address"
     t.string   "gpsLocation"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.string   "latitude"
+    t.string   "longitude"
     t.string   "brewery_id"
     t.string   "imgUrl"
     t.text     "description"
     t.string   "locality"
     t.string   "province"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
     t.string   "loc"
+
   end
 
   create_table "groups", force: :cascade do |t|
@@ -73,9 +73,6 @@ ActiveRecord::Schema.define(version: 20160801032942) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "email"
-    t.decimal  "lat"
-    t.decimal  "lon"
-    t.integer  "group_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.string   "password_digest"
@@ -86,7 +83,11 @@ ActiveRecord::Schema.define(version: 20160801032942) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.decimal  "lat",              precision: 10, scale: 6
+    t.decimal  "lon",              precision: 10, scale: 6
     t.string   "avatar"
+    t.text     "group_id"
+    t.text     "pending_group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
