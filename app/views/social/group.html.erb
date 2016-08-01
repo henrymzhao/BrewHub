@@ -3,6 +3,17 @@
 <body>
   <h4><p>Details about this group</p></h4>
 
+  <% if current_user#eventually check for user membership %>
+    <%= form_for :member, url: '/request_member' do |f| %>
+
+      <%= f.label :email %>
+      <%= f.text_field :name %>
+      <br>
+      <%= hidden_field_tag "gid", @group.id %>
+      <%= f.submit "Request User" %>
+    <% end %>
+  <% end %>
+
   Members:<br>
   <% @allUsers.each do |u| %>
     <% u.group_id.each do |g| %>

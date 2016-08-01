@@ -66,6 +66,18 @@ class SocialController < ApplicationController
     @allUsers = User.all
   end
 
+  def request_member
+    params.permit!
+    @user = User.find_by_email(params[:member][:name])
+    unless @user
+      @message = "Couldn't find a user with that email"
+      return
+    end
+    @user.pending_group_id.push(params[:gid].to_i)
+    @user.save
+    @message = "Successfully found the user with that email!"
+  end
+
   def remove_self
     current_user.group_id.delete(params[:id].to_f)#.to.f is necassary for num conversion from the string in the URL
     current_user.save
@@ -86,5 +98,4 @@ class SocialController < ApplicationController
     current_user.save
     redirect_to '/groups'
   end
-
 end
