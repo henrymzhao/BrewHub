@@ -116,6 +116,21 @@
       openNoti();
     });
 
+    //--------------------
+    <% if current_user || !current_user.name.blank? %>
+    {
+      <% @allGroups.each do |g| %>
+        <% current_user.pending_group_id.each do |c| %>
+          <% if c == g.id %>
+
+            openNoti();
+          <% end %>
+        <% end %>
+      <% end %>
+    }
+    <% end %>
+    //--------------------
+
     // HIDES DIV
     $("a[id^=closeNotification]").click(function (){
       closeNoti();
