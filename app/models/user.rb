@@ -26,14 +26,23 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length:{minimum:6, maximum:30}, allow_nil: true
 
+  #DEFAULT_AVATAR = "/../../assets/defaultavatar.png"
+  DEFAULT_AVATAR = "http://i.imgur.com/V9fMnpx.png"
+  def avatar
+    read_attribute('avatar') || DEFAULT_AVATAR
+  end
+  validates :avatar, :url => true, :image => true
+
   serialize :group_id, Array
+  serialize :pending_group_id, Array
+
 
   def self.create_with_omniauth(auth)
     create! do |user|
       user.firstname = "example"
       user.lastname = "example"
       user.username = rand 10000000
-      user.email = "#{user.username}@example.com"
+      user.email = auth["info"]["email"]
       user.password = auth["uid"]
       user.password_confirmation = auth["uid"]
       user.provider = auth["provider"]
