@@ -1,4 +1,4 @@
-<h1> GROUP NAMES </h1>
+<h1> Main Group Page </h1>
 <body>
   <% if current_user %>
     <%= form_for :groups, url: '/groups' do |f| %>
@@ -12,7 +12,7 @@
     <% @allGroups.each do |g| %>
       <% current_user.group_id.each do |c| %>
         <% if c == g.id %>
-          <p><%= g.name %><p>
+          <p><a href="/group/<%=g.id%>"><%= g.name %></a><p>
         <% end %>
       <% end %>
     <% end %>

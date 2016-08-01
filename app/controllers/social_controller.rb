@@ -45,20 +45,25 @@ class SocialController < ApplicationController
       end
   end
 
-  def index
-    @groups = Group.all
-  end
+  #def index
+#    @groups = Group.all
+#  end
 
-  def show
-    @group = Group.find(params[:id])
-  end
+#  def show
+#    @group = Group.find(params[:id])
+#  end
 
-  def new
+  def new#needed??????
     @group = Group.new
   end
 
   def groups
     @allGroups = Group.all
+  end
+
+  def group
+    @group = Group.find(params[:id])
+    @allUsers = User.all
   end
 
 end

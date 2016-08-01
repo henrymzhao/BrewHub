@@ -1,0 +1,24 @@
+<a href="/groups">Return to all groups</a>
+<h1><%= @group.name %></h1>
+<body>
+  <h4><p>Details about this group</p></h4>
+
+  Members:<br>
+  <% @allUsers.each do |u| %>
+    <% u.group_id.each do |g| %>
+      <% if @group.id == g %>
+        <p><%= u.username %></p>
+      <%end%>
+    <%end%>
+  <%end %>
+
+  <br><br>
+  Pending members:<br>
+  <% @allUsers.each do |u| %>
+    <% u.pending_group_id.each do |g| %>
+      <% if @group.id == g %>
+        <p><%= u.username %></p>
+      <%end%>
+    <%end%>
+  <%end %>
+</body>
