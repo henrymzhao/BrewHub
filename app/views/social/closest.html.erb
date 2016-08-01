@@ -4,33 +4,6 @@
 <p>Find me in app/views/social/closest.html.erb</p>
 <body>
 
-	<% if current_user && current_user.group_id.blank? %>
-		<a href="/groups">Create a group here</a>
 
-	<% elsif current_user && !current_user.group_id.blank? %>
-		"you are in group <%= current_user.group_id %>"
-	<% end %>
-
-	<% if current_user && !current_user.name.blank? %>
-	  <div>
-	    <script src="https://www.shoutbox.com/chat/chat.js.php"></script>
-	    <script>var chat = new Chat(<%= current_user.group_id %>,"<%=  current_user.name %>");</script>
-	  </div>
-	<% elsif current_user && !current_user.username.blank? %>
-	  <div>
-	    <script src="https://www.shoutbox.com/chat/chat.js.php"></script>
-	    <script>var chat = new Chat(<%= current_user.group_id %>,"<%=  current_user.username %>");</script>
-	  </div>
-	<% end %>
-	<style>
-		.shoutBoxContainer {
-		background-color: #ffe6e6;
-		width: 35%;
-		float: left;
-		}
-		.shoutInputRed{
-		background-color: #ddd;
-		}
-	</style>
 </body>
 

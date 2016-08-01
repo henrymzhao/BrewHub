@@ -32,4 +32,28 @@
       <%end%>
     <%end%>
   <%end %>
+  <br><br>
+  <div>
+    <% if current_user && !current_user.name.blank? %>
+      <div>
+        <script src="https://www.shoutbox.com/chat/chat.js.php"></script>
+        <script>var chat = new Chat(<%= @group.id %>,"<%=  current_user.name %>");</script>
+      </div>
+    <% elsif current_user && !current_user.username.blank? %>
+      <div>
+        <script src="https://www.shoutbox.com/chat/chat.js.php"></script>
+        <script>var chat = new Chat(<%= @group.id %>,"<%=  current_user.username %>");</script>
+      </div>
+    <% end %>
+    <style>
+      .shoutBoxContainer {
+      background-color: #ffe6e6;
+      width: 35%;
+      float: left;
+      }
+      .shoutInputRed{
+      background-color: #ddd;
+      }
+    </style>
+  </div>
 </body>
