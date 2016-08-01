@@ -147,8 +147,8 @@ class BrowserController < ApplicationController
     #  if (@pc == "")
     #    @pc = "British Columbia"
     #  end
-    
-    
+
+
     #pc= "Alberta"
     #pc = "British Columbia"
 
@@ -157,25 +157,25 @@ class BrowserController < ApplicationController
     #pubs = Brewery.where(:province == pc).order("name ASC")
     #@pubs = Brewery.near([49.277577, -122.913970], 6)
     #Brewery.geocoded
-    
+
     @maxPubDist = 12
-    
-    
+
+
     @pubs = Brewery.where("loc = ?", pc).order("name ASC")
     if @pubs.count == 0
         load(pc)
     end
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
-    
-    
+
+
     #COMMENT OUT WHEN TESING LOCALLY - UNCOMMENT WHEN PUSHING TO TEST ON HEROKU.
-    #@pubs = Brewery.near([request.location.latitude, request.location.longitude], @maxPubDist, :units => :km).order("name ASC")
+    @pubs = Brewery.near([request.location.latitude, request.location.longitude], @maxPubDist, :units => :km).order("name ASC")
 
 
     #this location is faculty of applied sciences at SFU.
-    @pubs = Brewery.near([49.277577, -122.913970], @maxPubDist, :units => :km)
-    
-    
+    #@pubs = Brewery.near([49.277577, -122.913970], @maxPubDist, :units => :km)
+
+
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
     #if @pubs.count == 0
       #load(pc)
@@ -275,8 +275,8 @@ class BrowserController < ApplicationController
       end
 
     end
-    
-    
+
+
     render :layout => 'blank'
 
   end
