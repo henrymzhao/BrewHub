@@ -45,7 +45,7 @@ class SocialController < ApplicationController
         flash[:notice] = "Group Created, user is a member in it"
         current_user.group_id.push(@group.id)
         @current_user.save
-        redirect_to '/meetup'
+        redirect_to '/group/' + @group.id
       else
         flash[:notice] = "Group Created, user not in it"#Would this ever be seen?
         # current_user.group_id = @group.group_id
