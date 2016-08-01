@@ -23,7 +23,59 @@ body, html
 
 </style>
 
+<script>
+window.onload = checkWindow();
+// optimize for mobile view
+function checkWindow()
+{
+  if ($(window).width() < 1024)
+  {
+    var logo = document.getElementById("logo");
+    logo.setAttribute("class", 'brand-logo dropdown-button btn');
+    logo.setAttribute("data-activates", 'dropdown1');
+    var box = document.getElementById("contentbox2");
+    box.setAttribute("margin-left", "0px");
+    box.setAttribute("width", "100%");
 
+    alert("execute");
+  }
+}
+</script>
+
+<ul id='dropdown1' class="dropdown-content">
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header waves-effect waves-teal"><i class="material-icons">filter_drama</i>Components</div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="water()"><p style="padding-top:0px; padding-bottom:0px">Water</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="hops()"><p style="padding-top:0px; padding-bottom:0px">Hops</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="starchsource()"><p style="padding-top:0px; padding-bottom:0px">Starch Source</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="yeast()"><p style="padding-top:0px; padding-bottom:0px">Yeast</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="clarifyingagent()"><p style="padding-top:0px; padding-bottom:0px">Clarifying Agent</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal" onclick="ale()"><i class="material-icons">whatshot</i>Ale</div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="brownale()"><p style="padding-top:0px; padding-bottom:0px">Brown Ale</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="ipa()"><p style="padding-top:0px; padding-bottom:0px">Indian Pale Ale</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="paleale()"><p style="padding-top:0px; padding-bottom:0px">Pale Ale</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="mildale()"><p style="padding-top:0px; padding-bottom:0px">Mild Ale</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal" onclick="lager()"><i class="material-icons">whatshot</i>Lager</div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="palelager()"><p style="padding-top:0px; padding-bottom:0px">Pale Lager</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="viennalager()"><p style="padding-top:0px; padding-bottom:0px">Vienna Lager</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="darklager()"><p style="padding-top:0px; padding-bottom:0px">Dark Lager</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal" onclick="stout()"><i class="material-icons">whatshot</i>Stout</div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="milkstout()"><p style="padding-top:0px; padding-bottom:0px">Milk Stout</p></div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="porter()"><p style="padding-top:0px; padding-bottom:0px">Porter</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal" onclick="wheatbeer()"><i class="material-icons">whatshot</i>Wheat Beer</div>
+      <div class="collapsible-body waves-effect waves-teal" onclick="lambic()"><p style="padding-top:0px; padding-bottom:0px">Lambic</p></div>
+    </li>
+  </ul>
+</ul>
 
 <ul id="nav-mobile" class="side-nav fixed" style="overflow: auto; translate(0%); margin-top: 64px;">
   <li class = "bold">
@@ -173,7 +225,7 @@ $('.collapsible').collapsible();
   }
 </style>
 
-<div class="contentbox2" style="">
+<div class="contentbox2" id="contentbox2" style="">
 
 <p class="bname" id="bname"> Beer </p>
 <p class="bdesc" id="bdesc"><%= render :file => '/app/assets/textfiles/beertypes/beer.txt' %></p>
