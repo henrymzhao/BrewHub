@@ -23,8 +23,8 @@
             <p>BECAUSE I CAN MOVE WEE. Click Accept to dismiss me.</p>
           </div>
           <div class="card-action">
-            <a href="javascript:void(0)" id="closeNotification">ACCEPT</a>
-            <a href="#">NAH</a>
+            <a href="#" id="closeNotification">ACCEPT</a>
+            <a href="#" id="denyNotification">NAH</a>
           </div>
         </div>
       </div>
@@ -117,12 +117,15 @@
     });
 
     //--------------------
+    <% @allGroups = Group.all %>
+
     <% if current_user || !current_user.name.blank? %>
     {
       <% @allGroups.each do |g| %>
         <% current_user.pending_group_id.each do |c| %>
           <% if c == g.id %>
-
+            document.getElementById("closeNotification").setAttribute("href", "/accept_membership/<%=g.id%>");
+            document.getElementById("denyNotification").setAttribute("href", "/deny_membership/<%=g.id%>");
             openNoti();
           <% end %>
         <% end %>
