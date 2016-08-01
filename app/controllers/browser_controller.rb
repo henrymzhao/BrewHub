@@ -158,21 +158,30 @@ class BrowserController < ApplicationController
     #@pubs = Brewery.near([49.277577, -122.913970], 6)
     #Brewery.geocoded
     
-    @maxPubDist = 12
-    
     
     @pubs = Brewery.where("loc = ?", pc).order("name ASC")
     if @pubs.count == 0
         load(pc)
     end
+    
+    if params[:dist].nil? or params[:dist].blank?
+      @maxPubDist = 10
+    elsif params[:dist].to_f < 0.5
+      @maxPubDist = 1
+      params[:dist] = 1
+    else
+      @maxPubDist = params[:dist].to_i
+    end
+    
+    
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
     
     
-    #COMMENT OUT WHEN TESING LOCALLY - UNCOMMENT WHEN PUSHING TO TEST ON HEROKU.
+    #COMMENT OUT WHEN TESING LOCALLY - UNCOMMENT WHEN PUSHING TO TEST ON HEROKU, AND COMMENT LINE 176
     #@pubs = Brewery.near([request.location.latitude, request.location.longitude], @maxPubDist, :units => :km).order("name ASC")
 
 
-    #this location is faculty of applied sciences at SFU.
+    #this location is faculty of applied sciences at SFU.  this should be commentd before pushing to heroku - and uncomment the above.
     @pubs = Brewery.near([49.277577, -122.913970], @maxPubDist, :units => :km)
     
     

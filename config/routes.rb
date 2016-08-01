@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   get '/beers' => 'browser#beers'
   get '/pubs' => 'browser#pubs'
+  get '/pubs/:dist' => 'browser#pubs'
   get '/pub/:id' => 'browser#pub'
   get '/style/:id' => 'browser#style'
   get '/load' => 'browser#load'
