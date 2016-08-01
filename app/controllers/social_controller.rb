@@ -66,4 +66,25 @@ class SocialController < ApplicationController
     @allUsers = User.all
   end
 
+  def remove_self
+    current_user.group_id.delete(params[:id].to_f)#.to.f is necassary for num conversion from the string in the URL
+    current_user.save
+    redirect_to '/groups'
+  end
+
+  def accept_membership
+    accepted_id = current_user.pending_group_id.delete(params[:id].to_f)
+    if accepted_id >= 0
+      current_user.group_id.push(accepted_id)
+    end
+    current_user.save
+    redirect_to '/groups'
+  end
+
+  def deny_membership
+    current_user.pending_group_id.delete(params[:id].to_f)
+    current_user.save
+    redirect_to '/groups'
+  end
+
 end

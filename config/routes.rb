@@ -31,7 +31,11 @@ Rails.application.routes.draw do
   #create new group
   get '/groups' => 'social#groups'
   post '/groups' => 'social#create'
+  #group management
   get '/group/:id' => 'social#group'
+  get '/remove_self/:id' => 'social#remove_self'
+  get '/accept_membership/:id' => 'social#accept_membership'
+  get '/deny_membership/:id' => 'social#deny_membership'
 
   # these routes are for showing users a login form, logging them in, and logging them out.
   get '/login' => 'sessions#new'

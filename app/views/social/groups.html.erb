@@ -9,10 +9,20 @@
 
       <%= f.submit "Create Group" %>
     <% end %>
+    <p>Groups you're a member of:</p>
     <% @allGroups.each do |g| %>
       <% current_user.group_id.each do |c| %>
         <% if c == g.id %>
-          <p><a href="/group/<%=g.id%>"><%= g.name %></a><p>
+          <p><a href="/group/<%=g.id%>"><%= g.name %></a>, <a href="/remove_self/<%=g.id%>">Remove Membership</a><p>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <br><p>Pending group memberships:</p>
+    <% @allGroups.each do |g| %>
+      <% current_user.pending_group_id.each do |c| %>
+        <% if c == g.id %>
+          <p><a href="/group/<%=g.id%>"><%= g.name %></a>, <a href="/accept_membership/<%=g.id%>">Accept Membership</a>, <a href="/deny_membership/<%=g.id%>">Deny Membership</a><p>
         <% end %>
       <% end %>
     <% end %>

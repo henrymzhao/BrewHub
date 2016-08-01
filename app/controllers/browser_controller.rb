@@ -258,7 +258,7 @@ class BrowserController < ApplicationController
     render :layout => 'blank'
 
   end
-  
+
   #here we deal with our API keys - we need a whole bunch for testing purposes, so that we don't run into a request limit.
 #  def tryAll
 #    #a bunch of nested try/catch blocks, basically, along with code to validate connection. keys are stored in the environment.
