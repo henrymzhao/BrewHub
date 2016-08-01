@@ -33,6 +33,9 @@
     </thead>
     <tbody>
   <%
+  
+  @styleBeers.sort_by! &:name
+  
   @styleBeers.each do |sb|
     
     @thisBrewery = Brewery.where(:id => sb.brewery_id.to_i).first

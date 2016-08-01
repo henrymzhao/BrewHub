@@ -54,7 +54,8 @@ body, html
     <div >
       <a ><b>Styles</b></a>
     </div>
-  </li>
+  </li>  
+  
   <%@allstyles.each do |s|
   @allBeersForStyle = Beer.where(:style_id => s.style_id)
     if (@allBeersForStyle.count > 0) then
