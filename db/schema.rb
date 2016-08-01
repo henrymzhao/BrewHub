@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160730041755) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
-    t.integer  "group_id", default: 123, null: false
+    t.integer  "brewery_id"
     t.integer  "leader"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
