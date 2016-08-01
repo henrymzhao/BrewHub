@@ -161,7 +161,7 @@ class BrowserController < ApplicationController
         load(pc)
     end
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
-    @pubs = Brewery.near([request.location.latitude, request.location.longitude], 6).order("name ASC")
+    @pubs = Brewery.near([request.location.latitude, request.location.longitude], 20, :units => :km).order("name ASC")
     
     
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
