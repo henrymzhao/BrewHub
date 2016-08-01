@@ -19,12 +19,12 @@
       <div class="col s4 push-s4">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">I AM COOL</span>
-            <p>BECAUSE I CAN MOVE WEE. Click Accept to dismiss me.</p>
+            <span class="card-title">Invitation</span>
+            <p id="notePara">You should not be seeing this :x</p>
           </div>
           <div class="card-action">
-            <a href="#" id="closeNotification">ACCEPT</a>
-            <a href="#" id="denyNotification">NAH</a>
+            <a href="#" id="closeNotification">Join</a>
+            <a href="#" id="denyNotification">Deny</a>
           </div>
         </div>
       </div>
@@ -126,6 +126,8 @@
           <% if c == g.id %>
             document.getElementById("closeNotification").setAttribute("href", "/accept_membership/<%=g.id%>");
             document.getElementById("denyNotification").setAttribute("href", "/deny_membership/<%=g.id%>");
+            var name = "<%= g.name %>";
+            document.getElementById("notePara").innerHTML = "You have been invited to join the group \"" + name + "\". Would you like to join?";
             openNoti();
           <% end %>
         <% end %>
