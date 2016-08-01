@@ -45,6 +45,14 @@ body, html
       <a ><b>Breweries</b></a>
     </div>
   </li>
+  <form>
+    <div class="input-field">
+      <form action="/pubs">
+        <input type="text" name="Search">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </form>
   <%@pubs.each do |p| %>
   <li class="bold">
     <a class="waves-effect waves-teal"; onclick="displayRight(&quot;<%= p.id %>&quot;)">

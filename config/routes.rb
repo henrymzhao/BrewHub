@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   get '/beers' => 'browser#beers'
+  post '/pubs' => 'browser#pubs'
   get '/pubs' => 'browser#pubs'
   get '/pub/:id' => 'browser#pub'
   get '/style/:id' => 'browser#style'

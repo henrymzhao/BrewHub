@@ -160,8 +160,10 @@ class BrowserController < ApplicationController
       load(pc)
       @pubs = Brewery.where("loc = ?", pc).order("name ASC")
     end
-
-
+    if params.has_key?(:Search)
+      @pubs = Brewery.name.search(params[:Search])
+      fjkdljfsalk
+    end
 
     #old code for grabbing all bc breweries, kept for reference purposes.
     #@breweries1 = brewery_db.breweries.all(ids: 'DqlySI, GSkOGp,yagN3u,zC8X6x,Xr0G6p,AAj4GG,aywDqA,gvFuE2,SxnUb2,nVB9Cq')
