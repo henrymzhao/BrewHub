@@ -119,7 +119,7 @@
     //--------------------
     <% @allGroups = Group.all %>
 
-    <% if current_user || !current_user.name.blank? %>
+    <% if current_user %>
     {
       <% @allGroups.each do |g| %>
         <% current_user.pending_group_id.each do |c| %>
