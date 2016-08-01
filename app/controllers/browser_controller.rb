@@ -156,10 +156,12 @@ class BrowserController < ApplicationController
     #pubs = Brewery.where(:province == pc).order("name ASC")
     #@pubs = Brewery.near([49.277577, -122.913970], 6)
     #Brewery.geocoded
-    if Brewery.count == 0
+    @pubs = Brewery.where("loc = ?", pc).order("name ASC")
+    if @pubs.count == 0
         load(pc)
     end
-    @pubs = Brewery.near([request.location.latitude, request.location.longitude], 6).order("name ASC")
+    @pubs = Brewery.where("loc = ?", pc).order("name ASC")
+    #@pubs = Brewery.near([request.location.latitude, request.location.longitude], 6).order("name ASC")
     
     
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
