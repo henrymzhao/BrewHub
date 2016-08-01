@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
       user.firstname = "example"
       user.lastname = "example"
       user.username = rand 10000000
-      user.email = "#{user.username}@example.com"
+      user.email = auth["info"]["email"]
       user.password = auth["uid"]
       user.password_confirmation = auth["uid"]
       user.provider = auth["provider"]
