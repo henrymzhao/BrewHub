@@ -40,7 +40,7 @@
 
       Slect A new brewery for this group:
 
-      <a href="<%= "/pubs?lat=" + @centralLat.to_s + "&lon=" + @centralLon.to_s + "%gid=" + @group.id.to_s %>">Choose a desination</a>
+      <a href="<%= "/pubs?lat=" + @centralLat.to_s + "&lon=" + @centralLon.to_s + "&gid=" + @group.id.to_s %>">Choose a desination</a>
     <%
 
     @brewsNearTheGroup = Brewery.near([@avgLat, @avgLon], 10, :units => :km )
