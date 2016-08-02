@@ -35,24 +35,24 @@ class SocialController < ApplicationController
 
     centralLat = centralLat / groupSize
     centralLon = centralLon / groupSize
-    
+
     centralLat = 49.277577
     centralLon = -122.913970
     @nearBreweries = Brewery.near([centralLat.to_f, centralLon.to_f], 25, :units => :km)
     @nearestID = 999
-    
+
     @nearBreweries.each do |nb|
       @nearestID = nb.id
     end
-    
+
     curGroup = Group.find_by(id: gid)
     curGroup.update(brewery_id: @nearestID)
-    
+
     curGroup.save!
-    
+
     @avgLat = centralLat
     @avgLon = centralLon
-    
+    return centralLat, centralLon
     #Right here we need to put the code to get a central brewery selected
   end
 
@@ -90,7 +90,7 @@ class SocialController < ApplicationController
   def group
     @group = Group.find(params[:id])
     @allUsers = User.all
-    centralize(@group.id)
+    @centralLat, @centralLon = centralize(@group.id)
   end
 
   def request_member
@@ -124,5 +124,12 @@ class SocialController < ApplicationController
     current_user.pending_group_id.delete(params[:id].to_f)
     current_user.save
     redirect_to '/groups'
+  end
+
+  def set_meetup
+    @group = Group.find(params[:gid])
+    @group.brewery_id = params[:bid]
+    @group.save
+    redirect_to '/pub/' + @group.brewery_id.to_s
   end
 end

@@ -182,10 +182,21 @@ class BrowserController < ApplicationController
     #@pubs = Brewery.near([request.location.latitude, request.location.longitude], @maxPubDist, :units => :km).order("name ASC")
 
     @pubs = Brewery.near([request.location.latitude, request.location.longitude], @maxPubDist, :units => :km).order("name ASC")
-    
+
     #if running on localhost, use FAS at SFU as the default location.
     if request.location.latitude == 0 && request.location.longitude == 0
       @pubs = Brewery.near([49.277577, -122.913970], @maxPubDist, :units => :km)
+    end
+
+    if !params[:lat].nil? && !params[:lon].nil?
+      @pubs = Brewery.near([params[:lat], params[:lon]], @maxPubDist, :units => :km)
+    end
+    @allData = 0
+    if !params[:gid].nil?
+      @bgid = params[:gid]
+    end
+    if !params[:lat].nil? && !params[:lon].nil? && !params[:gid].nil?
+      @allData = 1
     end
 
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")
@@ -212,7 +223,9 @@ class BrowserController < ApplicationController
     #@pub = brewery_db.brewery(params[:id]).all
     @pub = Brewery.find(params[:id])
     @pubBeers = Beer.where(:brewery_id => @pub.id)
-
+    if !params[:gid].nil?
+      @bgid = params[:gid]
+    end
 #    @breweries.each do |b|
 #    %>
 #<p><%=b.name%>, <%=b.id%>, <%=b.brew_id%>, <%=b.gpsLocation%></p>

@@ -147,7 +147,11 @@ body
 function displayRight(id){
   //This needs to actually displayRight
   //window.location.href = "/pub/" + id;
-  document.getElementById("rightFrame").src = "/pub/" + id;
+  <% if @allData == 1%>
+    document.getElementById("rightFrame").src = "/pub/" + <%= @bgid %> + "/" + id;
+  <% else %>
+    document.getElementById("rightFrame").src = "/pub/" + id;
+  <% end %>
 }
 
 
