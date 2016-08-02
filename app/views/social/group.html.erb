@@ -37,6 +37,11 @@
     average lat = <%= @sumLat/@count %><br>
     average lon = <%= @sumLon/@count %>
   </p>
+
+    <%@pubs.each do |p| %>
+      <%= p.name %>
+    <% end %>
+
   <% end %>
 
 
