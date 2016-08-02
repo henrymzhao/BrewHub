@@ -5,6 +5,62 @@
 </script>
 
 <div onclick="goBack()" style="display:inline; text-align: left; color:blue; width: 20px; font-weight: 300"><a>Back</a></div>
+<%
+if current_user then
+    if !current_user.group_id.blank? and !current_user.group_id.nil? then
+        #if user has an associated group value, we want to display a select button to allow them to pick this brewery as a destination.  Dislay the select.
+        %>
+        <div onclick="goBack()" style="display:inline; float:right; padding-right: 2%; color:blue; width: 20px; font-weight: 300"><a>Select</a></div>
+        
+        <div class="input-field">
+          <%
+          #this was code to limit distance radius.
+          #if params[:dist].nil? or params[:dist].blank?
+          #  @distDefault = 10
+          #elsif params[:dist].to_f < 0.5
+          #  @distDefault = 10
+          #  @maxPubDist = 10
+          #else
+          #  @distDefault = params[:dist]
+          #end
+          
+          
+          @userGroups = []
+          
+          @allGroups = Group.all
+          #get a list of user groups
+            
+            @allGroups.each do |g|
+              current_user.group_id.each do |c|
+                if c == g.id
+                    @userGroups << c
+                end
+              end
+            end
+          %>
+          
+          <form action="/selectBrewery/<%=@pub.id%>">
+            <%
+            %>
+           <p>Select a Group:</p>
+            <select id="group_id" name="group_id">
+              <%
+              @userGroups.each do |ug|
+                %>
+                <option value="<%=ug%>"><%=ug%></option>
+                <%
+              end
+              %>
+            </select>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        <%
+    end
+end
+%>
+
+
 <div style="text-align: center">
 <!---<h1>Brewery Info</h1>--->
 <h2><%= @pub.name %></h2>

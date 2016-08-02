@@ -15,6 +15,31 @@ class BrowserController < ApplicationController
 
     @allbreweries = Brewery.all
   end
+  
+  def selectBrewery
+    #cleansing entry goes here
+    
+    #@pub = Brewery.find(params[:id])
+    
+    #values we're getting: <%=@pub.id%>  group_id
+    
+    
+    
+    if params[:group_id].nil? or params[:id].nil? or params[:id].blank? or params[:group_id].blank?
+       redirect_to :root
+    else
+     @selGroup = Group.find(params[:group_id])
+     @selGroup.brewery_id = params[:id]
+     @selGroup.save!
+     
+     #params[:dist].nil? or params[:dist].blank?
+     
+     #thanks stackoverflow! http://stackoverflow.com/questions/4321286/redirect-to-out-of-an-iframe
+     render :text => "<script>parent.location.href='/groups';</script>"
+    end
+    
+    
+  end
 
   def showLoaded
     @allbeers = Beer.all.order("name ASC")
