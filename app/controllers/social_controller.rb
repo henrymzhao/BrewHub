@@ -35,6 +35,22 @@ class SocialController < ApplicationController
 
     centralLat = centralLat / groupSize
     centralLon = centralLon / groupSize
+    
+    centralLat = 49.277577
+    centralLon = -122.913970
+    @nearBreweries = Brewery.near([centralLat.to_f, centralLon.to_f], 25, :units => :km)
+    @nearestID = 999
+    
+    @nearBreweries.each do |nb|
+      @nearestID = nb.id
+    end
+    
+    curGroup = Group.find_by(id: gid)
+    curGroup.update(brewery_id: @nearestID)
+    
+    curGroup.save!
+    
+    
     #Right here we need to put the code to get a central brewery selected
   end
 

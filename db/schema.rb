@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730041755) do
-
+ActiveRecord::Schema.define(version: 20160802010030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,19 +30,18 @@ ActiveRecord::Schema.define(version: 20160730041755) do
   end
 
   create_table "breweries", force: :cascade do |t|
-    t.string   "name"
-    t.string   "website"
-    t.string   "address"
-    t.string   "gpsLocation"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "brewery_id"
-    t.string   "imgUrl"
-    t.text     "description"
-    t.string   "locality"
-    t.string   "province"
-    t.string   "loc"
-
+    t.string "name"
+    t.string "website"
+    t.string "address"
+    t.string "gpsLocation"
+    t.float  "latitude"
+    t.float  "longitude"
+    t.string "brewery_id"
+    t.string "imgUrl"
+    t.text   "description"
+    t.string "locality"
+    t.string "province"
+    t.string "loc"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -83,8 +81,8 @@ ActiveRecord::Schema.define(version: 20160730041755) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
-    t.decimal  "lat",              precision: 10, scale: 6
-    t.decimal  "lon",              precision: 10, scale: 6
+    t.float    "lat"
+    t.float    "lon"
     t.string   "avatar"
     t.text     "group_id"
     t.text     "pending_group_id"
