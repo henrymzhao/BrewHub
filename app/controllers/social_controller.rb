@@ -50,6 +50,8 @@ class SocialController < ApplicationController
     
     curGroup.save!
     
+    @avgLat = centralLat
+    @avgLon = centralLon
     
     #Right here we need to put the code to get a central brewery selected
   end
