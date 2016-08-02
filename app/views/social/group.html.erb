@@ -1,7 +1,7 @@
-<a href="/groups">Return to all groups</a>
-<h1><%= @group.name %></h1>
+<a href="/groups"> < < Return to all groups</a>
+<h3><%= @group.name %></h3>
 <body>
-  <h4><p>Details about this group</p></h4>
+  
 
   <% if current_user#eventually check for user membership %>
     <%= form_for :member, url: '/request_member' do |f| %>
@@ -10,10 +10,12 @@
       <%= f.text_field :name %>
       <br>
       <%= hidden_field_tag "gid", @group.id %>
-      <%= f.submit "Request User" %>
+      <%= f.submit "Invite a User" %>
     <% end %>
   <% end %>
 
+
+  <h5><p>Group Details:</p></h5>
   Members:<br>
   <% @sumLat = 0 %>
   <% @sumLon = 0 %>
@@ -37,12 +39,23 @@
 
     <!--average lat = <%= @avgLat %><br/>
     average lon = <%= @avgLon %><br/>-->
+      <%
+      if @group.brewery_id.nil? then
+        %>
+        <p>No set destination.  Pick one!</p>
+        <%
+      else
+        %>
+        <%
+        @pickedBrewery = Brewery.find(@group.brewery_id)
+        %>
+        <p>Current Destination: <%=@pickedBrewery.name%>, at: <%=@pickedBrewery.address%> Site: <a href="<%=@pickedBrewery.website%>">Link</a></p>
+        <%
+      end
+      %>
+      
 
-      Select A new brewery for this group:
-
-      <a href="<%= "/pubs?lat=" + @centralLat.to_s + "&lon=" + @centralLon.to_s + "&gid=" + @group.id.to_s %>">Choose a desination</a>
-      <%= @centralLat %>, <%= @centralLon %>
-
+      <a href="<%= "/pubs?lat=" + @centralLat.to_s + "&lon=" + @centralLon.to_s + "&gid=" + @group.id.to_s %>">Pick a Destination!</a>
   <% end %>
 
 
