@@ -180,7 +180,9 @@ class BrowserController < ApplicationController
 
     #COMMENT OUT WHEN TESING LOCALLY - UNCOMMENT WHEN PUSHING TO TEST ON HEROKU, AND COMMENT LINE 176
     @pubs = Brewery.near([request.location.latitude, request.location.longitude], @maxPubDist, :units => :km).order("name ASC")
-
+    if request.location.latitude == 0 && request.location.longitude == 0
+      @pubs = Brewery.near([49.277577, -122.913970], @maxPubDist, :units => :km)
+    end
 
     #this location is faculty of applied sciences at SFU.  this should be commentd before pushing to heroku - and uncomment the above.
     #@pubs = Brewery.near([49.277577, -122.913970], @maxPubDist, :units => :km)
