@@ -13,6 +13,8 @@ div.overlay {
 	left: 0;
 }
 
+
+
 div.fadingInBlack
 {
 	z-index: 5;
@@ -140,6 +142,15 @@ div.moveup {
 @-o-keyframes movedown {
     	0% { top: 50px;    }
       100% { top: 100%; }
+}
+
+#hold_my_iframe
+{
+	padding-bottom:100px;
+	margin-bottom: 100px;
+	width:100%;
+	height: 100%;
+	overflow:visible;
 }
 
 #mainbox

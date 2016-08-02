@@ -15,7 +15,7 @@
 <% end %>
 
 <p style="font-weight:bold"><%= @pub.address %>, <%= @pub.locality%></p>
-<a target="_blank" href="<%=@pub.website%>"><p><%=@pub.website%></p></a>
+<p><a target="_blank" href="<%=@pub.website%>"><%=@pub.website%></a></p>
 
 <p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @pub.description %></p>
 <% if @pub && @bgid %>
