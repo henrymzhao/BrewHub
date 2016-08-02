@@ -4,11 +4,6 @@ $primary-color: color("blue", "lighten-2") !default;
 @import 'materialize';
 @import "materialize/extras/nouislider";
 
-.side-nav
-{
-	width:240px !important;
-}
-
 div.overlay {
 	width: 100%;
 	position: fixed;
