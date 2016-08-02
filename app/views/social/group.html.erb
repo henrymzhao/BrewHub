@@ -1,24 +1,32 @@
-<a href="/groups">Return to all groups</a>
-<h1><%= @group.name %></h1>
-<body>
-  <h4><p>Details about this group</p></h4>
+<style>
+div.split
+{
+  width:50%;
+}
 
-  <% if current_user#eventually check for user membership %>
-    <%= form_for :member, url: '/request_member' do |f| %>
 
-      <%= f.label :email %>
-      <%= f.text_field :name %>
-      <br>
-      <%= hidden_field_tag "gid", @group.id %>
-      <%= f.submit "Request User" %>
+#mainbox
+{
+  height: 100vh;
+}
+</style>
+<div class = "split left">
+  <a href="/groups">Return to all groups</a>
+  <h1><%= @group.name %></h1>
+  <body>
+    <h4><p>Details about this group</p></h4>
+
+    <% if current_user#eventually check for user membership %>
+      <%= form_for :member, url: '/request_member' do |f| %>
+        <%= f.label :email %>
+        <%= f.text_field :name %>
+        <br>
+        <%= hidden_field_tag "gid", @group.id %>
+        <%= f.submit "Invite a User" %>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <!-- Members:<br> -->
-  <% @sumLat = 0 %>
-  <% @sumLon = 0 %>
-  <% @count = 0 %>
- 
+
 
       <ul style="width: 30%" class="collection with-header">
         <li class="collection-header"><h4>Members</h4></li>
@@ -38,58 +46,93 @@
           <%end %>
 
       </ul>
-
-
-  <% if @sumLat %>
+    <% if @sumLat %>
 
 
     <!--average lat = <%= @avgLat %><br/>
     average lon = <%= @avgLon %><br/>-->
+      <%
+      if @group.brewery_id.nil? then
+        %>
+        <p>No set destination.  Pick one!</p>
+        <%
+      else
+        %>
+        <%
+        @pickedBrewery = Brewery.find(@group.brewery_id)
+        %>
+        <p>Current Destination: <%=@pickedBrewery.name%>, at: <%=@pickedBrewery.address%> Site: <a href="<%=@pickedBrewery.website%>">Link</a></p>
+        <%
+      end
+      %>
 
-      Select A new brewery for this group:
 
-      <a href="<%= "/pubs?lat=" + @centralLat.to_s + "&lon=" + @centralLon.to_s + "&gid=" + @group.id.to_s %>">Choose a desination</a>
-      <%= @centralLat %>, <%= @centralLon %>
+    Select A new brewery for this group:
 
-  <% end %>
+    <a href="<%= "/pubs?lat=" + @centralLat.to_s + "&lon=" + @centralLon.to_s + "&gid=" + @group.id.to_s %>">Pick a desination</a>
+
+    <% end %>
 
 
-  <br><br>
-  Pending members:<br>
-  <% @allUsers.each do |u| %>
+    <br><br>
+    Pending members:<br>
+    <% @allUsers.each do |u| %>
     <% u.pending_group_id.each do |g| %>
-            
-      <% if @group.id == g %>
-        <% if !u.name.blank? %>
-          <p><%= image_tag(u.avatar, :width => 30, :height => 30) %><%= u.name %></p>
-        <% else %>
-          <p><%= image_tag(u.avatar, :width => 30, :height => 30) %><%= u.username %></p>
-        <% end %>
-      <%end%>
+    <% if @group.id == g %>
+    <% if !u.name.blank? %>
+    <p><%= image_tag(u.avatar, :width => 30, :height => 30) %><%= u.name %></p>
+    <% else %>
+    <p><%= image_tag(u.avatar, :width => 30, :height => 30) %><%= u.username %></p>
+    <% end %>
     <%end%>
-  <%end %>
-  <br><br>
-  <div>
-    <% if current_user && !current_user.name.blank? %>
+    <%end%>
+    <%end %>
+    <br><br>
+    <div>
+      <% if current_user && !current_user.name.blank? %>
       <div>
         <script src="https://www.shoutbox.com/chat/chat.js.php"></script>
         <script>var chat = new Chat(<%= @group.id %>,"<%=  current_user.name %>");</script>
       </div>
-    <% elsif current_user && !current_user.username.blank? %>
+      <% elsif current_user && !current_user.username.blank? %>
       <div>
         <script src="https://www.shoutbox.com/chat/chat.js.php"></script>
         <script>var chat = new Chat(<%= @group.id %>,"<%=  current_user.username %>");</script>
       </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
     <style>
-      .shoutBoxContainer {
+    .shoutBoxContainer {
       background-color: #ffe6e6;
-      width: 35%;
-      }
-      .shoutInputRed{
+      width: 40%;
+    }
+    .shoutInputRed{
       background-color: #ddd;
-      }
+    }
     </style>
 
-</body>
+  </body>
+</div>
+
+<script>
+function displayRight(id){
+  //This needs to actually displayRight
+  //window.location.href = "/pub/" + id;
+  <% if @allData == 1%>
+  document.getElementById("rightFrame").src = "/pub/" + id + "/" + <%= @bgid %>;
+  <% else %>
+  document.getElementById("rightFrame").src = "/pub/" + id;
+  <% end %>
+}
+
+$(document).ready(function()
+{
+  <% if @group.brewery_id%>
+    displayRight(<%=@group.brewery_id%>)
+  <% end %>
+});
+</script>
+
+
+
+<iframe id="rightFrame" class="breweries_info right" frameborder="0" style="width: 50%; height: 100vh"></iframe>
