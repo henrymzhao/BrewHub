@@ -3,6 +3,11 @@ div.split
 {
   width:50%;
 }
+
+#mainbox
+{
+  height: 100vh;
+}
 </style>
 <div class = "split left">
   <a href="/groups">Return to all groups</a>
@@ -106,7 +111,7 @@ function displayRight(id){
 
 $(document).ready(function()
 {
-  <% if @group.brewery_id != null %>
+  <% if @group.brewery_id%>
     displayRight(<%=@group.brewery_id%>)
   <% end %>
 });
@@ -114,4 +119,4 @@ $(document).ready(function()
 
 
 
-<iframe id="rightFrame" class="breweries_info right" frameborder="1" style="width: 50%; height: 100%"></iframe>
+<iframe id="rightFrame" class="breweries_info right" frameborder="0" style="width: 50%; height: 100vh"></iframe>
