@@ -55,7 +55,7 @@ class SocialController < ApplicationController
       else
         flash[:notice] = "Group Created, user not in it"#Would this ever be seen?
         # current_user.group_id = @group.group_id
-        redirect_to '/meetup'
+        redirect_to '/groups'
       end
   end
 
