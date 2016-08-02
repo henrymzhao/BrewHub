@@ -26,6 +26,8 @@ class SocialController < ApplicationController
     allUsers.each do |u|
       u.group_id.each do |b|
         if b == gid
+          u.lat = request.location.latitude
+          u.lon = request.location.longitude
           centralLat += u.lat.to_f
           centralLon += u.lon.to_f
           groupSize += 1
@@ -36,6 +38,10 @@ class SocialController < ApplicationController
     centralLat = centralLat / groupSize
     centralLon = centralLon / groupSize
     #Right here we need to put the code to get a central brewery selected
+    @pubs = Brewery.near([centralLat, centralLon], 10, :units => :km).order("name ASC")
+    if request.location.latitude == 0 && request.location.longitude == 0
+      @pubs = Brewery.near([49.277577, -122.913970], 10, :units => :km)
+    end
   end
 
   def create
