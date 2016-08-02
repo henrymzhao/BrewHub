@@ -34,14 +34,17 @@
   <%end %>
   <% if @sumLat %>
 
-  <p>
+  
     <!--average lat = <%= @avgLat %><br/>
     average lon = <%= @avgLon %><br/>-->    
     <%
     @curBrewery = Brewery.find(@group.brewery_id)
     %>
-    The currently selected destination is <%= @curBrewery.name%>, at <%= @curBrewery.address%>. <a href="<%=@curBrewery.website%>"><%=@curBrewery.website%></a>
-    </p>
+    
+    <p>The currently selected destination is <%= @curBrewery.name%>, at <%= @curBrewery.address%>.</p>
+    
+    <a href="<%=@curBrewery.website%>"><%=@curBrewery.website%></a>
+    
   
   <table>
     <%
@@ -49,7 +52,7 @@
     @brewsNearTheGroup = Brewery.near([@avgLat, @avgLon], 10, :units => :km )
       @brewsNearTheGroup.each do |bng|
         %>
-        <p><%=bng.name%>, <%=bng.address%>, <%=bng.website%></p>
+        <p><%=bng.name%>, <%=bng.address%>, <a href="<%=bng.website%>"><%=bng.website%></a></p>
         <%
       end
     %>
