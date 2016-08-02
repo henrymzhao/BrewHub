@@ -197,6 +197,9 @@ class BrowserController < ApplicationController
     end
     if !params[:lat].nil? && !params[:lon].nil? && !params[:gid].nil?
       @allData = 1
+      @lat = params[:lat]
+      @lon = params[:lon]
+      #jfkdjfk
     end
 
     #@pubs = Brewery.where("loc = ?", pc).order("name ASC")

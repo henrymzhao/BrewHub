@@ -38,18 +38,10 @@
     <!--average lat = <%= @avgLat %><br/>
     average lon = <%= @avgLon %><br/>-->
 
-      Slect A new brewery for this group:
+      Select A new brewery for this group:
 
       <a href="<%= "/pubs?lat=" + @centralLat.to_s + "&lon=" + @centralLon.to_s + "&gid=" + @group.id.to_s %>">Choose a desination</a>
-    <%
-
-    @brewsNearTheGroup = Brewery.near([@avgLat, @avgLon], 10, :units => :km )
-      @brewsNearTheGroup.each do |bng|
-        %>
-        <p><%=bng.name%>, <%=bng.address%>, <a href="<%=bng.website%>"><%=bng.website%></a></p>
-        <%
-      end
-    %>
+      <%= @centralLat %>, <%= @centralLon %>
   <% end %>
 
 
