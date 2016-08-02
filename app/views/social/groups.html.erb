@@ -1,4 +1,4 @@
-<h1> Main Group Page </h1>
+<h3>Groups</h3>
 <body>
   <% if current_user %>
     <%= form_for :groups, url: '/groups' do |f| %>
@@ -9,11 +9,11 @@
 
       <%= f.submit "Create Group" %>
     <% end %>
-    <p>Groups you're a member of:</p>
+    <p>Member of the below Groups:</p>
     <% @allGroups.each do |g| %>
       <% current_user.group_id.each do |c| %>
         <% if c == g.id %>
-          <p><a href="/group/<%=g.id%>"><%= g.name %></a>, <a href="/remove_self/<%=g.id%>">Remove Membership</a><p>
+          <p><a href="/group/<%=g.id%>"><%= g.name %></a>, <a href="/remove_self/<%=g.id%>">Leave Group!</a><p>
         <% end %>
       <% end %>
     <% end %>
