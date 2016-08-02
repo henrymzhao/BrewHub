@@ -110,6 +110,8 @@
   };
 
   $(document).ready(function() {
+    $('.dropdown-button').dropdown();
+    $('select').material_select();
     $(".button-collapse").sideNav();
     // SHOWS DIV
     $("a[id^=openNotification]").click(function () {
@@ -141,22 +143,6 @@
       closeNoti();
     });
   });
-
-  // function fadeOut()
-  // {
-  //   let box = document.getElementById("fadingBlack");
-  //   let alpha = 1;
-  //   // window.setInterval(function(){
-  //   //   while (alpha >= 0)
-  //   //   {
-  //   //     console.log(box.style.backgroundColor);
-  //   //     box.style.backgroundColor = 'RGBA(0,0,0,' + alpha + ')';
-  //   //     alpha-=0.1;
-  //   //   }
-  //   // }, 75);
-  //   $('#fadingBlack').animate({ "backgroundColor" : "rgba(0,0,0, .1)"}, 400)
-  // };
-
   </script>
 <%
 if current_user
