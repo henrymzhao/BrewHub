@@ -136,6 +136,6 @@ class SocialController < ApplicationController
     @group = Group.find(params[:gid])
     @group.brewery_id = params[:bid]
     @group.save
-    render :text => "<script>parent.location.href='/group/" + @group.id + "';</script>"
+    render :text => "<script>parent.location.href='/group/" + @group.id.to_s + "';</script>"
   end
 end

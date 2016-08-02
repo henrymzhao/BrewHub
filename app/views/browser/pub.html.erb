@@ -19,7 +19,7 @@
 
 <p style="white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word; "><%= @pub.description %></p>
 <% if @pub && @bgid %>
-  <p><a href=<%= "/set_meetup/" + @pub.id.to_s + "/" + @bgid  %>>Select As destination for group</a></p>
+  <p><a href=<%= "/set_meetup/" + @bgid + "/" + @pub.id.to_s %>>Select As destination for group</a></p>
 <% end %>
 
 
