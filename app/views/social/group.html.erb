@@ -22,9 +22,9 @@
     <% u.group_id.each do |g| %>
       <% if @group.id == g %>
         <% if !u.name.blank? %>
-          <p><%= u.name %> </p>
+          <p><%= image_tag(u.avatar, :width => 50, :height => 50) %><%= u.name %> <%= u.lat %> <%= u.lon %></p>
         <% else %>
-          <p><%= u.username %> </p>
+          <p><%= image_tag(u.avatar, :width => 50, :height => 50) %><%= u.username %> <%= u.lat %> <%= u.lon %></p>
         <% end %>
           <p>
             <% @sumLat+=u.lat %> <% @sumLon+=u.lon %> <% @count+=1%>
@@ -51,9 +51,9 @@
     <% u.pending_group_id.each do |g| %>
       <% if @group.id == g %>
         <% if !u.name.blank? %>
-          <p><%= u.name %></p>
+          <p><%= image_tag(u.avatar, :width => 50, :height => 50) %><%= u.name %></p>
         <% else %>
-          <p><%= u.username %></p>
+          <p><%= image_tag(u.avatar, :width => 50, :height => 50) %><%= u.username %></p>
         <% end %>
       <%end%>
     <%end%>
@@ -71,15 +71,15 @@
         <script>var chat = new Chat(<%= @group.id %>,"<%=  current_user.username %>");</script>
       </div>
     <% end %>
+  </div>
     <style>
       .shoutBoxContainer {
       background-color: #ffe6e6;
       width: 35%;
-      float: left;
       }
       .shoutInputRed{
       background-color: #ddd;
       }
     </style>
-  </div>
+
 </body>
