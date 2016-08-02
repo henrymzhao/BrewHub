@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get '/remove_self/:id' => 'social#remove_self'
   get '/accept_membership/:id' => 'social#accept_membership'
   get '/deny_membership/:id' => 'social#deny_membership'
+  get '/set_meetup/:gid/:bid' => 'social#set_meetup'
   post 'request_member' => 'social#request_member'
 
   # these routes are for showing users a login form, logging them in, and logging them out.
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
   get '/pubs' => 'browser#pubs'
   get '/pubs/:dist' => 'browser#pubs'
   get '/pub/:id' => 'browser#pub'
+  get '/pub/:id/:gid' => 'browser#pub'
   get '/style/:id' => 'browser#style'
   get '/load' => 'browser#load'
   get '/showLoaded' => 'browser#showLoaded'

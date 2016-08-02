@@ -126,6 +126,11 @@ body
       <form action="/pubs/<%=@maxPubDist%>">
        <p>Enter search radius (km):</p>
         <input type="number" name="dist" min="0.5" step="0.5" value="<%=@distDefault%>">
+        <% if @allData %>
+          <input type="hidden" name="lat" value="<%= @lat %>">
+          <input type="hidden" name="lon" value="<%= @lon %>">
+          <input type="hidden" name="gid" value="<%= @bgid %>">
+        <% end %>
         <input type="submit" value="Submit">
       </form>
     </div>
@@ -147,7 +152,11 @@ body
 function displayRight(id){
   //This needs to actually displayRight
   //window.location.href = "/pub/" + id;
-  document.getElementById("rightFrame").src = "/pub/" + id;
+  <% if @allData == 1%>
+    document.getElementById("rightFrame").src = "/pub/" + id + "/" + <%= @bgid %>;
+  <% else %>
+    document.getElementById("rightFrame").src = "/pub/" + id;
+  <% end %>
 }
 
 
