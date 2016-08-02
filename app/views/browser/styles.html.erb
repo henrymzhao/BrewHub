@@ -165,7 +165,9 @@ function getWidth()
 
 window.onload = checkWindow();
 window.onload = $('.dropdown-button').dropdown();
-window.onresize = checkWindow();
+$(window).resize(function() {
+  checkWindow();
+});
 // optimize for mobile view
 function checkWindow()
 {
@@ -177,6 +179,7 @@ function checkWindow()
     logo.setAttribute("data-activates", 'dropdown1');
     logo.setAttribute("href", "javascript:void(0)");
     box.setAttribute("class", "breweries_info2");
+    Materialize.toast('You are now on mobile view! Press the logo for a drop down menu!', 5000);
   }
   if ($(window).width() > 1024)
   {
