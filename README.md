@@ -1,6 +1,6 @@
-Project Overview (Iteration 3) - BrewHub - Group 4
+Project Overview (Iteration 3) - BrewHub
 
-Trevor Gale, Janice Moat, Edmond Eng, Henry Zhao, Jonathan Loewen
+Group 4: Trevor Gale, Janice Moat, Edmond Eng, Henry Zhao, Jonathan Loewen
 
 Overview
 
