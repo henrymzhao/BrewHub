@@ -10,7 +10,6 @@ if current_user then
     if !current_user.group_id.blank? and !current_user.group_id.nil? then
         #if user has an associated group value, we want to display a select button to allow them to pick this brewery as a destination.  Dislay the select.
         %>
-        <div onclick="goBack()" style="display:inline; float:right; padding-right: 2%; color:blue; width: 20px; font-weight: 300"><a>Select</a></div>
         
         <div class="input-field">
           <%
@@ -51,6 +50,8 @@ if current_user then
                 <%
               end
               %>
+              
+              
             </select>
             <input type="submit" value="Submit">
           </form>
