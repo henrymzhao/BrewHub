@@ -26,8 +26,8 @@ class SocialController < ApplicationController
     allUsers.each do |u|
       u.group_id.each do |b|
         if b == gid
-          u.lat = request.location.latitude
-          u.lon = request.location.longitude
+          # u.lat = request.location.latitude
+          # u.lon = request.location.longitude
           centralLat += u.lat.to_f
           centralLon += u.lon.to_f
           groupSize += 1
