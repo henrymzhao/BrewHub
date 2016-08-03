@@ -81,7 +81,6 @@
         <td><a href="/style/<%=@assocStyle.id%>"><%=@assocStyle.name%></a></td>
         <%
       end
-
       %>
     </tr>
     <%
@@ -104,6 +103,15 @@
         map: map,
         title: '<%= @pub.name %>'
     });
+      
+        var userMarker = new google.maps.Marker({
+          position: {lat: <%=request.location.latitude%>, lng: <%=request.location.longitude%>},
+          map: map,
+          title: 'You!'
+        });
+        <%
+      
+      %>
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyx6w96mmMia6L8Rd__mCfaOxFO5sbFlE&callback=initMap"
