@@ -53,7 +53,9 @@
   <%
   @pubBeers.each do |pb|
     %>
+    
     <tr>
+      
       <%
       #@pub = Brewery.find(params[:id])
       @assocStyle = Style.where(:style_id => pb.style_id).first
